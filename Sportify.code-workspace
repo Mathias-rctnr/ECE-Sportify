@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../Exercices/Personnel/Démineur"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Sportify"
+	}
+}
