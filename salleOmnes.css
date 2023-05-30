@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;1,200&family=Maven+Pro&display=swap');
+
+
+
+:root {
+    --bleu1: #003A70;
+    --bleu2: #0F558F;
+    --bleu3: #1965A0;
+    --bleu4: #2476B1;
+    --bleu5: #2D82BD;
+    --bleu6: #4893C6;
+    --bleu7: #64A4CE;
+    --bleu8: #8DBEDC;
+    --bleu9: #B7D7EA;
+    --bleu10: #E2EFF6;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    height: auto;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bleu1);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+header {
+    z-index: 30;
+    position: fixed;
+    padding: 10px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(40, 40, 40);
+}
+
+/*************************** LIENS DU NAVIGATEUR */
+
+.Titre_Sportify {
+    z-index: 3;
+    font-size: 40px;
+    color: var(--bleu9);
+    font-family: Moder;
+}
+
+.Wrapper_Liens {
+    z-index: 3;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 800px;
+}
+
+#liens_Nav {
+    z-index: 3;
+    position: relative;
+    text-decoration: none;
+    color: var(--bleu8);
+    transition: color 0.3s ease-in-out;
+}
+
+#liens_Nav:hover {
+    color: var(--bleu10);
+    cursor: pointer;
+}
+
+#liens_Nav::after {
+    content: " ";
+    position: absolute;
+    left: 0px;
+    bottom: -5px;
+    width: 0;
+    height: 1px;
+    background-color: var(--bleu10);
+    transition: width 0.3s ease-in-out;
+}
+
+#liens_Nav:hover::after {
+    width: 100%;
+}
+
+.Progression {
+    background-color: #839c49;
+    height: 3px;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 12;
+}
+
+/*************************** CONSTRUCTION PAGE */
+
+.Content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: 100vw;
+}
+
+/*************************** IMAGE DE FOND */
+
+#video-background {
+    position: absolute;
+    width: 100vw;
+    height: auto;
+}
+
+.Back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+.calque {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.65);
+    box-shadow: inset 0 0 1000px rgba(0, 0, 0, 0.5);
+}
+
+/*********Contenu*/
+
+#Div_salle {
+    display: flex;
+    z-index: 10;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Libere {
+    color: var(--bleu7);
+    font-size: 85px;
+}
+
+.Carroussel_salles {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+    height: auto;
+    margin-top: 60px;
+}
+
+#Monaco,
+#Paris,
+#St_tropez {
+    display: flex;
+    flex-direction: column;
+    height: 25vh;
+    width: 30vw;
+    padding: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+    background: rgba(142, 142, 142, 0.45);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(141, 190, 220, 0.31);
+    margin-bottom: 60px;
+}
+
+.ville {
+    font-size: 35px;
+    color: var(--bleu7);
+}
+
+#id_ville {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.coord {
+    font-size: 17px;
+    color: var(--bleu10);
+}
+
+#coord {
+    margin-bottom: 6px;
+}
+
+.card {
+    margin-bottom: 10px;
+    --background: linear-gradient(to left, var(--bleu1) 0%, #00aeb4 100%);
+    width: 60vw;
+    height: 5vw;
+    padding: 2px;
+    border-radius: 1rem;
+    overflow: visible;
+    background: #f7ba2b;
+    background: var(--background);
+    position: relative;
+    z-index: 1;
+}
+
+.card::after {
+    position: absolute;
+    content: "";
+    top: 30px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 70%;
+    width: 100%;
+    transform: scale(0.8);
+    filter: blur(25px);
+    background: #f7ba2b;
+    background: var(--background);
+    transition: opacity .5s;
+}
+
+.card-info {
+    --color: #181818;
+    background: var(--color);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    border-radius: .9rem;
+}
+
+.card .title {
+    letter-spacing: .1em;
+}
+
+/*Hover*/
+.card:hover::after {
+    opacity: 0;
+}
+
+.card:hover .card-info {
+    color: var(--bleu7);
+    transition: color 1s;
+}
+
+
+.title {
+    font-size: 30px;
+}
+
+#info {
+    position: relative;
+}
+
+.Carroussel_info {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+    height: auto;
+    margin-top: 60px;
+}
+
+.card2 {
+    margin-left: 20px;
+    margin-right: 20px;
+    --background: linear-gradient(to left, var(--bleu1) 0%, #00aeb4 100%);
+    width: 12vw;
+    height: 6vw;
+    padding: 2px;
+    border-radius: 1rem;
+    overflow: visible;
+    background: #f7ba2b;
+    background: var(--background);
+    position: relative;
+    z-index: 1;
+}
+
+.card2::after {
+    position: absolute;
+    content: "";
+    top: 30px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 70%;
+    width: 100%;
+    transform: scale(0.8);
+    filter: blur(25px);
+    background: #f7ba2b;
+    background: var(--background);
+    transition: opacity .5s;
+}
+
+.card2-info {
+    --color: #181818;
+    background: var(--color);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    border-radius: .9rem;
+}
+
+.card2 .title2 {
+    letter-spacing: .1em;
+}
+
+/*Hover*/
+.card2:hover::after {
+    opacity: 0;
+}
+
+.card2:hover .card2-info {
+    color: var(--bleu7);
+    transition: color 1s;
+}
+
+.title2 {
+    font-size: 15px;
+}

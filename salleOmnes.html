@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Salle de sport Omnes</title>
+    <link rel="stylesheet" href="salleOmnes.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+    <script type="text/javascript" src="salleOmnes.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="Titre_Sportify">Sportify</div>
+        <div class="Wrapper_Liens">
+            <a class="Liens1" id="liens_Nav" href="menu.html">Accueil</a>
+            <a class="Liens2" id="liens_Nav" href="Tout_parcourir.html">Tout Parcourir</a>
+            <a class="Liens3" id="liens_Nav" href="">Recherche</a>
+            <a class="Liens4" id="liens_Nav" href="">Rendez-Vous</a>
+            <a class="Liens5" id="liens_Nav" href="">Votre Compte</a>
+        </div>
+    </header>
+
+    <div id="Div_salle">
+        <p><span class="Libere">Tes salles de sport Omnes</span></p>
+
+        <div class="Carroussel_salles">
+            <div id="Monaco">
+                <div id="id_ville">
+                    <p><span class="ville">Monaco</span></p>
+                </div>
+                <div id="coord">
+                    <p><span class="coord">38 Boulevard des Moulins, 98000 Monte Carlo</span></p>
+                </div>
+                <div id="coord">
+                    <p><span class="coord">+337 93 38 92 73</span></p>
+                </div>
+                <div id="coord">
+                    <p><span class="coord">salle.monaco@omnessport.mc</span></p>
+                </div>
+            </div>
+            <div id="St_tropez">
+                <div id="id_ville">
+                    <p><span class="ville">St-Tropez</span></p>
+                </div>
+                <div id="coord">
+                    <p><span class="coord">99 Rue du General Allard, 83990 Saint-Tropez</span></p>
+                </div>
+                <div id="coord">
+                    <p><span class="coord">+33 4 17 03 82 93</span></p>
+                </div>
+                <div id="coord">
+                    <p><span class="coord">salle.tropez@omnessport.fr</span></p>
+                </div>
+            </div>
+            <div id="Paris">
+                <div id="id_ville">
+                    <p><span class="ville">Paris</span></p>
+                </div>
+                <div id="coord">
+                    <p><span class="coord">13 place des vosges, 75004 Paris</span></p>
+                </div>
+                <div id="coord">
+                    <p><span class="coord">+33 1 23 45 67 89</span></p>
+                </div>
+                <div id="coord">
+                    <p><span class="coord">salle.paris@omnessport.fr</span></p>
+                </div>
+            </div>
+            <img class="Back" src="activites_sportives/activites sportives/gym2.jpg" alt="background_Gym">
+            <div class="calque"></div>
+        </div>
+
+        <button onclick="afficherboutons()" class="card">
+            <div class="card-info">
+                <p class="title"><span class="ville">Les informations de tes salles Omnes</span></p>
+            </div>
+        </button>
+
+
+        <div id="info" style="display: none;">
+            <div class="Carroussel_info">
+
+                <button class="card2">
+                    <div class="card2-info">
+                        <p class="title2"><span class="coord">Personnels de la salle de sport</span></p>
+                    </div>
+                </button>
+
+                <button class="card2">
+                    <div class="card2-info">
+                        <p class="title2"><span class="coord">Horaires</span></p>
+                    </div>
+                </button>
+
+                <button class="card2">
+                    <div class="card2-info">
+                        <p class="title2"><span class="coord">Règle sur l'utilisation des machines</span></p>
+                    </div>
+                </button>
+
+                <button class="card2">
+                    <div class="card2-info">
+                        <p class="title2"><span class="coord">Nouveaux clients</span></p>
+                    </div>
+                </button>
+
+                <button class="card2">
+                    <div class="card2-info">
+                        <p class="title2"><span class="coord">Alimentation et nutrition</span></p>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
