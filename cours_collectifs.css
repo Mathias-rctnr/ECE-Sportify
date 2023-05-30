@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;1,200&family=Maven+Pro&display=swap');
+
+:root{
+    --bleu1: #003A70;
+    --bleu2: #0F558F;
+    --bleu3: #1965A0;
+    --bleu4: #2476B1;
+    --bleu5: #2D82BD;
+    --bleu6: #4893C6;
+    --bleu7: #64A4CE;
+    --bleu8: #8DBEDC;
+    --bleu9: #B7D7EA;
+    --bleu10: #E2EFF6;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    height: auto;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bleu1);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+header{
+    z-index: 30;
+    position: fixed;
+    padding: 10px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(40, 40, 40);
+}
+
+/*************************** LIENS DU NAVIGATEUR */
+
+.Titre_Sportify{
+    z-index: 3;
+    font-size: 40px;
+    color: var(--bleu9);
+    font-family: Moder;
+}
+
+.Wrapper_Liens{
+    z-index: 3;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 800px;
+}
+
+#liens_Nav {
+    z-index: 3;
+    position: relative;
+    text-decoration: none;
+    color: var(--bleu8);
+    transition: color 0.3s ease-in-out;
+}
+
+#liens_Nav:hover{
+    color: var(--bleu10);
+    cursor: pointer;
+}
+
+#liens_Nav::after {
+    content: " ";
+    position: absolute;
+    left: 0px;
+    bottom: -5px;
+    width: 0;
+    height: 1px;
+    background-color: var(--bleu10);
+    transition: width 0.3s ease-in-out;
+}
+
+#liens_Nav:hover::after {
+    width: 100%;
+}
+
+.Progression{
+    background-color: #839c49;
+	height: 3px;
+	width: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 12;
+}
+
+/*************************** CONSTRUCTION PAGE */
+
+.Content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: 100vw;
+    background-color: black;
+}
+
+/*************************** IMAGE DE FOND */
+
+#video-background{
+    position: absolute;
+    width : 100vw;
+    height: auto;
+}
+
+.Back{
+    width: 100vw;
+    max-width: 2000px;
+    z-index: -1;
+}
+
+
+/*************************** COACH */
+
+#debut{
+    background-color: black;
+    display: flex;
+    z-index: 10;
+    width: 100vw;
+    max-width: 2000px;
+    justify-content: center;
+}
+
+#coach{
+    background-color: black;
+    justify-content: center;
+    display : flex;
+    color: #E2EFF6;
+    width: 100vw;
+    max-width: 2000px;
+    align-items: flex-start;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+.cv_cache{
+    position :relative;
+    overflow : hidden;
+}
+.cv_coach{
+    width: 40vw;
+    max-width: 700px;
+    padding: 3vw;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.photo_coach{
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 40vw;
+    max-width: 700px;
+    padding: 3vw;
+    transition: opacity 0.3s ease;
+}
+
+.cv_cache:hover .photo_coach{
+    opacity: 0;
+}
+
+.cv_cache:hover .cv_coach{
+    opacity: 1;
+}
+
+
+.text_coach{
+
+    padding: 30px;
+    width: 50vw;
+}
+
+.nom_coach{
+    font-family: 'Maven Pro', sans-serif;
+    font-size: 70px;
+    line-height: 35px;
+    padding-bottom: 3vh;
+    padding-top: 3vh;
+}
+
+.description_coach{
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 31px;
+    text-align: justify;
+
+}
+
+.highlight{
+    color : var(--bleu8)
+}
+
+.bureau{
+    font-size: 25px;
+}
+/*************************** RDV */
+
+#dispo{
+    background-color: black;
+    justify-content: center;
+    display : flex;
+    color: #E2EFF6;
+    flex-direction: column;
+    width: 100vw;
+    max-width: 2000px;
+    align-items: center;
+    padding:1vw;
+}
+
+#rdv{
+    display: flex;
+    width: 100vw;
+    height: 80vh;
+    background-image: url("photos/activites sportives/cardio_training5.jpg");
+    background-size: cover;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.rdv_text{
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 70px;
+    padding-bottom: 30px;
+}
+
+.container_edt{
+    padding-top: 2vh;
+    display: flex;
+    width: 80vw;
+    height: 70vh;
+    background: rgba(255, 255, 255, 0.29);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.6px);
+    -webkit-backdrop-filter: blur(6.6px);
+    border: 1px solid rgba(255, 255, 255, 1);
+}
+
+.bouton_prise_rdv{
+    font-family: 'Libre Franklin', sans-serif;
+    display: flex;
+    width: 15vw;
+    height: 3vw;
+    background: rgba(255, 255, 255, 0.29);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.6px);
+    -webkit-backdrop-filter: blur(6.6px);
+    border: 1px solid rgba(255, 255, 255, 1);
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.5s ease;
+}
+
+.bouton_prise_rdv:hover{
+    background-color:var(--bleu5);
+}
+
+.card {
+    font-family: 'Libre Franklin', sans-serif;
+    --background: linear-gradient(to left, var(--bleu1) 0%, #00aeb4 100%);
+    width: 15vw;
+    height: 3vw;
+    padding: 2px;
+    border-radius: 1rem;
+    overflow: visible;
+    background: #f7ba2b;
+    background: var(--background);
+    position: relative;
+    z-index: 1;
+   }
+   
+   .card::after {
+    font-family: 'Libre Franklin', sans-serif;
+    position: absolute;
+    content: "";
+    top: 30px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 70%;
+    width: 100%;
+    transform: scale(0.8);
+    filter: blur(25px);
+    background: #f7ba2b;
+    background: var(--background);
+    transition: opacity .5s;
+   }
+   
+   .card-info {
+    font-family: 'Libre Franklin', sans-serif;
+    --color: #181818;
+    background: var(--color);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    border-radius: .9rem;
+   }
+   
+   .card .title {
+    letter-spacing: .1em;
+   }
+   
+   /*Hover*/
+   .card:hover::after {
+    opacity: 0;
+   }
+   
+   .card:hover .card-info {
+    color: var(--bleu7);
+    transition: color 1s;
+   }
+
+   .button{
+    flex-direction: row;
+    width : 50vw;
+    justify-content: space-evenly;
+    align-items: center;
+    display : flex;
+    padding-bottom: 3vh;
+   }
