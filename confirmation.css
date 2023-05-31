@@ -1,0 +1,178 @@
+:root{
+    --bleu1: #003A70;
+    --bleu2: #0F558F;
+    --bleu3: #1965A0;
+    --bleu4: #2476B1;
+    --bleu5: #2D82BD;
+    --bleu6: #4893C6;
+    --bleu7: #64A4CE;
+    --bleu8: #8DBEDC;
+    --bleu9: #B7D7EA;
+    --bleu10: #E2EFF6;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    height: auto;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    background-color: #171717;
+    overflow: hidden;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+header{
+    z-index: 30;
+    position: fixed;
+    padding: 10px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(40, 40, 40);
+}
+
+/*************************** LIENS DU NAVIGATEUR */
+
+.Titre_Sportify{
+    z-index: 3;
+    font-size: 40px;
+    color: var(--bleu9);
+    font-family: Moder;
+}
+
+.Wrapper_Liens{
+    z-index: 3;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 800px;
+}
+
+#liens_Nav {
+    z-index: 3;
+    position: relative;
+    text-decoration: none;
+    color: var(--bleu8);
+    transition: color 0.3s ease-in-out;
+}
+
+#liens_Nav:hover{
+    color: var(--bleu10);
+    cursor: pointer;
+}
+
+#liens_Nav::after {
+    content: " ";
+    position: absolute;
+    left: 0px;
+    bottom: -5px;
+    width: 0;
+    height: 1px;
+    background-color: var(--bleu10);
+    transition: width 0.3s ease-in-out;
+}
+
+#liens_Nav:hover::after {
+    width: 100%;
+}
+
+/* ************* BODY */
+
+svg{
+    width: 30vw;
+    height: 30vh;
+}
+
+.monChemin{
+    fill: none;
+    stroke: rgb(125, 215, 52);
+    stroke-width: 15;
+}
+
+.Icone_Validation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    height: 90vh;
+}
+
+.Txt_Validation{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    width: 230px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    font-size: 15px;
+    color: var(--bleu10);
+}
+
+.txt_recap{
+    font-size: 25px;
+    padding: 20px;
+    color: var(--bleu10);
+}
+
+.txt_btn1{
+    width: 110px;
+}
+
+.txt_btn2{
+    width: 210px;
+}
+
+.txt_btn1 p, .txt_btn2 p{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 17px;
+    color: #4d4d4d;
+}
+
+button{
+    border: var(--bleu6) solid 7px;
+    background-color: var(--bleu9);
+    transition: all 0.15s ease-in-out;
+}
+
+button:active{
+    border: var(--bleu9) solid 4px;
+    background-color: var(--bleu6);
+}
+
+.Wrapper_btn{
+    padding: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50vw;
+}
