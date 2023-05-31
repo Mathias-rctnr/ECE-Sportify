@@ -3,7 +3,7 @@ const Inp_Row = document.querySelector("#Inp_Row");
 const Inp_Col = document.querySelector("#Inp_Col");
 const div = document.querySelector(".edt");
 
-cases.addEventListener('click', (e) => {
+div.addEventListener('click', (e) => {
     let valeurLigne = e.target.dataset.row;
     let valeurColonne = e.target.dataset.col;
 
@@ -15,9 +15,9 @@ cases.addEventListener('click', (e) => {
         Inp_Col.value = valeurColonne;
     }
     if(typeof valeurLigne === "string"){
-        Inp_Col.value = valeurLigne;
+        Inp_Row.value = valeurLigne;
     }
 
-    console.log("test");
+    console.log("nv-------------------");
 });
 

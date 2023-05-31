@@ -123,11 +123,6 @@
                 </div>
             </div>
         </div>
-        <!--
-        <div class="bouton_prise_rdv">
-            <p>VALIDER</p>
-        </div>
-        -->
 
         <form action="confirmation.php" method="post">
                 <div id="Input_cases">
@@ -137,25 +132,23 @@
                     <input id="Inp_Row" name="Num_Lig">
                 </div>
             </div>
-        </form>
         <div class = "button">
         <div class="card">
-            <div class="card-info">
-              <p type="submit" class="title">VALIDER</p>
+            <button type="submit" class="card-info">
+                <p class="title">VALIDER</p>
+            </button>
             </div>
-          </div>
 
         <div class="card">
             <div class="card-info">
-              <p class="title">ME CONTACTER</p>
+                <p class="title">ME CONTACTER</p>
             </div>
-          </div>
-        
             </div>
+            </div>
+        </form>
         </div>
-  </div>
-
-
+    </div>
+    <script src="musculation.js"></script>
 </body>
 
 </html>
