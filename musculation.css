@@ -258,38 +258,48 @@ header{
     border: 1px solid rgba(255, 255, 255, 1);
     justify-content: center;
     align-items: center;
+    transition: background-color 0.5s ease;
+}
+
+.bouton_prise_rdv:hover{
+    background-color:var(--bleu5);
 }
 
 .card {
     font-family: 'Libre Franklin', sans-serif;
+    --background: linear-gradient(to left, var(--bleu1) 0%, #00aeb4 100%);
+    width: 15vw;
+    height: 3vw;
+    padding: 2px;
+    border-radius: 1rem;
+    overflow: visible;
+    background: #f7ba2b;
+    background: var(--background);
     position: relative;
-    display: inline-block;
-    padding: 10px 20px;
-    color: #ffffff;
-    font-size: 16px;
-    text-decoration: none;
-    text-transform: uppercase;
-    overflow: hidden;
-    background-color: var(--bleu11);
-    border-radius: 10px;
-    transition: .3s;
-    margin-top: 40px;
-    letter-spacing: 4px;
-    border: none;
-  }
-  
-  .card:hover {
-    background: var(--bleu7);
-    color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 5px var(--bleu7),
-      0 0 25px var(--bleu7),
-      0 0 50px var(--bleu7),
-      0 0 100px var(--bleu7);
-  }
+    z-index: 1;
+   }
+   
+   .card::after {
+    font-family: 'Libre Franklin', sans-serif;
+    position: absolute;
+    content: "";
+    top: 30px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 70%;
+    width: 100%;
+    transform: scale(0.8);
+    filter: blur(25px);
+    background: #f7ba2b;
+    background: var(--background);
+    transition: opacity .5s;
+   }
    
    .card-info {
     font-family: 'Libre Franklin', sans-serif;
+    --color: #181818;
+    background: var(--color);
     color: white;
     display: flex;
     justify-content: center;
@@ -308,10 +318,15 @@ header{
    .card:hover::after {
     opacity: 0;
    }
+   
+   .card:hover .card-info {
+    color: var(--bleu7);
+    transition: color 1s;
+   }
 
    .button{
     flex-direction: row;
-    width : 100%;
+    width : 50vw;
     justify-content: space-evenly;
     align-items: center;
     display : flex;
