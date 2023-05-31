@@ -70,6 +70,8 @@
                     ini_set('display_startup_errors', 1);
                     error_reporting(E_ALL);
 
+                    $compteur = 0;
+
                     $_SESSION['id_Coach'] = 1;
                     $_SESSION['specialite'] = 'musculation';
 
@@ -113,7 +115,9 @@
                                         $Reserv = "reserv";
                                     }
 
-                                    echo "<td><button class='" . $Reserv . "' name='btn' id='cases' data-row='" . $row ."' data-col='" . $col ."'>" . $heure[$row] .":". $minutes[$row] . $dbl_zero ."</button></td>";
+                                    $compteur++;
+
+                                    echo "<td><button class='" . $Reserv . "' name='". $compteur ."' id='cases' data-row='" . $row ."' data-col='" . $col ."'>" . $heure[$row] .":". $minutes[$row] . $dbl_zero ."</button></td>";
                                 }
                                 echo "</tr>";
                             }
