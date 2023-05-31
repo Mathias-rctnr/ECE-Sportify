@@ -232,7 +232,7 @@ form .envoyer {
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
-  background-color: var(--bleu11);
+  background-color: transparent;
   border-radius: 10px;
   transition: .3s;
   margin-top: 40px;
@@ -280,7 +280,7 @@ form .envoyer {
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
-  background-color: var(--bleu11);
+  background-color: transparent;
   border-radius: 10px;
   transition: .3s;
   margin-top: 40px;
