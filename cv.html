@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Affichage d'un fichier XML</title>
+    <style>
+        h2,
+        p,
+        h3 {
+            color: white;
+            text-align: center;
+            align-items: center;
+        }
+
+        #info_perso,
+        #qualites {
+            flex-basis: 50%;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+
+        #img{
+            float: right;
+            width: 300px;
+        }
+        #experiences,
+        #formations {
+            flex-basis: 50%;
+            box-sizing: border-box;
+            padding: 10px;
+            text-align: right;
+        }
+
+        body {
+            background-image: url("photos/CV/fondcv.png");
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function loadXMLDoc() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    displayXML(this);
+                }
+            };
+            xhttp.open("GET", "cv.xml", true);
+            xhttp.send();
+        }
+
+        function displayXML(xml) {
+            const xmlDoc = xml.responseXML;
+
+            // Récupérer les informations personnelles
+            const infoPerso = xmlDoc.getElementsByTagName("info_perso")[0];
+            const nom = infoPerso.getElementsByTagName("nom")[0].textContent;
+            const prenom = infoPerso.getElementsByTagName("prenom")[0].textContent;
+            const adresse = infoPerso.getElementsByTagName("adresse")[0].textContent;
+            const telephone = infoPerso.getElementsByTagName("telephone")[0].textContent;
+            const email = infoPerso.getElementsByTagName("email")[0].textContent;
+
+            // Afficher les informations personnelles aux emplacements souhaités
+            document.getElementById("nom").innerHTML = nom;
+            document.getElementById("prenom").innerHTML = prenom;
+            document.getElementById("adresse").innerHTML = adresse;
+            document.getElementById("telephone").innerHTML = telephone;
+            document.getElementById("email").innerHTML = email;
+
+
+            // Récupérer les expériences professionnelles
+            let experiences = xmlDoc.getElementsByTagName("experiences")[0];
+            let posteElements = experiences.getElementsByTagName("poste");
+
+            // Parcourir les postes d'expérience et les afficher aux emplacements souhaités
+            let experiencesHtml = "";
+            for (let i = 0; i < posteElements.length; i++) {
+                let entreprise = posteElements[i].getElementsByTagName("entreprise")[0].textContent;
+                let date = posteElements[i].getElementsByTagName("date")[0].textContent;
+                let description = posteElements[i].getElementsByTagName("description")[0].textContent;
+
+                experiencesHtml += "<h3>" + entreprise + "</h3>";
+                experiencesHtml += "<p>Date : " + date + "</p>";
+                experiencesHtml += "<p>Description : " + description + "</p>";
+            }
+            document.getElementById("experiences").innerHTML = experiencesHtml;
+
+            // Récupérer les qualités
+            const qualites = xmlDoc.getElementsByTagName("qualites")[0];
+            const qualite1 = qualites.getElementsByTagName("qualite1")[0].textContent;
+            const qualite2 = qualites.getElementsByTagName("qualite2")[0].textContent;
+            const qualite3 = qualites.getElementsByTagName("qualite3")[0].textContent;
+            const qualite4 = qualites.getElementsByTagName("qualite4")[0].textContent;
+
+            // Afficher les qualités aux emplacements souhaités
+            document.getElementById("qualite1").innerHTML = qualite1;
+            document.getElementById("qualite2").innerHTML = qualite2;
+            document.getElementById("qualite3").innerHTML = qualite3;
+            document.getElementById("qualite4").innerHTML = qualite4;
+
+            // Récupérer les formations
+            let formations = xmlDoc.getElementsByTagName("formations")[0];
+            let formationElements = formations.getElementsByTagName("formation");
+
+            // Parcourir les postes d'expérience et les afficher aux emplacements souhaités
+            let formationsHtml = "";
+            for (let i = 0; i < formationElements.length; i++) {
+                let etablissement = formationElements[i].getElementsByTagName("etablissement")[0].textContent;
+                let diplome = formationElements[i].getElementsByTagName("diplome")[0].textContent;
+                let date = formationElements[i].getElementsByTagName("date")[0].textContent;
+
+                formationsHtml += "<h3>" + etablissement + "</h3>";
+                formationsHtml += "<p> Diplôme : " + diplome + "</p>";
+                formationsHtml += "<p> " + date + "</p>";
+            }
+            document.getElementById("formations").innerHTML = formationsHtml;
+        }
+
+        // Charger le fichier XML au chargement de la page
+        window.onload = function () { 
+            loadXMLDoc();
+        };
+    </script>
+</head>
+
+<body>
+    <div class="Wrapper">
+        <div id="img">
+            <img id="photo" src="photos\sport de competition\plongeon.png" alt="Photo de profil" width="200"
+                height="250">
+        </div>
+        <div id="info_perso">
+            <!--  <h2>Informations personnelles</h2>-->
+            <p><span id="nom"></span></p>
+            <p><span id="prenom"></span></p>
+            <p><span id="adresse"></span></p>
+            <p><span id="telephone"></span></p>
+            <p><span id="email"></span></p>
+        </div>
+        <h2>Expériences professionnelles</h2>
+        <div id="experiences"></div>
+        <div id="qualites">
+            <h2>Qualités</h2>
+            <p><span id=qualite1></span></p>
+            <p><span id="qualite2"></span></p>
+            <p><span id="qualite3"></span></p>
+            <p><span id="qualite4"></span></p>
+        </div>
+        <h2>Education</h2>
+        <div id="formations"></div>
+    </div>
+</body>
+
+</html>
