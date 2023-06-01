@@ -11,343 +11,363 @@
 </head>
 
 <body>
-    <header>
-        <div class="Titre_Sportify">Sportify</div>
-        <div class="Wrapper_Liens">
-            <a class="Liens1" id="liens_Nav" href="menu.html">Accueil</a>
-            <a class="Liens2" id="liens_Nav" href="Tout_parcourir.html">Tout Parcourir</a>
-            <a class="Liens3" id="liens_Nav" href="">Recherche</a>
-            <a class="Liens4" id="liens_Nav" href="">Rendez-Vous</a>
-            <a class="Liens5" id="liens_Nav" href="">Votre Compte</a>
-        </div>
-    </header>
+    <style id = "calque"></style>
+    <div id="total">
+        <header>
+            <div class="Titre_Sportify">Sportify</div>
+            <div class="Wrapper_Liens">
+                <a class="Liens1" id="liens_Nav" href="menu.html">Accueil</a>
+                <a class="Liens2" id="liens_Nav" href="Tout_parcourir.html">Tout Parcourir</a>
+                <a class="Liens3" id="liens_Nav" href="">Recherche</a>
+                <a class="Liens4" id="liens_Nav" href="">Rendez-Vous</a>
+                <a class="Liens5" id="liens_Nav" href="">Votre Compte</a>
+            </div>
+        </header>
 
-    <div id="content">
-        <img class="Back" src="activites_sportives/activites sportives/gym2.jpg" alt="background_Gym">
-        <div class="calque"></div>
+        <div id="content">
+            <img class="Back" src="activites_sportives/activites sportives/gym2.jpg" alt="background_Gym">
+            <div class = "calque"></div>
 
-        <div id="Div_salle">
-            <p><span class="Libere"><br>Vos salles de sport Omnes</span></p>
+            <div id="Div_salle">
+                <p><span class="Libere"><br>Vos salles de sport Omnes</span></p>
 
-            <div class="Carroussel_salles">
-                <div id="Monaco">
-                    <div id="id_ville">
-                        <p><span class="ville">Monaco</span></p>
+                <div class="Carroussel_salles">
+                    <div id="Monaco">
+                        <div id="id_ville">
+                            <p><span class="ville">Monaco</span></p>
+                        </div>
+                        <div id="coord">
+                            <p><span class="coord">38 Boulevard des Moulins, 98000 Monte Carlo</span></p>
+                        </div>
+                        <div id="coord">
+                            <p><span class="coord">+337 93 38 92 73</span></p>
+                        </div>
+                        <div id="coord">
+                            <p><span class="coord">salle.monaco@omnessport.mc</span></p>
+                        </div>
                     </div>
-                    <div id="coord">
-                        <p><span class="coord">38 Boulevard des Moulins, 98000 Monte Carlo</span></p>
+                    <div id="St_tropez">
+                        <div id="id_ville">
+                            <p><span class="ville">St-Tropez</span></p>
+                        </div>
+                        <div id="coord">
+                            <p><span class="coord">99 Rue du General Allard, 83990 Saint-Tropez</span></p>
+                        </div>
+                        <div id="coord">
+                            <p><span class="coord">+33 4 17 03 82 93</span></p>
+                        </div>
+                        <div id="coord">
+                            <p><span class="coord">salle.tropez@omnessport.fr</span></p>
+                        </div>
                     </div>
-                    <div id="coord">
-                        <p><span class="coord">+337 93 38 92 73</span></p>
-                    </div>
-                    <div id="coord">
-                        <p><span class="coord">salle.monaco@omnessport.mc</span></p>
+                    <div id="Paris">
+                        <div id="id_ville">
+                            <p><span class="ville">Paris</span></p>
+                        </div>
+                        <div id="coord">
+                            <p><span class="coord">13 place des vosges, 75004 Paris</span></p>
+                        </div>
+                        <div id="coord">
+                            <p><span class="coord">+33 1 23 45 67 89</span></p>
+                        </div>
+                        <div id="coord">
+                            <p><span class="coord">salle.paris@omnessport.fr</span></p>
+                        </div>
                     </div>
                 </div>
-                <div id="St_tropez">
-                    <div id="id_ville">
-                        <p><span class="ville">St-Tropez</span></p>
-                    </div>
-                    <div id="coord">
-                        <p><span class="coord">99 Rue du General Allard, 83990 Saint-Tropez</span></p>
-                    </div>
-                    <div id="coord">
-                        <p><span class="coord">+33 4 17 03 82 93</span></p>
-                    </div>
-                    <div id="coord">
-                        <p><span class="coord">salle.tropez@omnessport.fr</span></p>
-                    </div>
-                </div>
-                <div id="Paris">
-                    <div id="id_ville">
-                        <p><span class="ville">Paris</span></p>
-                    </div>
-                    <div id="coord">
-                        <p><span class="coord">13 place des vosges, 75004 Paris</span></p>
-                    </div>
-                    <div id="coord">
-                        <p><span class="coord">+33 1 23 45 67 89</span></p>
-                    </div>
-                    <div id="coord">
-                        <p><span class="coord">salle.paris@omnessport.fr</span></p>
-                    </div>
-                </div>
+
+                <button onclick="afficherboutons()" id="bouton_affichage">
+                    <p><span class="texte_bouton">Les informations de tes salles Omnes</span>
+                </button>
             </div>
 
-            <button onclick="afficherboutons()" class="card">
-                <div class="card-info">
-                    <p class="title"><span class="ville">Les informations de tes salles Omnes</span></p>
-                </div>
-            </button>
-        </div>
+            <div id="info" style="display: none;">
 
-        <div id="info"><!--style="display: none;" a remettre-->
+                <div class="calque_info"></div>
 
-            <div id="horaire">
-                <div id="div_titre_info">
-                    <h1><span class="titre_info">Horaires d'ouvertures</span></h1>
-                </div>
-                <div id="Carroussel_horaire">
-                    <h2 id="texte_id"><span class="texte">Vos salles de sport Omnes sont ouvertes <span
-                                class="texte_equipe">tous les jours</span>
-                            <span class="horaire_24">24h/24!</span> <br>Vous pourrez vous y rendre à <span
-                                class="texte_equipe">n'importe quelle moment</span> de votre journée!
-                            <br>Nos équipes seront toujours là pour <span class="texte_equipe">vous
-                                accueillir!</span></span></h2>
-                </div>
-            </div>
-
-            <div id="Personnels">
-                <div id="div_titre_info">
-                    <h1><span class="titre_info">Personnels de vos salle Omnes</span></h1>
-                    <div id="Carroussel_equipe">
-                        <h2 id="texte_id"><span class="texte">Nos coachs ont été <span
-                                    class="texte_equipe">soigneusement</span>
-                                choisi d'apres leurs <span class="texte_equipe">compétences</span> et leur
-                                <span class="texte_equipe">passion</span> pour le sport qu'ils
-                                pratiquent. Ils sont tous très <span class="texte_equipe">expérimentés</span> et
-                                pourront vous apprendre toutes les techniques
-                                ainsi que tous les secrets qui vous permettront de vous <span
-                                    class="texte_equipe">épanouir</span> et
-                                <span class="texte_equipe">évoluer</span> dans le sport que vous avez choisi de
-                                pratiquer.<br>
-                                Si vous souhaitez en connaitre <span class="texte_equipe">plus</span> sur eux, <span
-                                    class="texte_equipe">
-                                    rendez-vous</span> dans nos salles Omnes!</span></h2>
+                <div id="horaire">
+                    <div id="div_titre_info">
+                        <h1><span class="titre_info">Horaires d'ouvertures</span></h1>
                     </div>
-                </div>
-            </div>
-
-            <div id="Regles">
-                <div id="div_titre_info">
-                    <h1><span class="titre_info">Règlements</span></h1>
-                </div>
-
-                <div id="Carroussel_regles">
-                    <div id="Entre">
-                        <img src="photos/salle/home.jpg" alt="entree" height="205px">
-                        <ul>
-                            <li>
-                                <p>L'âge minimum pour accéder à les salles de sport Omnes est de <span
-                                        class=texte_regle>16 ans </span>.</p>
-                            </li>
-                            <li>
-                                <p>Seuls les membres possédant une adhésion <span class=texte_regle>valide
-                                    </span>peuvent
-                                    accéder à la salle de sport Omnes.</p>
-                            </li>
-                            <li>
-                                <p>Les adhérents sont tenus de se <span class=texte_regle>conformer aux
-                                        directives</span> du
-                                    personnel de la salle de sport, que ce soit pour des questions
-                                    de <span class=texte_regle>sécurité, d'utilisation des équipements ou de respect
-                                        des règles spécifiques</span>.</p>
-                            </li>
-                            <li>Vos clubs Omnes <span class=texte_regle> n'autorisent pas </span> la présence d'animaux,
-                                <span class=texte_regle>
-                                    à l'exception </span> des chiens d'assistance.
-                            </li>
-                            <li>
-                                Il est <span class=texte_regle>obligatoire</span> pour les membres de se munir d'une
-                                paire de chaussures
-                                <span class=texte_regle>propre spécifiquement réservée</span> à la salle de sport, ainsi
-                                que d'une
-                                <span class=texte_regle>serviette</span> qui doit être changée régulièrement.
-                        </ul>
-                    </div>
-
-                    <div id="Materiel">
-                        <ul>
-                            <li>
-                                <p>Veuillez <span class=texte_regle>libérer</span> les équipements pour les autres
-                                    adhérents si vous ne le utilisez pas activement.</p>
-                            </li>
-                            <li>
-                                <p>Après utilisation d'un matériel, vous devez le <span
-                                        class=texte_regle>desinfecter</span>
-                                    en utilisant les produits mis à votre disposition</p>
-                            </li>
-                            <li>
-                                <p>Après utilisation, vous devez <span class=texte_regle>ranger</span> les équipements
-                                    utilisées
-                                    à leur emplacement désigné.</p>
-                            </li>
-                            <li>
-                                <p>
-                                    Veuillez <span class=texte_regle>éviter</span> de faire tomber bruyamment le
-                                    matériel et
-                                    <span class=texte_regle>limiter</span> les bruits de toutes sortes, y compris
-                                    le volume sonore de votre musique.
-                                </p>
-                            </li>
-                            <li>
-                                <p>Assurez-vous de savoir <span class=texte_regle>comment utiliser </span> les appareils
-                                    et effectuer les exercices <span class=texte_regle>correctement </span>. <span
-                                        class=texte_regle>Respectez </span> vos limites et soyez
-                                    conscient de ce dont vous êtes capable, en consultant éventuellement un
-                                    spécialiste (coach/médical) pour obtenir des conseils. Vous êtes <span
-                                        class=texte_regle>responsable</span> de votre propre bien-être.</p>
-
-                            </li>
-                        </ul>
-
-                        <img src="photos/salle/gym3.jpg" alt="entree" height="205px">
+                    <div id="Carroussel_horaire">
+                        <h2 id="texte_id"><span class="texte">Vos salles de sport Omnes sont ouvertes <span
+                                    class="texte_equipe">tous les jours</span>
+                                <span class="horaire_24">24h/24!</span> <br>Vous pourrez vous y rendre à <span
+                                    class="texte_equipe">n'importe quelle moment</span> de votre journée!
+                                <br>Nos équipes seront toujours là pour <span class="texte_equipe">vous
+                                    accueillir!</span></span></h2>
                     </div>
                 </div>
 
-
-            </div>
-
-            <div id="Nouveaux">
-                <div id="div_titre_info">
-                    <h1><span class="titre_info">Nouveaux clients</span></h1>
-                </div>
-
-                <div id="Carroussel_faq">
-                    <div id="gauche_faq">
-                        <ul>
-                            <li>
-                                <p>
-                                <div id="quest_faq"><span class="quest_faq">Quels sont les types d'adhésion disponibles
-                                        ?</span></div>
-                                </p>
-                                <p>
-                                <div id="rep_faq"><span class="rep_faq">Nous proposons différentes options d'adhésion,
-                                        y compris des abonnements mensuels, trimestriels et annuels.</span></div>
-                                </p>
-                            </li>
-
-                            <li>
-                                <p>
-                                <div id="quest_faq"><span class="quest_faq">Est-ce possible de faire un essai avant de
-                                        m'inscrire
-                                        ?</span></div>
-                                </p>
-                                <p>
-                                <div id="rep_faq"><span class="rep_faq">Nous offrons une séance d'essai gratuite pour
-                                        que vous
-                                        puissiez découvrir nos salles de sport.</span></div>
-                                </p>
-                            </li>
-
-                            <li>
-                                <p>
-                                <div id="quest_faq"><span class="quest_faq">Y a-t-il des installations pour se doucher
-                                        et se changer
-                                        ?</span></div>
-                                </p>
-                                <p>
-                                <div id="rep_faq"><span class="rep_faq">Des douches,des vestiaires, une piscine et un
-                                        spa sont à
-                                        votre disposition au sein de
-                                        nos salles de sport Omnes.</span></div>
-                                </p>
-                            </li>
-
-                            <li>
-                                <p>
-                                <div id="quest_faq"><span class="quest_faq">Quelles sont les exigences concernant les
-                                        vêtements et
-                                        les chaussures ?</span></div>
-                                </p>
-                                <p>
-                                <div id="rep_faq"><span class="rep_faq">Nous demandons à nos membres de porter une tenue
-                                        de sport
-                                        appropriée et des chaussures de sport
-                                        propres réservées à la salle de sport. L'utilisation de serviettes pour la
-                                        protection des équipements
-                                        est également obligatoire.</span></div>
-                                </p>
-                            </li>
-
-                            <li>
-                                <p>
-                                <div id="quest_faq"><span class="quest_faq">Puis-je amener un invité avec moi à la salle
-                                        de sport
-                                        ?</span></div>
-                                </p>
-                                <p>
-                                <div id="rep_faq"><span class="rep_faq">Nous proposons des options d'adhésion pour les
-                                        membres qui
-                                        souhaitent venir accompagnés
-                                        d'un ami. Veuillez vous renseigner auprès de nos équipes pour plus de
-                                        détails.</span></div>
-                                </p>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div id="separation"></div>
-
-                    <div id="droite_faq">
-                        <ul>
-                            <li>
-                                <p>
-                                <div id="quest_faq"><span class="quest_faq">Est-ce nécessaire de prendre un rendez-vous
-                                        pour utiliser
-                                        certains équipements ou participer à des cours collectifs ?
-                                    </span></div>
-                                </p>
-                                <p>
-                                <div id="rep_faq"><span class="rep_faq">En règle générale, vous n'avez pas besoin de
-                                        prendre
-                                        rendez-vous pour utiliser les équipements. Cependant, certains
-                                        cours collectifs peuvent nécessiter une inscription préalable en raison du
-                                        nombre limité de places disponibles. Veuillez consulter
-                                        notre emploi du temps des cours pour plus d'informations.</span></div>
-                                </p>
-                            </li>
-
-                            <li>
-                                <p>
-                                <div id="quest_faq"><span class="quest_faq">Est-ce qu'il y a des frais
-                                        supplémentaires pour des
-                                        services supplémentaires tels que
-                                        des séances individuelles ou des programmes nutritionnels ?</span></div>
-                                </p>
-                                <p>
-                                <div id="rep_faq"><span class="rep_faq">certains services supplémentaires tels que les
-                                        cours
-                                        particuliers avec un entraîneur
-                                        personnel ou les programmes de nutrition peuvent entraîner des frais
-                                        supplémentaires. Veuillez vous renseigner
-                                        auprès de notre équipe pour connaître les tarifs et les
-                                        disponibilités.</span></div>
-                                </p>
-                            </li>
-
-                            <li>
-                                <p>
-                                <div id="quest_faq"><span class="quest_faq">Comment puis-je résilier mon adhésion ?
-                                    </span></div>
-                                </p>
-                                <p>
-                                <div id="rep_faq"><span class="rep_faq">Pour annuler votre adhésion, veuillez vous
-                                        rendre au
-                                        bureau
-                                        d'accueil de la salle de sport
-                                        et remplir le formulaire d'annulation. Veuillez noter qu'il peut y avoir des
-                                        conditions spécifiques en fonction
-                                        de votre type d'adhésion.</span></div>
-                                </p>
-                            </li>
-
-                            <li>
-                                <p>
-                                <div id="quest_equipe"><span class="quest_equipe">Si vous avez plus de questions
-                                        n'hesitez pas à aller voir nos équipes.
-                                        Ils seront heureux de vous repondre!</span></div>
-                                </p>
-                            </li>
-                        </ul>
+                <div id="Personnels">
+                    <div id="div_titre_info">
+                        <h1><span class="titre_info">Personnels de vos salle Omnes</span></h1>
+                        <div id="Carroussel_equipe">
+                            <h2 id="texte_id"><span class="texte">Nos coachs ont été <span
+                                        class="texte_equipe">soigneusement</span>
+                                    choisi d'apres leurs <span class="texte_equipe">compétences</span> et leur
+                                    <span class="texte_equipe">passion</span> pour le sport qu'ils
+                                    pratiquent. Ils sont tous très <span class="texte_equipe">expérimentés</span> et
+                                    pourront vous apprendre toutes les techniques
+                                    ainsi que tous les secrets qui vous permettront de vous <span
+                                        class="texte_equipe">épanouir</span> et
+                                    <span class="texte_equipe">évoluer</span> dans le sport que vous avez choisi de
+                                    pratiquer.<br>
+                                    Si vous souhaitez en connaitre <span class="texte_equipe">plus</span> sur eux, <span
+                                        class="texte_equipe">
+                                        rendez-vous</span> dans nos salles Omnes!<br>
+                                    Vous retrouverez toutes les infos sur nos coachs dans la partie 
+                                    <span class="lien_parcourir"><a href = "Tout_parcourir.html">Tout parcourir</a></span></span></h2>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div id="Alimentation">
-                <div id="div_titre_info">
-                    <h1><span class="titre_info">Alimentation et nutrition</span></h1>
+                <div id="Regles">
+                    <div id="div_titre_info">
+                        <h1><span class="titre_info">Règlements</span></h1>
+                    </div>
+
+                    <div id="Carroussel_regles">
+                        <div id="Entre">
+                            <img src="photos/salle/home.jpg" alt="entree" height="205px">
+                            <ul>
+                                <li>
+                                    <p>L'âge minimum pour accéder à les salles de sport Omnes est de <span
+                                            class=texte_regle>16 ans </span>.</p>
+                                </li>
+                                <li>
+                                    <p>Seuls les membres possédant une adhésion <span class=texte_regle>valide
+                                        </span>peuvent
+                                        accéder à la salle de sport Omnes.</p>
+                                </li>
+                                <li>
+                                    <p>Les adhérents sont tenus de se <span class=texte_regle>conformer aux
+                                            directives</span> du
+                                        personnel de la salle de sport, que ce soit pour des questions
+                                        de <span class=texte_regle>sécurité, d'utilisation des équipements ou de respect
+                                            des règles spécifiques</span>.</p>
+                                </li>
+                                <li>Vos clubs Omnes <span class=texte_regle> n'autorisent pas </span> la présence
+                                    d'animaux,
+                                    <span class=texte_regle>
+                                        à l'exception </span> des chiens d'assistance.
+                                </li>
+                                <li>
+                                    Il est <span class=texte_regle>obligatoire</span> pour les membres de se munir d'une
+                                    paire de chaussures
+                                    <span class=texte_regle>propre spécifiquement réservée</span> à la salle de sport,
+                                    ainsi
+                                    que d'une
+                                    <span class=texte_regle>serviette</span> qui doit être changée régulièrement.
+                            </ul>
+                        </div>
+
+                        <div id="Materiel">
+                            <ul>
+                                <li>
+                                    <p>Veuillez <span class=texte_regle>libérer</span> les équipements pour les autres
+                                        adhérents si vous ne le utilisez pas activement.</p>
+                                </li>
+                                <li>
+                                    <p>Après utilisation d'un matériel, vous devez le <span
+                                            class=texte_regle>desinfecter</span>
+                                        en utilisant les produits mis à votre disposition</p>
+                                </li>
+                                <li>
+                                    <p>Après utilisation, vous devez <span class=texte_regle>ranger</span> les
+                                        équipements
+                                        utilisées
+                                        à leur emplacement désigné.</p>
+                                </li>
+                                <li>
+                                    <p>
+                                        Veuillez <span class=texte_regle>éviter</span> de faire tomber bruyamment le
+                                        matériel et
+                                        <span class=texte_regle>limiter</span> les bruits de toutes sortes, y compris
+                                        le volume sonore de votre musique.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>Assurez-vous de savoir <span class=texte_regle>comment utiliser </span> les
+                                        appareils
+                                        et effectuer les exercices <span class=texte_regle>correctement </span>. <span
+                                            class=texte_regle>Respectez </span> vos limites et soyez
+                                        conscient de ce dont vous êtes capable, en consultant éventuellement un
+                                        spécialiste (coach/médical) pour obtenir des conseils. Vous êtes <span
+                                            class=texte_regle>responsable</span> de votre propre bien-être.</p>
+
+                                </li>
+                            </ul>
+
+                            <img src="photos/salle/gym3.jpg" alt="entree" height="205px">
+                        </div>
+                    </div>
+
+
                 </div>
+
+                <div id="Nouveaux">
+                    <div id="div_titre_info">
+                        <h1><span class="titre_info">Nouveaux clients</span></h1>
+                    </div>
+
+                    <div id="Carroussel_faq">
+                        <div id="gauche_faq">
+                            <ul>
+                                <li>
+                                    <p>
+                                    <div id="quest_faq"><span class="quest_faq">Quels sont les types d'adhésion
+                                            disponibles
+                                            ?</span></div>
+                                    </p>
+                                    <p>
+                                    <div id="rep_faq"><span class="rep_faq">Nous proposons différentes options
+                                            d'adhésion,
+                                            y compris des abonnements mensuels, trimestriels et annuels.</span></div>
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <p>
+                                    <div id="quest_faq"><span class="quest_faq">Est-ce possible de faire un essai avant
+                                            de
+                                            m'inscrire
+                                            ?</span></div>
+                                    </p>
+                                    <p>
+                                    <div id="rep_faq"><span class="rep_faq">Nous offrons une séance d'essai gratuite
+                                            pour
+                                            que vous
+                                            puissiez découvrir nos salles de sport.</span></div>
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <p>
+                                    <div id="quest_faq"><span class="quest_faq">Y a-t-il des installations pour se
+                                            doucher
+                                            et se changer
+                                            ?</span></div>
+                                    </p>
+                                    <p>
+                                    <div id="rep_faq"><span class="rep_faq">Des douches,des vestiaires, une piscine et
+                                            un
+                                            spa sont à
+                                            votre disposition au sein de
+                                            nos salles de sport Omnes.</span></div>
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <p>
+                                    <div id="quest_faq"><span class="quest_faq">Quelles sont les exigences concernant
+                                            les
+                                            vêtements et
+                                            les chaussures ?</span></div>
+                                    </p>
+                                    <p>
+                                    <div id="rep_faq"><span class="rep_faq">Nous demandons à nos membres de porter une
+                                            tenue
+                                            de sport
+                                            appropriée et des chaussures de sport
+                                            propres réservées à la salle de sport. L'utilisation de serviettes pour la
+                                            protection des équipements
+                                            est également obligatoire.</span></div>
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <p>
+                                    <div id="quest_faq"><span class="quest_faq">Puis-je amener un invité avec moi à la
+                                            salle
+                                            de sport
+                                            ?</span></div>
+                                    </p>
+                                    <p>
+                                    <div id="rep_faq"><span class="rep_faq">Nous proposons des options d'adhésion pour
+                                            les
+                                            membres qui
+                                            souhaitent venir accompagnés
+                                            d'un ami. Veuillez vous renseigner auprès de nos équipes pour plus de
+                                            détails.</span></div>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div id="separation"></div>
+
+                        <div id="droite_faq">
+                            <ul>
+                                <li>
+                                    <p>
+                                    <div id="quest_faq"><span class="quest_faq">Est-ce nécessaire de prendre un
+                                            rendez-vous
+                                            pour utiliser
+                                            certains équipements ou participer à des cours collectifs ?
+                                        </span></div>
+                                    </p>
+                                    <p>
+                                    <div id="rep_faq"><span class="rep_faq">En règle générale, vous n'avez pas besoin de
+                                            prendre
+                                            rendez-vous pour utiliser les équipements. Cependant, certains
+                                            cours collectifs peuvent nécessiter une inscription préalable en raison du
+                                            nombre limité de places disponibles. Veuillez consulter
+                                            notre emploi du temps des cours pour plus d'informations.</span></div>
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <p>
+                                    <div id="quest_faq"><span class="quest_faq">Est-ce qu'il y a des frais
+                                            supplémentaires pour des
+                                            services supplémentaires tels que
+                                            des séances individuelles ou des programmes nutritionnels ?</span></div>
+                                    </p>
+                                    <p>
+                                    <div id="rep_faq"><span class="rep_faq">certains services supplémentaires tels que
+                                            les
+                                            cours
+                                            particuliers avec un entraîneur
+                                            personnel ou les programmes de nutrition peuvent entraîner des frais
+                                            supplémentaires. Veuillez vous renseigner
+                                            auprès de notre équipe pour connaître les tarifs et les
+                                            disponibilités.</span></div>
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <p>
+                                    <div id="quest_faq"><span class="quest_faq">Comment puis-je résilier mon adhésion ?
+                                        </span></div>
+                                    </p>
+                                    <p>
+                                    <div id="rep_faq"><span class="rep_faq">Pour annuler votre adhésion, veuillez vous
+                                            rendre au
+                                            bureau
+                                            d'accueil de la salle de sport
+                                            et remplir le formulaire d'annulation. Veuillez noter qu'il peut y avoir des
+                                            conditions spécifiques en fonction
+                                            de votre type d'adhésion.</span></div>
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <p>
+                                    <div id="quest_equipe"><span class="quest_equipe">Si vous avez plus de questions
+                                            n'hesitez pas à aller voir nos équipes.
+                                            Ils seront heureux de vous repondre!</span></div>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="Alimentation">
+                    <div id="div_titre_info">
+                        <h1><span class="titre_info">Alimentation et nutrition</span></h1>
+                    </div>
                     <div id="Carroussel_alimentation">
                         <h2 id="conseil_id">
                             <span class="texte">L'alimentation joue un rôle <span class="texte_equipe">cruciale</span>
@@ -379,7 +399,9 @@
                                     métabolisme.
                                 </li>
                                 <li>
-                                    Les athlètes ont généralement des besoins énergétiques<span class="texte_equipe">plus élevés</span>
+                                    Les athlètes ont généralement des besoins énergétiques<span
+                                        class="texte_equipe">plus
+                                        élevés</span>
                                     en raison de leur activité physique <span class="texte_equipe">intense</span>.
                                     Il est donc important de <span class="texte_equipe">consommer
                                         suffisamment</span>
@@ -387,38 +409,88 @@
                                     énergétiques.
                                 </li>
                                 <li>
-                                    Une hydratation adéquate est <span class="texte_equipe">cruciale</span> pour <span class="texte_equipe">maintenir 
-                                    les performances</span> sportives et <span class="texte_equipe">prévenir la déshydratation</span>.
-                                    Il est conseillé de boire suffisamment d'eau <span class="texte_equipe">avant, pendant et après</span> l'exercice.
+                                    Une hydratation adéquate est <span class="texte_equipe">cruciale</span> pour <span
+                                        class="texte_equipe">maintenir
+                                        les performances</span> sportives et <span class="texte_equipe">prévenir la
+                                        déshydratation</span>.
+                                    Il est conseillé de boire suffisamment d'eau <span class="texte_equipe">avant,
+                                        pendant
+                                        et après</span> l'exercice.
                                 </li>
                                 <li>
                                     La planification des repas avant et après l'entraînement est importante pour
-                                    <span class="texte_equipe">optimiser</span> les performances et <span class="texte_equipe">favoriser</span> 
-                                    la récupération. Il est recommandé de consommer des repas <span class="texte_equipe">équilibrés</span> 
+                                    <span class="texte_equipe">optimiser</span> les performances et <span
+                                        class="texte_equipe">favoriser</span>
+                                    la récupération. Il est recommandé de consommer des repas <span
+                                        class="texte_equipe">équilibrés</span>
                                     avant l'exercice et de prendre des collations nutritives après l'effort.
                                 </li>
                                 <li>
-                                    Les compléments alimentaires peuvent être utilisés de manière ciblée pour répondre à des besoins spécifiques, 
-                                    tels que la récupération musculaire, l'augmentation de la force ou l'amélioration de l'endurance. 
-                                    Cependant, il est important de les utiliser <span class="texte_equipe">judicieusement</span> et 
+                                    Les compléments alimentaires peuvent être utilisés de manière ciblée pour répondre à
+                                    des
+                                    besoins spécifiques,
+                                    tels que la récupération musculaire, l'augmentation de la force ou l'amélioration de
+                                    l'endurance.
+                                    Cependant, il est important de les utiliser <span
+                                        class="texte_equipe">judicieusement</span> et
                                     sous la <span class="texte_equipe">supervision</span> d'un professionnel
                                     de santé ou d'un nutritionniste.
                                 </li>
                                 <li>
-                                    Chaque personne a des besoins nutritionnels <span class="texte_equipe">spécifiques</span> 
-                                    en fonction de facteurs tels que l'âge, le sexe, le poids, le type d'activité physique pratiquée 
-                                    et les objectifs personnels. 
-                                    Nous vous  <span class="texte_equipe">conseillons</span> de prendre rendez-vous avec nos équipes afin d'élaborer un plan 
+                                    Chaque personne a des besoins nutritionnels <span
+                                        class="texte_equipe">spécifiques</span>
+                                    en fonction de facteurs tels que l'âge, le sexe, le poids, le type d'activité
+                                    physique
+                                    pratiquée
+                                    et les objectifs personnels.
+                                    Nous vous <span class="texte_equipe">conseillons</span> de prendre rendez-vous avec
+                                    nos
+                                    équipes afin d'élaborer un plan
                                     alimentaire <span class="texte_equipe">adapté</span> à vos besoins spécifiques.
-                                    Si vous n'avez <span class="texte_equipe">pas le temps</span> de réaliser vous-mêmes vos repas, 
-                                    nos partenaires proposent de réaliser des repas <span class="texte_equipe">selon vos besoins</span> et de vous les 
-                                    <span class="texte_equipe"><livrer/span> trois fois par jour 7 jours sur 7!                        
+                                    Si vous n'avez <span class="texte_equipe">pas le temps</span> de réaliser vous-mêmes
+                                    vos
+                                    repas,
+                                    nos partenaires proposent de réaliser des repas <span class="texte_equipe">selon vos
+                                        besoins</span> et de vous les
+                                    <span class="texte_equipe"> livrer </span> trois fois par jour 7 jours sur 7!
                                 </li>
                             </ul>
                         </h3>
                     </div>
+                </div>
             </div>
         </div>
+
+        <footer>
+            <h1>Nos informations</h1>
+            <div class="Container_Footer">
+                <div class="Wrapper_Txt_Footer">
+                    <ul>
+                        <li>
+                            <p>Sportify - <span>Sportify@gmail.com</span></p>
+                        </li>
+                        <li>
+                            <p>Numéro - <span>+33 6 46 76 36 08</span></p>
+                        </li>
+                        <li>
+                            <p>Siège Social - 24 Rue du Dr Finlay, 75015 Paris</p>
+                        </li>
+                    </ul>
+                    <div class="Liens_Réseaux">
+                        <a href=""><i id="insta" class="fa fa-instagram"></i></a>
+                        <a><i id="twitter" class="fa fa-twitter"></i></a>
+                        <a><i id="youtube" class="fa fa-youtube"></i></a>
+                        <a href="https://www.twitch.tv/maxenceh95"><i id="twitch" class="fa fa-twitch"></i></a>
+                        <a><i id="facebook" class="fa fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="Maps">
+                    <iframe class="Image_Maps"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1062.4556212285272!2d2.3649380768321207!3d48.855269801000595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e671ffd6f54a2d%3A0x7e113ba33d5dfcf0!2s13%20Pl.%20des%20Vosges%2C%2075004%20Paris!5e0!3m2!1sfr!2sfr!4v1685371601491!5m2!1sfr!2sfr"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 
