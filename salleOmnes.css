@@ -41,6 +41,12 @@ header {
     background-color: rgb(40, 40, 40);
 }
 
+/*total*/
+
+#total {
+    height: auto;
+}
+
 /*************************** LIENS DU NAVIGATEUR */
 
 .Titre_Sportify {
@@ -98,7 +104,7 @@ header {
 
 /*************************** CONSTRUCTION PAGE */
 
-.Content {
+#content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -129,18 +135,19 @@ header {
     top: 0;
     left: 0;
     z-index: -1;
-    width: 100vw;
-    height: 100vh;
     background-color: rgba(0, 0, 0, 0.65);
     box-shadow: inset 0 0 1000px rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 150vh;
 }
 
 /*********Contenu*/
 
+
 #Div_salle {
     display: flex;
     z-index: 10;
-    height: 100vh;
+    height: 70vh;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -169,7 +176,7 @@ header {
     width: 30vw;
     padding: 40px;
     margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 90px;
     justify-content: center;
     align-items: center;
     background: rgba(142, 142, 142, 0.45);
@@ -178,7 +185,6 @@ header {
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(141, 190, 220, 0.31);
-    margin-bottom: 60px;
 }
 
 .ville {
@@ -200,139 +206,347 @@ header {
     margin-bottom: 6px;
 }
 
-.card {
-    margin-bottom: 10px;
-    --background: linear-gradient(to left, var(--bleu1) 0%, #00aeb4 100%);
-    width: 60vw;
-    height: 5vw;
-    padding: 2px;
-    border-radius: 1rem;
-    overflow: visible;
-    background: #f7ba2b;
-    background: var(--background);
-    position: relative;
-    z-index: 1;
-}
+/*bouton*/
 
-.card::after {
-    position: absolute;
-    content: "";
-    top: 30px;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    height: 70%;
-    width: 100%;
-    transform: scale(0.8);
-    filter: blur(25px);
-    background: #f7ba2b;
-    background: var(--background);
-    transition: opacity .5s;
-}
-
-.card-info {
-    --color: #181818;
-    background: var(--color);
-    color: white;
-    display: flex;
-    justify-content: center;
+#bouton_affichage {
+    width: 700px;
+    height: 60px;
+    border-radius: 10px;
     align-items: center;
-    width: 100%;
-    height: 100%;
-    overflow: visible;
-    border-radius: .9rem;
+    gap: 10px;
+    z-index: 5;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid 3px var(--bleu2);
+    background: var(--bleu4);
+    color: var(--bleu10);
 }
 
-.card .title {
-    letter-spacing: .1em;
+.texte_bouton {
+    font-size: 35px;
+    color: var(--bleu10);
 }
 
-/*Hover*/
-.card:hover::after {
-    opacity: 0;
-}
-
-.card:hover .card-info {
-    color: var(--bleu7);
-    transition: color 1s;
-}
-
-
-.title {
-    font-size: 30px;
-}
+/*info*/
 
 #info {
     position: relative;
-}
-
-.Carroussel_info {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100vw;
-    height: auto;
     margin-top: 60px;
+    margin-left: 30px;
+    justify-content: baseline;
+    z-index: 10;
+    height: auto;
 }
 
-.card2 {
-    margin-left: 20px;
-    margin-right: 20px;
-    --background: linear-gradient(to left, var(--bleu1) 0%, #00aeb4 100%);
-    width: 12vw;
-    height: 6vw;
-    padding: 2px;
-    border-radius: 1rem;
-    overflow: visible;
-    background: #f7ba2b;
-    background: var(--background);
-    position: relative;
-    z-index: 1;
+#info p {
+    color: var(--bleu10);
 }
 
-.card2::after {
-    position: absolute;
-    content: "";
-    top: 30px;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    height: 70%;
-    width: 100%;
-    transform: scale(0.8);
-    filter: blur(25px);
-    background: #f7ba2b;
-    background: var(--background);
-    transition: opacity .5s;
+#horaire,
+#Personnels,
+#Regles,
+#Nouveaux,
+#Alimentation {
+    margin-bottom: 10px;
 }
 
-.card2-info {
-    --color: #181818;
-    background: var(--color);
-    color: white;
+#div_titre_info {
+    margin-bottom: 5px;
+}
+
+/*horaires*/
+
+#texte_id {
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-bottom: 50px;
+}
+
+.texte {
+    color: var(--bleu10);
+}
+
+.horaire_24 {
+    font-size: larger;
+}
+
+#Carroussel_horaire {
     display: flex;
+    flex-direction: column;
+    width: 90vw;
+    display: flex;
+    height: 120px;
+    padding: 5px;
+    margin-bottom: 30px;
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+
+/*Personnels*/
+
+#Carroussel_equipe {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    display: flex;
+    height: 180px;
+    padding: 5px;
+    margin-bottom: 30px;
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.texte_equipe {
+    color: var(--bleu7);
+}
+
+.lien_parcourir {
+    color: var(--bleu10);
+}
+
+/*Regle*/
+
+#Entre ul {
+    margin-left: 40px;
+}
+
+#Materiel ul {
+    margin-right: 40px;
+}
+
+#Regles li {
+    color: var(--bleu10);
+    margin-bottom: 10px;
+}
+
+.titre_info {
+    font-size: 40px;
+    color: var(--bleu7);
+}
+
+#Carroussel_regles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90vw;
+    margin-top: 20px;
+}
+
+#Entre,
+#Materiel {
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    display: flex;
+    height: 35vh;
+    width: 80vw;
+    padding: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background: rgba(142, 142, 142, 0.45);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(141, 190, 220, 0.31);
+    margin-bottom: 60px;
+}
+
+.texte_regle {
+    color: var(--bleu7);
+}
+
+/*Nouv clients*/
+
+#Nouveaux {
+    height: 900px;
+}
+
+#Carroussel_faq {
+    display: flex;
+    width: 90vw;
+    height: 860px;
+}
+
+#separation {
+    width: 2px;
+    height: 700px;
+    background-color: var(--bleu9);
+    border-radius: 50%;
+    margin: 5vh auto;
+}
+
+#gauche_faq,
+#droite_faq {
+    display: flex;
+    height: 800px;
+    width: 80vw;
+    padding: 40px;
+    margin-bottom: 30px;
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+#Nouveaux li {
+    list-style: none;
+    /*Pour pas afficherles points de la liste*/
+}
+
+.quest_faq {
+    font-size: 25px;
+    color: var(--bleu9);
+}
+
+#quest_faq {
+    margin-bottom: 15px;
+}
+
+.rep_faq {
+    color: var(--bleu10);
+    font-size: 15px;
+}
+
+#rep_faq {
+    margin-bottom: 25px;
+}
+
+.quest_equipe {
+    color: var(--bleu8);
+    font-size: 30px;
+}
+
+#quest_equipe {
+    margin-top: 10px;
+}
+
+/*Alimentation*/
+
+#Carroussel_alimentation {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    display: flex;
+    height: 650px;
+    padding: 5px;
+    margin-bottom: 30px;
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+#conseil_id {
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+
+#Carroussel_conseil {
+    display: flex;
+    flex-direction: column;
+    width: 1100px;
+    display: flex;
+    height: 200px;
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: var(--bleu10);
+    margin-left: 100px;
+}
+
+#Carroussel_conseil li {
+    margin-bottom: 10px;
+}
+
+/************* FOOTER  */
+
+footer {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
-    overflow: visible;
-    border-radius: .9rem;
+    padding: 30px;
 }
 
-.card2 .title2 {
-    letter-spacing: .1em;
-}
-
-/*Hover*/
-.card2:hover::after {
-    opacity: 0;
-}
-
-.card2:hover .card2-info {
+footer h1 {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 70px;
     color: var(--bleu7);
-    transition: color 1s;
 }
 
-.title2 {
-    font-size: 15px;
+footer p,
+footer li {
+    color: var(--bleu9);
+    font-size: 20px;
+}
+
+.Container_Footer {
+    margin-top: 20px;
+    display: flex;
+    width: 90vw;
+    height: auto;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.Wrapper_Txt_Footer ul {
+    display: flex;
+    height: 30vh;
+    justify-content: space-evenly;
+    align-items: start;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.Maps {
+    width: auto;
+    height: auto;
+}
+
+.Image_Maps {
+    border-radius: 30px;
+    width: 30vw;
+    height: 40vh;
+}
+
+.Liens_Réseaux {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.Liens_Réseaux i {
+    color: var(--bleu10);
+    font-size: 30px;
+    transition: color 0.3s ease-in-out, scale 0.4s;
+}
+
+#insta:hover {
+    color: #c32aa3;
+    scale: 1.3;
+}
+
+#twitter:hover {
+    color: #1DA1F2;
+    scale: 1.3;
+}
+
+#youtube:hover {
+    color: #FF0000;
+    scale: 1.3;
+}
+
+#twitch:hover {
+    color: #6441a4;
+    scale: 1.3;
+}
+
+#facebook:hover {
+    color: #3b5998;
+    scale: 1.3;
 }

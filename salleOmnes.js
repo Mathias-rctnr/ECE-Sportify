@@ -1,5 +1,20 @@
+var afficher = "false";
+
 function afficherboutons() {
     var optionsDiv = document.getElementById("info");
-    optionsDiv.style.display = "block";
+
+    var calque = document.getElementById("calque");
+
+    if (afficher == "false") {
+        optionsDiv.style.display = "block";
+        calque.innerHTML = ".calque {height: 500vh;}";
+        afficher = "true";
+    }
+
+    else {
+        optionsDiv.style.display = "none";
+        calque.innerHTML = ".calque {height: 150vh;}";
+        afficher = "false";
+    }
 }
 

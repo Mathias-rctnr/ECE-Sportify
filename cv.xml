@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<cv>
+    <info_perso id="info_perso" >
+        <nom>Lambert</nom>
+        <prenom>Marie</prenom>
+        <adresse>Monaco</adresse>
+        <telephone>+33 6 54 76 87 67</telephone>
+        <email>marie.lambert@omnesport.com</email>
+        <image>photos\sport de competition\plongeon.png</image>
+    </info_perso>
+
+    <experiences id="exp">
+        <poste>
+            <entreprise>Sportify</entreprise>
+            <date>2015-Présent</date>
+            <description>
+            <![CDATA[Enseignement du plongeon artistique à des plongeurs de tout âges et de tous niveaux.
+            Conception et mise en place de programmes d'entraînementadaptés aux objectifs individuels des plongeurs.]]>
+            </description>
+        </poste>
+        <poste>
+            <entreprise>Centre Aquatique Nice</entreprise>
+            <date>2013-2015</date>
+            <description>
+            <![CDATA[Assister le coach principal dans la formation des plongeurs dedifférents niveaux.
+            Enseignement des techniques de base du plongeon, de laposition du corps à l'entrée dans l'eau.
+            Encouragement des plongeurs à surmonter leurs peurs]]>
+            </description>
+        </poste>
+    </experiences>
+
+    <qualites id="qualites">
+        <qualite1>Dynamique</qualite1>
+        <qualite2>Prudente</qualite2>
+        <qualite3>Flexible</qualite3>
+        <qualite4>Organisee</qualite4>
+    </qualites>
+    <formations id="formations">
+        <formation>
+            <etablissement>Federation francaise de Natation</etablissement>
+            <diplome>Diplome d'Entraineur de natation</diplome>
+            <date>2012</date>
+        </formation>
+        <formation>
+            <etablissement>Université d'Aix-Marseille </etablissement>
+            <diplome>Licence en Sciences et Techniques des Activites Physiques et Sportives </diplome>
+            <date>2009 - 2011</date>
+        </formation>
+        <formation>
+            <etablissement>Lycee Marcel Pagnol </etablissement>
+            <diplome>Baccalaureat scientifique</diplome>
+            <date>2008</date>
+        </formation>
+    </formations>
+
+</cv>
