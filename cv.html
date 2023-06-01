@@ -4,6 +4,16 @@
 <head>
     <title>Affichage d'un fichier XML</title>
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-size: 0.7vw;
+        }
+
         h2,
         p,
         h3 {
@@ -12,28 +22,121 @@
             align-items: center;
         }
 
-        #info_perso,
-        #qualites {
-            flex-basis: 50%;
-            box-sizing: border-box;
-            padding: 10px;
+        #experiences{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: column;
         }
 
-        #img{
-            float: right;
-            width: 300px;
-        }
-        #experiences,
-        #formations {
-            flex-basis: 50%;
-            box-sizing: border-box;
-            padding: 10px;
-            text-align: right;
+        .Container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
         }
 
-        body {
-            background-image: url("photos/CV/fondcv.png");
+        .en-texte{
+            display: flex;
+            width: 35vw;
         }
+
+        .Wrapper{
+            width: 40vw;
+            height: 90vh;
+            border: solid 3px rgb(149, 0, 255);
+            background-image: url(photos/CV/fondcv.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        } */
+
+        .Nom{
+            margin-left: 2vw;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 17vw;
+        }
+
+        .Nom p{
+            font-size: 2.5vw;
+        }
+
+        .en-tete{
+            margin-top: 4vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: solid 2px salmon;
+        }
+
+        #photo{
+            margin-right: 2vw;
+            border-radius: 20px;
+            width: 8vw;
+            height: 18vh;
+        }
+
+        .Corps{
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40vw;
+            height: 33vh;
+            border: solid 2px rgb(32, 118, 179);
+        }
+
+        #info_perso, #qualites{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 10vw;
+            padding: 20px;
+            height: 17vh;
+            border: solid 3px rgb(233, 202, 29);
+        }
+
+        .Exp_Pro, .informations{
+            height: 90%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 30vw;
+            border: solid 3px rgb(0, 255, 191);
+        }
+
+        .Footer{
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40vw;
+            height: 30vh;
+            border: solid 3px rgb(47, 0, 255);
+        }
+
+        .educ{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 30vw;
+            height: 90%;
+            border: solid 3px red;
+        }
+
+
+
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
@@ -123,30 +226,50 @@
 </head>
 
 <body>
-    <div class="Wrapper">
-        <div id="img">
-            <img id="photo" src="photos\sport de competition\plongeon.png" alt="Photo de profil" width="200"
-                height="250">
+    <div class="Container">
+        <div class="Wrapper">
+            <div class="en-tete">
+                <div class="Nom">
+                    <p><span id="nom"></span></p>
+                    <p><span id="prenom"></span></p>
+                </div>
+                <img id="photo" src="photos\sport de competition\plongeon.png" alt="Photo de profil">
+            </div>
+            <div class="Corps">
+                <div id="info_perso">
+                    <h2>Informations personnelles</h2>
+                    <div class="Donnee_Info">
+                        <p><span id="adresse"></span></p>
+                        <p><span id="telephone"></span></p>
+                        <p><span id="email"></span></p>
+                    </div>
+                </div>
+                <div class="Exp_Pro">
+                    <h2>Exp&eacuteriences professionnelles</h2>
+                    <div id="experiences">
+                        <!-- !METTRE DIV1 ET DIV2 POUR EXP1 ET EXP2 -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="Footer">
+                <div id="qualites">
+                    <h2>Qualit&eacutes</h2>
+                    <div class="Liste_qualites">
+                        <p><span id="qualite1"></span></p>
+                        <p><span id="qualite2"></span></p>
+                        <p><span id="qualite3"></span></p>
+                        <p><span id="qualite4"></span></p>
+                    </div>
+                </div>
+                <div class="educ">
+                    <h2>Education</h2>
+                    <div id="formations">
+
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="info_perso">
-            <!--  <h2>Informations personnelles</h2>-->
-            <p><span id="nom"></span></p>
-            <p><span id="prenom"></span></p>
-            <p><span id="adresse"></span></p>
-            <p><span id="telephone"></span></p>
-            <p><span id="email"></span></p>
-        </div>
-        <h2>Expériences professionnelles</h2>
-        <div id="experiences"></div>
-        <div id="qualites">
-            <h2>Qualités</h2>
-            <p><span id=qualite1></span></p>
-            <p><span id="qualite2"></span></p>
-            <p><span id="qualite3"></span></p>
-            <p><span id="qualite4"></span></p>
-        </div>
-        <h2>Education</h2>
-        <div id="formations"></div>
     </div>
 </body>
 
