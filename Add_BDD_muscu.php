@@ -52,6 +52,5 @@
 
         echo "<p class='txt_recap'>Bonjour " . $MaxID . ", Nous vous confirmons la réservation de votre cours de " . $Specialite . " avec " . $Id_Coach . " le " . $tempDate . " à " . $tempHeure . "h:" . $tempMinute . $dbl_zero . " !</p>";
 
-        //mysqli_close($db_handle);
     }
 ?>

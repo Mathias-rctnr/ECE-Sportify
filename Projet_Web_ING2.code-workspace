@@ -2,9 +2,10 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": ".."
 		}
 	],
-	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "Sportify"
-	}
+	"settings": {}
 }

@@ -35,7 +35,7 @@
                     </svg>
                 </div>
                 <div class="Txt_Validation">
-                    <?php require("Add_BDD_muscu.php"); ?>
+                    <?php include("Add_BDD_muscu.php"); ?>
                     <div class="Wrapper_btn">
                             <button value="2" id="btn_reserv"><div class="txt_btn2"><p>Voir mes réservations<i class="fa fa-arrow-right"></i></p></div></button>
                     </div>
