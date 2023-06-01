@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sportify</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="newclient.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+        integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <header>
+        <div class="Titre_Sportify">Sportify</div>
+        <div class="Wrapper_Liens">
+            <a class="Liens1" id="liens_Nav" href="menu.html">Accueil</a>
+            <a class="Liens2" id="liens_Nav" href="Tout_parcourir.html">Tout Parcourir</a>
+            <a class="Liens3" id="liens_Nav" href="">Recherche</a>
+            <a class="Liens4" id="liens_Nav" href="">Rendez-Vous</a>
+            <a class="Liens5" id="liens_Nav" href="">Votre Compte</a>
+        </div>
+    </header>
+
+    <div id="container">
+        <div class="login-box">
+            <form method="post" action="newclient_traitement.php">
+
+                <div id="nom_prenom_tel" class="form_group">
+
+                    <div id="nom" class="user-box">
+                        <input oninput="verif()" id="nom" type="text" onblur="verif()" name="nom" required="">
+                        <label>Nom</label>
+                    </div>
+                    <div class="user-box">
+                        <input oninput="verif()" id="prenom" type="text" onblur="verif()" name="prenom" required="">
+                        <label>Prénom</label>
+                    </div>
+                    <div class="user-box">
+                        <input id="tel" type="tel" pattern="[0-9]{10}" name="tel"
+                            oninvalid="setCustomValidity('Veuillez saisir un numéro de télephone à 10 chiffres.')"
+                            oninput="setCustomValidity(''); verif()" onblur="verif()" required="">
+                        <label>Téléphone</label>
+                    </div>
+
+                </div>
+                <div id="mail_mdp_mdpconf_error" class="form_group">
+                    <div class="user-box">
+                        <input id="mail" type="email" name="mail"
+                            oninvalid="setCustomValidity('Veuillez saisir une adresse email valide.')"
+                            oninput="setCustomValidity(''); verif()" onblur="verif()" required>
+                        <label>Adresse e-mail</label>
+                    </div>
+                    <div class="user-box">
+                        <input id = "input1" type="password" oninput="verif()" onblur="verif()" name="mdp" required>
+                        <label>Mot de passe</label>
+                    </div>
+                    <div id ="mdp" class="user-box">
+                        <input id = "input2" type="password" name="mdp_conf" oninput="verif()" onblur="verif()" required="">
+                        <label>Confirmer Mot de passe</label>
+                        <span id ="message_pswrd">Les mots de passes doivent être identiques !</span>
+                    </div>
+
+                </div>
+                <div id="adress" class="form_group">
+                    <div class="user-box">
+                        <input id="adress" type="text" name="adresse1" oninput="verif()" onblur="verif()" required="">
+                        <label>Adresse</label>
+                    </div>
+                    <div class="user-box">
+                        <input type="text" name="adresse2" oninput="verif()" onblur="verif()" placeholder="Optionnel">
+                        <label>Complément d'adresse</label>
+                    </div>
+                </div>
+                <div id="ville_cp_pays" class="form_group">
+
+                    <div class="user-box">
+                        <input id="ville"type="text" oninput="verif()" onblur="verif()" name="ville" required="">
+                        <label>Ville</label>
+                    </div>
+                    <div class="user-box">
+                        <input id="cp" type="text" name="cp" pattern="[0-9]{5}" oninvalid="setCustomValidity('Veuillez saisir un code postal valide.')" 
+                        oninput="setCustomValidity(''); verif()" onblur="verif()" required>
+                        <label>Code postal</label>
+                    </div>
+                    <div class="user-box">
+                        <input id="pays" type="text" oninput="verif()" onblur="verif()" name="pays" required="">
+                        <label>Pays</label>
+                    </div>
+
+                    <div class="user-box">
+                        <!--
+            - ^ et $ représentent respectivement le début et la fin de la chaîne.
+            - (?: ... ) est utilisé pour regrouper des sous-expressions sans les capturer.
+            - \d correspond à un chiffre.
+            - [a-zA-Z] correspond à une lettre (minuscule ou majuscule).
+            - {10} et {9} spécifient le nombre d'occurrences attendues.
+            -  Les | (pipe) indiquent une alternative entre les deux modèles.
+            -->
+
+                        <input id="num_etu" type="text" name="num_etu" pattern="(?:\d{10}[a-zA-Z]$)|(?:\d{9}[a-zA-Z]{2})"
+                        oninvalid="setCustomValidity('Un num étudiant est composé de 11 caractères, soit 10 chiffres et 1 lettre soit 9 chiffres et 2 lettres.')" 
+                        oninput="setCustomValidity('')" oninput="verif()" onblur="verif()"required>
+                        <label>N° Étudiant</label>
+                    </div>
+                </div>
+                <p class = "message_error">Adresse-mail ou numéro de téléphone déja utilisé. </p>
+                <div class="valider">
+                    <input id= "val"  class="envoyer_red" oninput="verif()" onblur="verif()" type="submit" value="VALIDER">
+
+                    <div class="wrapper_deja_compte">
+                        <a href="login.html">
+                            <div class="deja_compte">
+                                J'AI DÉJA UN COMPTE
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <script src="newclient.js"></script>
+</body>
+
+</html>
