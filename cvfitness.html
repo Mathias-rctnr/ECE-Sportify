@@ -2,142 +2,8 @@
 <html>
 
 <head>
-    <title>Affichage d'un fichier XML</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body{
-            font-size: 0.7vw;
-        }
-
-        h2,
-        p,
-        h3 {
-            color: white;
-            text-align: center;
-            align-items: center;
-        }
-
-        #experiences{
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        .Container{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100vw;
-            height: 100vh;
-        }
-
-        .en-texte{
-            display: flex;
-            width: 35vw;
-        }
-
-        .Wrapper{
-            width: 40vw;
-            height: 90vh;
-            border: solid 3px rgb(149, 0, 255);
-            background-image: url(photos/CV/fondcv.png);
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        /* body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        } */
-
-        .Nom{
-            margin-left: 2vw;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            width: 17vw;
-        }
-
-        .Nom p{
-            font-size: 2.5vw;
-        }
-
-        .en-tete{
-            margin-top: 4vh;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border: solid 2px salmon;
-        }
-
-        #photo{
-            margin-right: 2vw;
-            border-radius: 20px;
-            width: 8vw;
-            height: 18vh;
-        }
-
-        .Corps{
-            padding: 30px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 40vw;
-            height: 33vh;
-            border: solid 2px rgb(32, 118, 179);
-        }
-
-        #info_perso, #qualites{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            width: 10vw;
-            padding: 20px;
-            height: 17vh;
-            border: solid 3px rgb(233, 202, 29);
-        }
-
-        .Exp_Pro, .informations{
-            height: 90%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            width: 30vw;
-            border: solid 3px rgb(0, 255, 191);
-        }
-
-        .Footer{
-            padding: 30px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 40vw;
-            height: 30vh;
-            border: solid 3px rgb(47, 0, 255);
-        }
-
-        .educ{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            align-items: center;
-            width: 30vw;
-            height: 90%;
-            border: solid 3px red;
-        }
-
-
-
-    </style>
+    <title>CV FIT</title>
+    <link rel="stylesheet" type="text/css" href="cv.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         function loadXMLDoc() {
@@ -147,7 +13,7 @@
                     displayXML(this);
                 }
             };
-            xhttp.open("GET", "cv.xml", true);
+            xhttp.open("GET", "fitness.xml", true);
             xhttp.send();
         }
 
@@ -183,7 +49,7 @@
 
                 experiencesHtml += "<h3>" + entreprise + "</h3>";
                 experiencesHtml += "<p>Date : " + date + "</p>";
-                experiencesHtml += "<p>Description : " + description + "</p>";
+                experiencesHtml += "<p>Description : " + description + "<br></br></p>";
             }
             document.getElementById("experiences").innerHTML = experiencesHtml;
 
@@ -219,10 +85,11 @@
         }
 
         // Charger le fichier XML au chargement de la page
-        window.onload = function () { 
+        window.onload = function () {
             loadXMLDoc();
         };
     </script>
+
 </head>
 
 <body>
@@ -233,7 +100,7 @@
                     <p><span id="nom"></span></p>
                     <p><span id="prenom"></span></p>
                 </div>
-                <img id="photo" src="photos\sport de competition\plongeon.png" alt="Photo de profil">
+                <img id="photo" src="photos/activites sportives/fitness.png" alt="Photo de profil">
             </div>
             <div class="Corps">
                 <div id="info_perso">

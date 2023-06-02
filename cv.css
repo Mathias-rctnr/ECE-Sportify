@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 0.7vw;
+}
+
+h2,
+p,
+h3 {
+    color: white;
+    text-align: center;
+    align-items: center;
+}
+
+#experiences {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.en-texte {
+    display: flex;
+    width: 35vw;
+}
+
+.Wrapper {
+    width: 40vw;
+    height: 90vh;
+    background-image: url(photos/CV/fondcv.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.Nom {
+    margin-left: 2vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 17vw;
+}
+
+.Nom p {
+    font-size: 2.5vw;
+}
+
+.en-tete {
+    margin-top: 4vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#photo {
+    margin-right: 2vw;
+    border-radius: 20px;
+    width: 8vw;
+    height: 23vh;
+}
+
+.Corps {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    height: 33vh;
+}
+
+#info_perso,
+#qualites {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 10vw;
+    padding: 20px;
+    height: 17vh;
+}
+
+.Exp_Pro,
+.informations {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30vw;
+}
+
+.Footer {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    height: 30vh;
+}
+
+.educ {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 30vw;
+    height: 90%;
+}

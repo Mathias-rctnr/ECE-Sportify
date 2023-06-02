@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<cv>
+    <info_perso id="info_perso">
+        <nom>Martin</nom>
+        <prenom>Pierre</prenom>
+        <adresse>Paris, 75001</adresse>
+        <telephone>+33 6 21 43 65 87</telephone>
+        <email>pierre.martin@omnesport.com</email>
+        <image>photos\sport de competition\football.png</image>
+    </info_perso>
+
+    <experiences id="exp">
+        <poste>
+            <entreprise>Sportify</entreprise>
+            <date>2012-Présent</date>
+            <description>
+            <![CDATA[Organisation de séances d'entraînement collectives pour développer les compétences des joueurs.
+            Encadrement lors des matchs et compétitions pour fournir des conseils en temps réel et aider les joueurs à prendre de bonnes décisions sur le terrain.]]>
+            </description>
+        </poste>
+        <poste>
+            <entreprise>ActivLife Fitness</entreprise>
+            <date>2010-2012</date>
+            <description>
+            <![CDATA[Encadrement des jeunes joueurs dans le cadre d'un programme de formation de football, en se concentrant sur le développement des compétences techniques et tactiques.
+            Conception et mise en place de séances d'entraînement spécifiques pour les différents groupes d'âge et niveaux de compétence.]]>
+            </description>
+        </poste>
+    </experiences>
+
+    <qualites id="qualites">
+        <qualite1>Dynamique</qualite1>
+        <qualite2>Ponctuel</qualite2>
+        <qualite3>Bonne communication</qualite3>
+        <qualite4>Maitrise</qualite4>
+    </qualites>
+    <formations id="formations">
+        <formation>
+            <etablissement>Fédération Francaise de Football</etablissement>
+            <diplome>Certificat d'entraîneur de Football</diplome>
+            <date>2010</date>
+        </formation>
+        <formation>
+            <etablissement>Université de Paris </etablissement>
+            <diplome>Licence en Sciences du Sport </diplome>
+            <date>2006 - 2009</date>
+        </formation>
+        <formation>
+            <etablissement>Lycee Louis Pasteur </etablissement>
+            <diplome>Baccalaureat scientifique</diplome>
+            <date>2005</date>
+        </formation>
+    </formations>
+
+</cv>

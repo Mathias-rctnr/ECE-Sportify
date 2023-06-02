@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<cv>
+    <info_perso id="info_perso">
+        <nom>Patterson</nom>
+        <prenom>Jonathan</prenom>
+        <adresse>St-Tropez</adresse>
+        <telephone>+33 6 12 45 35 67</telephone>
+        <email>jonathan.patterson@omnesport.com</email>
+        <image>photos\sport de competition\natation.png</image>
+    </info_perso>
+
+    <experiences id="exp">
+        <poste>
+            <entreprise>Sportify</entreprise>
+            <date>2018-Présent</date>
+            <description>
+            <![CDATA[Encadrement des séances d'entraînement collectives et individuelles pour garantir une progression continue.
+            Assistance aux nageurs lors des compétitions pour les aider à améliorer leurs performances et à atteindre leurs objectifs.]]>
+            </description>
+        </poste>
+        <poste>
+            <entreprise>Centre de Loisirs Nice</entreprise>
+            <date>2015-2017</date>
+            <description>
+            <![CDATA[Enseignement des techniques de base de la natation et développement de la confiance dans l'eau.
+            Organisation de jeux et d'activités aquatiques pour rendre l'apprentissage de la natation ludique et stimulant]]>
+            </description>
+        </poste>
+    </experiences>
+
+    <qualites id="qualites">
+        <qualite1>Dynamique</qualite1>
+        <qualite2>Responsable</qualite2>
+        <qualite3>Prudence</qualite3>
+        <qualite4>A l'écoute</qualite4>
+    </qualites>
+    <formations id="formations">
+        <formation>
+            <etablissement>Fédération Francaise de Natation</etablissement>
+            <diplome>Diplôme de maître-Nageur Sauveteur</diplome>
+            <date>2014</date>
+        </formation>
+        <formation>
+            <etablissement>Université de Marseille </etablissement>
+            <diplome>Licence en Sciences et Technique du Sport </diplome>
+            <date>2010 - 2013</date>
+        </formation>
+        <formation>
+            <etablissement>Lycee Marcel Pagnol </etablissement>
+            <diplome>Baccalaureat scientifique</diplome>
+            <date>2009</date>
+        </formation>
+    </formations>
+
+</cv>

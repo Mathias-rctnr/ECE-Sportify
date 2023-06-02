@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<cv>
+    <info_perso id="info_perso">
+        <nom>Thomas</nom>
+        <prenom>Aaron</prenom>
+        <adresse>St-Tropez</adresse>
+        <telephone>+33 6 24 54 32 45</telephone>
+        <email>aaron.thomas@omnesport.com</email>
+        <image>photos\sport de competition\rugby.png</image>
+    </info_perso>
+
+    <experiences id="exp">
+        <poste>
+            <entreprise>Sportify</entreprise>
+            <date>2018-Présent</date>
+            <description>
+            <![CDATA[Encadrement des joueurs lors des matchs et compétitions pour fournir des conseils en temps réel et les aider à prendre de bonnes décisions sur le terrain.
+            Création de programmes d'entraînement spécifiques en fonction des objectifs et des postes des joueurs.]]>
+            </description>
+        </poste>
+        <poste>
+            <entreprise>Centre de Loisirs Nice</entreprise>
+            <date>2015-2017</date>
+            <description>
+            <![CDATA[Analyse des performances des joueurs lors des matchs et des entraînements pour identifier les domaines d'amélioration et fournir des retours constructifs.
+            Collaboration avec le staff technique pour évaluer le progrès des joueurs et recommander les ajustements nécessaires.]]>
+            </description>
+        </poste>
+    </experiences>
+
+    <qualites id="qualites">
+        <qualite1>Dynamique</qualite1>
+        <qualite2>Responsable</qualite2>
+        <qualite3>Organisé</qualite3>
+        <qualite4>A l'écoute</qualite4>
+    </qualites>
+    <formations id="formations">
+        <formation>
+            <etablissement>Fédération Francaise de Rugby</etablissement>
+            <diplome>Diplôme d'entraîneur de Rugby</diplome>
+            <date>2014</date>
+        </formation>
+        <formation>
+            <etablissement>Université de Toulouse </etablissement>
+            <diplome>Licence en Sciences du Sport </diplome>
+            <date>2010 - 2013</date>
+        </formation>
+        <formation>
+            <etablissement>Lycee Louis Pasteur </etablissement>
+            <diplome>Baccalaureat scientifique</diplome>
+            <date>2009</date>
+        </formation>
+    </formations>
+
+</cv>

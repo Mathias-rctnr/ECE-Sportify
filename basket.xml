@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<cv>
+    <info_perso id="info_perso">
+        <nom>Paprika</nom>
+        <prenom>Stephen</prenom>
+        <adresse>Paris, 75001</adresse>
+        <telephone>+33 6 21 34 56 78</telephone>
+        <email>lucas.dupont@omnesport.com</email>
+        <image>photos\sport de competition\basketball.png</image>
+    </info_perso>
+
+    <experiences id="exp">
+        <poste>
+            <entreprise>Sportify</entreprise>
+            <date>2012-Présent</date>
+            <description>
+            <![CDATA[Entraînement des jeunes joueurs de basketball, en se concentrant sur les fondamentaux techniques, tactiques et physiques.
+            Organisation de séances d'entraînement collectives et individuelles pour développer les compétences individuelles et collectives des joueurs.]]>
+            </description>
+        </poste>
+        <poste>
+            <entreprise>Centre de formation de Nanterre</entreprise>
+            <date>2010-2012</date>
+            <description>
+            <![CDATA[Encadrement des jeunes joueurs dans le cadre d'un programme de formation de basketball, en mettant l'accent sur le développement des compétences techniques et tactiques.
+            Conception et mise en place de séances d'entraînement spécifiques pour différents groupes d'âge et niveaux de compétence.]]>
+            </description>
+        </poste>
+    </experiences>
+
+    <qualites id="qualites">
+        <qualite1>Dynamique</qualite1>
+        <qualite2>Ponctuel</qualite2>
+        <qualite3>Précis</qualite3>
+        <qualite4>Patient</qualite4>
+    </qualites>
+    <formations id="formations">
+        <formation>
+            <etablissement>Fédération Francaise de Basketball</etablissement>
+            <diplome>Diplôme d'entraîneur de Basketball</diplome>
+            <date>2010</date>
+        </formation>
+        <formation>
+            <etablissement>Université de Lyon </etablissement>
+            <diplome>Licence en Sciences du Sport </diplome>
+            <date>2006 - 2009</date>
+        </formation>
+        <formation>
+            <etablissement>Lycee Saint-Exupéry </etablissement>
+            <diplome>Baccalaureat scientifique</diplome>
+            <date>2005</date>
+        </formation>
+    </formations>
+
+</cv>

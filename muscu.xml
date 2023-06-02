@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<cv>
+    <info_perso id="info_perso">
+        <nom>Durand</nom>
+        <prenom>Maxime</prenom>
+        <adresse>St-Tropez</adresse>
+        <telephone>+33 6 98 76 54 32</telephone>
+        <email>maxime.durand@omnesport.com</email>
+        <image>photos\activites sportives\musculation.png</image>
+    </info_perso>
+
+    <experiences id="exp">
+        <poste>
+            <entreprise>Sportify</entreprise>
+            <date>2018-Présent</date>
+            <description>
+            <![CDATA[Conception et mise en place de programmes d'entraînement personnalisés pour les clients,
+            Encadrement des clients pendant les séances de musculation, en veillant à une bonne exécution des exercices et en fournissant des conseils sur la technique et la progression.
+            Suivi régulier des progrès des clients et ajustement des programmes d'entraînement en conséquence.]]>
+            </description>
+        </poste>
+        <poste>
+            <entreprise>BodyFit Club</entreprise>
+            <date>2015-2017</date>
+            <description>
+            <![CDATA[Accueil des nouveaux membres, évaluation de leur condition physique et recommandation d'un programme d'entraînement adapté.
+            Assistanat des entraîneurs principaux lors des séances de musculation en groupe, en fournissant un soutien supplémentaire et des conseils aux participants.
+            Maintenance de l'équipement de musculation et suivi de l'hygiène et de la sécurité dans la salle de musculation.]]>
+            </description>
+        </poste>
+    </experiences>
+
+    <qualites id="qualites">
+        <qualite1>Dynamique</qualite1>
+        <qualite2>Expertise</qualite2>
+        <qualite3>Prudence</qualite3>
+        <qualite4>Inspiration</qualite4>
+    </qualites>
+    <formations id="formations">
+        <formation>
+            <etablissement>Institut du Sport</etablissement>
+            <diplome>Certificat d'entraîneur de Musculation</diplome>
+            <date>2014</date>
+        </formation>
+        <formation>
+            <etablissement>Université de Paris </etablissement>
+            <diplome>Licence en Sciences du Sport </diplome>
+            <date>2010 - 2013</date>
+        </formation>
+        <formation>
+            <etablissement>Lycee Victor Hugo </etablissement>
+            <diplome>Baccalaureat scientifique</diplome>
+            <date>2009</date>
+        </formation>
+    </formations>
+
+</cv>

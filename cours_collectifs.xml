@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<cv>
+    <info_perso id="info_perso">
+        <nom>Javel</nom>
+        <prenom>Aude</prenom>
+        <adresse>Monaco</adresse>
+        <telephone>+33 6 12 43 56 87</telephone>
+        <email>aude.javel@omnesport.com</email>
+        <image>photos\activites sportives\cours_collectifs.png</image>
+    </info_perso>
+
+    <experiences id="exp">
+        <poste>
+            <entreprise>Sportify</entreprise>
+            <date>2015-Présent</date>
+            <description>
+            <![CDATA[Animation de cours collectifs tels que l'aérobic, le step, le cardio-boxe, le body combat, le pilates, le yoga
+            Programmation des séances d'entraînement.]]>
+            </description>
+        </poste>
+        <poste>
+            <entreprise>FitActive</entreprise>
+            <date>2011-2014</date>
+            <description>
+            <![CDATA[Animation de cours collectifs de fitness, incluant des séances de cardio, de renforcement musculaire, de stretching et de relaxation.]]>
+            </description>
+        </poste>
+    </experiences>
+
+    <qualites id="qualites">
+        <qualite1>Dynamique</qualite1>
+        <qualite2>Expertise</qualite2>
+        <qualite3>Prudence</qualite3>
+        <qualite4>Investie</qualite4>
+    </qualites>
+    <formations id="formations">
+        <formation>
+            <etablissement>Institut du Sport</etablissement>
+            <diplome>Certificat d'entraîneur de Cours Collectifs de Sport</diplome>
+            <date>2010</date>
+        </formation>
+        <formation>
+            <etablissement>Université de Lyon </etablissement>
+            <diplome>Licence en Sciences du Sport </diplome>
+            <date>2006 - 2009</date>
+        </formation>
+        <formation>
+            <etablissement>Lycee Saint-Exupéry </etablissement>
+            <diplome>Baccalaureat scientifique</diplome>
+            <date>2005</date>
+        </formation>
+    </formations>
+
+</cv>
