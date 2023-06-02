@@ -113,15 +113,28 @@ header{
 #Input_Recherche, #send{
     overflow: hidden;
     width: 45vw;
+    opacity: 0;
     height: 15vh;
     text-align: center;
     font-size: 60px;
     border-radius: 200px;
     background-color: var(--bleu8);
     border: solid 10px var(--bleu5);
+    transition: all 0.2s,;
 }
 
 #send{
     width: 15vh;
     height: 15vh;
+}
+
+#send:hover{
+    scale: 1.1;
+}
+
+#send:active{
+    width: 15vh;
+    height: 15vh;
+    background-color: var(--bleu5);
+    border: solid 10px var(--bleu8);
 }

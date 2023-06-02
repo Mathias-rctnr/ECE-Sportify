@@ -17,6 +17,7 @@
     $Id_Coach = $_SESSION['id_Coach'];
     $Specialite = $_SESSION['specialite'];
 
+
     $MaxID = 0;
 
     $_SESSION['id_Coach'] = $Id_Coach;
@@ -47,7 +48,7 @@
 
         $_SESSION['id'] = $MaxID;
 
-        $requete = "INSERT INTO rdv (id_rdv, id_coach, id_client, date, specialite, adresse1, adresse2, doc_sup, info_sup, heure_rdv, minutes_rdv) VALUES ('$MaxID', '$Id_Coach', '0', '$tempDate', '$Specialite', 'a', 'a', 'a', 'a', '$tempHeure', '$tempMinute')";
+        $requete = "INSERT INTO rdv (id_rdv, id_coach, id_client, date, specialite, adresse1, adresse2, doc_sup, info_sup, heure_rdv, minutes_rdv) VALUES ('$MaxID', '$Id_Coach', '1', '$tempDate', '$Specialite', 'a', 'a', 'a', 'a', '$tempHeure', '$tempMinute')";
         $result = mysqli_query($db_handle, $requete);
 
         echo "<p class='txt_recap'>Bonjour " . $MaxID . ", Nous vous confirmons la réservation de votre cours de " . $Specialite . " avec " . $Id_Coach . " le " . $tempDate . " à " . $tempHeure . "h:" . $tempMinute . $dbl_zero . " !</p>";
