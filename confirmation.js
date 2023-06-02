@@ -23,7 +23,7 @@ document.addEventListener("onload", (e) => {
     .create({
         body: 'Bonjour, nous vous confirmons la réservation de votre cours !',
         from: '+13204464830',
-        to: '+330646763608'
+        to: '+33624526313'
     })
     .then(message => console.log(message.sid))
     .catch(err => console.error(err));

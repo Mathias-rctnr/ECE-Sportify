@@ -38,7 +38,7 @@ header{
     background-color: rgb(40, 40, 40);
 }
 
-/*************************** LIENS DU NAVIGATEUR */
+/********* LIENS DU NAVIGATEUR */
 
 .Titre_Sportify{
     z-index: 3;
@@ -83,7 +83,7 @@ header{
     width: 100%;
 }
 
-/* ************ WRAPPER */
+/* **** WRAPPER */
 
 .Wrapper{
 
@@ -101,10 +101,11 @@ header{
     justify-content: start;
     align-items: center;
     height: auto;
-    border: solid 10px rgb(114, 250, 139);
+    border: solid 10px rgb(128, 114, 250);
 }
 
 .Titre{
+    border:solid 3px saddlebrown;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -124,7 +125,7 @@ h1{
     gap: 30px;
     height: auto;
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -137,7 +138,7 @@ h1{
     width: 15vw;
     height: 30vh;
     overflow: hidden;
-    background-color: rgb(144, 226, 43);
+    background-color: blueviolet;
     border: dodgerblue solid 4px;
     border-radius: 20px;
 }
@@ -154,7 +155,7 @@ h1{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgb(136, 219, 255);
+    background-color: pink;
 }
 
 .NomCoach{

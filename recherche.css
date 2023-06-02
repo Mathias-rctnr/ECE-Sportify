@@ -39,7 +39,7 @@ header{
     background-color: rgb(40, 40, 40);
 }
 
-/*************************** LIENS DU NAVIGATEUR */
+/********* LIENS DU NAVIGATEUR */
 
 .Titre_Sportify{
     z-index: 3;
@@ -84,7 +84,7 @@ header{
     width: 100%;
 }
 
-/* ********** Div Centrale */
+/* **** Div Centrale */
 
 .Wrapper{
     width: 100vw;
@@ -92,6 +92,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    border: #e8359a solid 2px;
 }
 
 .container{
@@ -99,6 +100,7 @@ header{
     height: 100vh;
     display: flex;
     justify-content: center;
+    border: #41e835 solid 2px;
     align-items: center;
 }
 
@@ -107,34 +109,24 @@ header{
     justify-content: space-evenly;
     align-items: center;
     width: 70vw;
+    border: #1965A0 solid 2px;
     height: 30vh;
+    z-index: 40;
 }
 
 #Input_Recherche, #send{
     overflow: hidden;
     width: 45vw;
-    opacity: 0;
     height: 15vh;
     text-align: center;
     font-size: 60px;
     border-radius: 200px;
+    border: #3586e8 solid 2px;
     background-color: var(--bleu8);
     border: solid 10px var(--bleu5);
-    transition: all 0.2s,;
 }
 
 #send{
     width: 15vh;
     height: 15vh;
-}
-
-#send:hover{
-    scale: 1.1;
-}
-
-#send:active{
-    width: 15vh;
-    height: 15vh;
-    background-color: var(--bleu5);
-    border: solid 10px var(--bleu8);
 }
