@@ -29,6 +29,8 @@
                     echo "<p class='Spe'>" . $database['specialite'] . "</p>";
                 echo "</div>";
             echo "</div>";
+            
+            echo $_SESSION['specialite'];
         }
     }
 ?>

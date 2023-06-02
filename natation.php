@@ -14,7 +14,7 @@
         <div class="Titre_Sportify">Sportify</div>
         <div class="Wrapper_Liens">
             <a class="Liens1" id="liens_Nav" href="menu.html">Accueil</a>
-            <a class="Liens2" id="liens_Nav" href="Tout_parcourir.html">Tout Parcourir</a>
+            <a class="Liens2" id="liens_Nav" href="activite.html">Tout Parcourir</a>
             <a class="Liens3" id="liens_Nav" href="">Recherche</a>
             <a class="Liens4" id="liens_Nav" href="">Rendez-Vous</a>
             <a class="Liens5" id="liens_Nav" href="">Votre Compte</a>
@@ -23,36 +23,31 @@
 
     <div class="Content">
         <div id="debut">
-            <img class="Back" src="photos/activites sportives/gym6.png" alt="background_Gym">
+            <img class="Back" src="photos/sport de competition/natationtete.png" alt="background_Gym">
         </div>
         <div id="coach">
             <a href="">
                 <div class="cv_cache">
                     <img class="cv_coach" src="photos/activites sportives/cv.png" alt="cliquez pour voir cv">
-                    <img class="photo_coach" src="photos/activites sportives/musculation.png" alt="coach musclation">
+                    <img class="photo_coach" src="photos/sport de competition/natation.png" alt="coach natation">
             </a>
         </div>
         <div class="text_coach">
             <p class="nom_coach">
-                <span class="highlight">MAXIME DURAND</span><br>
-                <span class="bureau">SPORTIFY PARIS - 13 Place des Vosges, 75004 Paris France</span>
+                <span class="highlight">Jonathan Patterson</span><br>
+                <span class="bureau">SPORTIFY MONACO - 28 Boulvard des Moulins, Monaco</span>
             </p>
 
-            <p class="description_coach">Je m'appelle Maxime Durand et je suis un athlète professionnel <span
-                    class="highlight">passionné</span> par la culture physique.<br><br> Depuis mon plus jeune âge, j'ai
-                toujours été fasciné par les possibilités offertes par le corps
-                humain et les défis qu'il peut relever.<br><br> Au fil des ans, j'ai développé une expertise dans cette
-                magnifique discipline qu'est la musculation.
-                Aujourd'hui, je suis fier de dire que j'ai réussi à faire de ma passion mon métier.<br><br> J'ai décidé
-                de
-                <span class="highlight">partager</span> ma passion avec le plus grand nombre en aidant les gens à
-                <span class="highlight">atteindre leurs propres objectifs</span>
-                grâce à un accompagnement <span class="highlight">personnalisé</span>. Que ce soit pour <span
-                    class="highlight">perdre du poids</span>, <span class="highlight">gagner en masse
-                    musculaire</span>
-                ou <span class="highlight">améliorer leurs performances sportives</span>, je suis là pour les
-                aider à <span class="highlight">réaliser leur potentiel</span>.<br><br>
-                Merci de me permettre de partager ma passion avec vous.
+            <p class="description_coach">
+                Découvrez les joies de l'eau et laissez-vous guider par <span class="highlight">un coach passionné</span> de natation.<br><br> Avec une
+                expertise approfondie dans le domaine, ce coach saura vous accompagner tout au long de votre parcours
+                aquatique. Que vous soyez <span class="highlight">débutant ou nageur confirmé</span>, ce coach vous aidera à perfectionner votre
+                technique de nage, à améliorer votre respiration, votre endurance et votre efficacité dans l'eau.<br><br> Doté
+                d'une pédagogie adaptée et d'un soutien constant, il créera un environnement sûr et stimulant pour vous
+                permettre de <span class="highlight">repousser vos limites</span> et d'atteindre vos objectifs de natation. Rejoignez ses cours de
+                natation et découvrez le plaisir de glisser dans l'eau en toute fluidité, de vous sentir à l'aise et en
+                confiance. <br><br>Ne manquez pas cette occasion de <span class="highlight">vous épanouir</span> dans la natation et de devenir un nageur
+                compétent, aux côtés de ce coach inspirant.
             </p>
         </div>
     </div>
@@ -73,7 +68,7 @@
                     $compteur = 0;
 
                     $_SESSION['id_Coach'] = 1;
-                    $_SESSION['specialite'] = 'musculation';
+                    $_SESSION['specialite'] = 'natation';
 
                     $database = "Projet_Piscine";                           //!                     ATTENTION AU NOM DE LA BDD 
                     $db_handle = mysqli_connect("localhost", "root", "");
@@ -106,7 +101,7 @@
                                     $tempDate = $date[$col];
                                     $tempHeure = $heure[$row];
                                     $tempMinute = $minutes[$row];
-                                    $tempSpe = "musculation";
+                                    $tempSpe = 'natation';
                                     $requete = "SELECT * FROM rdv WHERE date = '$tempDate' AND heure_rdv = '$tempHeure' AND minutes_rdv = '$tempMinute' AND specialite = '$tempSpe'";
                                     $result = mysqli_query($db_handle, $requete);
 

@@ -23,6 +23,8 @@
                     echo "<p class='SpeCoach'>" . $database['specialite'] . "</p>";
                 echo "</div>";
             echo "</div>";
+
+            echo $_SESSION['specialite'];
         }
     }
 ?>

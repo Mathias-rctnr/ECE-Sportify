@@ -23,37 +23,31 @@
 
     <div class="Content">
         <div id="debut">
-            <img class="Back" src="photos/activites sportives/gym6.png" alt="background_Gym">
+            <img class="Back" src="photos/sport de competition/rugbytete.png" alt="background_Gym">
         </div>
         <div id="coach">
             <a href="">
                 <div class="cv_cache">
                     <img class="cv_coach" src="photos/activites sportives/cv.png" alt="cliquez pour voir cv">
-                    <img class="photo_coach" src="photos/activites sportives/musculation.png" alt="coach musclation">
+                    <img class="photo_coach" src="photos/sport de competition/rugby.png" alt="coach rugby">
             </a>
         </div>
         <div class="text_coach">
             <p class="nom_coach">
-                <span class="highlight">MAXIME DURAND</span><br>
+                <span class="highlight">AARON THOMAS</span><br>
                 <span class="bureau">SPORTIFY PARIS - 13 Place des Vosges, 75004 Paris France</span>
             </p>
 
-            <p class="description_coach">Je m'appelle Maxime Durand et je suis un athlète professionnel <span
-                    class="highlight">passionné</span> par la culture physique.<br><br> Depuis mon plus jeune âge, j'ai
-                toujours été fasciné par les possibilités offertes par le corps
-                humain et les défis qu'il peut relever.<br><br> Au fil des ans, j'ai développé une expertise dans cette
-                magnifique discipline qu'est la musculation.
-                Aujourd'hui, je suis fier de dire que j'ai réussi à faire de ma passion mon métier.<br><br> J'ai décidé
-                de
-                <span class="highlight">partager</span> ma passion avec le plus grand nombre en aidant les gens à
-                <span class="highlight">atteindre leurs propres objectifs</span>
-                grâce à un accompagnement <span class="highlight">personnalisé</span>. Que ce soit pour <span
-                    class="highlight">perdre du poids</span>, <span class="highlight">gagner en masse
-                    musculaire</span>
-                ou <span class="highlight">améliorer leurs performances sportives</span>, je suis là pour les
-                aider à <span class="highlight">réaliser leur potentiel</span>.<br><br>
-                Merci de me permettre de partager ma passion avec vous.
-            </p>
+            <p class="description_coach">
+                Préparez-vous à vivre <span class="highlight">une expérience inoubliable</span> dans le monde du rugby avec un coach passionné qui vous
+                emmènera vers de nouveaux sommets.C Ce coach de rugby possède une connaissance approfondie du jeu, une
+                énergie contagieuse et un véritable dévouement pour vous aider à atteindre vos objectifs.<br><br> Avec lui, vous
+                découvrirez les fondamentaux du rugby, les techniques de plaquage, les passes précises et les stratégies
+                de jeu gagnantes. Son <span class="highlight">approche pédagogique personnalisée</span> vous permettra de développer vos compétences
+                techniques, d'améliorer votre condition physique et de renforcer votre esprit d'équipe.<br><br>
+                Son enthousiasme et son soutien constant <span class="highlight">feront de vous un joueur plus fort, plus compétent et plus
+                passionné</span>. Rejoignez ses cours de rugby et préparez-vous à vivre des moments intenses, à forger des
+                liens solides avec vos coéquipiers et à créer des souvenirs durables.
         </div>
     </div>
     <div id="dispo">
@@ -62,6 +56,7 @@
         </div>
         <div id="rdv">
             <div class="container_edt">
+
                 <div class="edt">
                 <?php
                     session_start();
@@ -72,8 +67,8 @@
 
                     $compteur = 0;
 
-                    $_SESSION['id_Coach'] = 1;
-                    $_SESSION['specialite'] = 'musculation';
+                    $_SESSION['id_Coach'] = 2;
+                    $_SESSION['specialite'] = 'rugby';
 
                     $database = "Projet_Piscine";                           //!                     ATTENTION AU NOM DE LA BDD 
                     $db_handle = mysqli_connect("localhost", "root", "");
@@ -106,7 +101,7 @@
                                     $tempDate = $date[$col];
                                     $tempHeure = $heure[$row];
                                     $tempMinute = $minutes[$row];
-                                    $tempSpe = "musculation";
+                                    $tempSpe = 'rugby';
                                     $requete = "SELECT * FROM rdv WHERE date = '$tempDate' AND heure_rdv = '$tempHeure' AND minutes_rdv = '$tempMinute' AND specialite = '$tempSpe'";
                                     $result = mysqli_query($db_handle, $requete);
 
@@ -144,7 +139,7 @@
             <button type="submit" class="card-info">
                 <p class="title">VALIDER</p>
             </button>
-            </div>
+        </div>
 
         <div class="card">
             <div class="card-info">
@@ -153,6 +148,10 @@
             </div>
             </div>
         </form>
+        </div>
+    </div>
+    </div>
+
     <script src="musculation.js"></script>
 </body>
 
