@@ -5,13 +5,13 @@
 }
 
 :root{
-    --bleu1: #003A70;
+    --bleu1: rgb(0, 58, 112);
     --bleu2: #0F558F;
     --bleu3: #1965A0;
     --bleu4: #2476B1;
     --bleu5: #2D82BD;
     --bleu6: #4893C6;
-    --bleu7: #64A4CE;
+    --bleu7: rgb(100, 164, 206);
     --bleu8: #8DBEDC;
     --bleu9: #B7D7EA;
     --bleu10: #E2EFF6;
@@ -288,7 +288,7 @@ header{
     translate: 500px;
 }
 
-.Offres1, .Offres2, .Offres3{
+.Offres1{
     display: flex;
     opacity: 0;
     flex-direction: column;
@@ -305,15 +305,95 @@ header{
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(141, 190, 220, 0.31);
+    transition: 0.5s ease-in-out;
+}
+ .Offres2{
+    display: flex;
+    opacity: 0;
+    flex-direction: column;
+    height: 60vh;
+    width: 25vw;
+    padding: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+    background: rgba(142, 142, 142, 0.45);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(100, 164, 206, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(141, 190, 220, 0.31);
+    transition: 0.5s ease-in-out;
+}
+
+.Offres3{
+    display: flex;
+    opacity: 0;
+    flex-direction: column;
+    height: 60vh;
+    width: 25vw;
+    padding: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+    background: rgb(0, 58, 112,0.45);
+    border-radius: 16px;
+    box-shadow: 0 0px 30px rgba(255,215,0,0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(141, 190, 220, 0.31);
+    transition: 0.5s ease-in-out;
+}
+
+.Offres1:hover{
+    background: rgba(142, 142, 142, 0.55);
+    height: 61vh;
+    width: 25.5vw;
+}
+
+.Offres2:hover{
+    height: 61vh;
+    background: rgba(142, 142, 142, 0.55);
+    width: 25.5vw;
+    box-shadow: 0 4px 30px rgba(100, 164, 206, 1);
+}
+
+.Offres3:hover{
+    height: 61vh;
+    width: 25.5vw;
+    background: rgb(0, 58, 112,0.65);
+    box-shadow: 0 0px 30px rgba(255,215,0,1);
+}
+
+.Offres3:hover button{
+    background-color: rgb(168, 143, 0);
+    box-shadow: 0 0px 30px rgba(255,215,0,0.8);
+}
+
+.spanspe{
+    color: rgb(168, 143, 0);
+    font-weight: bold;
 }
 
 .Offres1 p, .Offres2 p, .Offres3 p{
-    font-size: 30px;
+    font-size: 27px;
     margin-bottom: 4vh;
     color: var(--bleu8);
 }
 
-.Offres1 ul li, .Offres2 ul li, .Offres3 ul li{
+.Offres1 ul li{
+    font-size: 18px;
+    color: var(--bleu10);
+}
+
+.Offres2 ul li{
+    font-size: 18px;
+    color: var(--bleu10);
+}
+
+.Offres3 ul li{
     font-size: 18px;
     color: var(--bleu10);
 }
@@ -332,13 +412,35 @@ header{
     width: 150px;
     height: 40px;
     border-radius: 10px;
-    border: solid 3px beige;
     font-size: 15px;
-    color: yellow;
+    transition: .3s ease-in-out;
 }
 
-.Carroussel_Offres li span{
+.Offres1 button{
+    border: solid 1px rgb(25, 25, 25);
+    color: rgb(25, 25, 25);
+    background-color: white;
+}
+
+.Offres2 button{
+    border: solid 1px rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    background-color: var(--bleu7);
+}
+
+.Offres3 button{
+    border: solid 1px rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    background-color: var(--bleu1);
+}
+
+.Carroussel_Offres .Offres1 li span, .Carroussel_Offres .Offres2 li span{
     color: var(--bleu6);
+    font-weight: bold;
+}
+
+.Carroussel_Offres .Offres3 span{
+    color: rgb(168, 143, 0);
     font-weight: bold;
 }
 
@@ -420,6 +522,7 @@ header{
     transition: all 0.3s;
 }
 
+
 /************* FOOTER  */
 
 footer{
@@ -479,6 +582,10 @@ footer p, footer li{
     color: var(--bleu10);
     font-size: 30px;
     transition: color 0.3s ease-in-out, scale 0.4s;
+}
+
+span{
+    font-weight: 500;
 }
 
 #insta:hover{

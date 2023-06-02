@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Libre+Franklin:ital,wght@0,100;0,500;1,200&display=swap');
+
+:root{
+    --bleu1: #003A70;
+    --bleu2: #0F558F;
+    --bleu3: #1965A0;
+    --bleu4: #2476B1;
+    --bleu5: #2D82BD;
+    --bleu6: #4893C6;
+    --bleu7: #64A4CE;
+    --bleu8: #8DBEDC;
+    --bleu9: #B7D7EA;
+    --bleu10: #E2EFF6;
+    --bleu11 : rgba(0,23,55, 0.7);
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    caret-color: transparent;
+}
+
+body{
+    height: auto;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+header{
+    z-index: 30;
+    position: fixed;
+    padding: 10px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(40, 40, 40);
+}
+
+/*************************** LIENS DU NAVIGATEUR */
+
+.Titre_Sportify{
+    z-index: 3;
+    font-size: 40px;
+    color: var(--bleu9);
+    font-family: Moder;
+}
+
+.Wrapper_Liens{
+    z-index: 3;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 800px;
+}
+
+#liens_Nav {
+    z-index: 3;
+    position: relative;
+    text-decoration: none;
+    color: var(--bleu8);
+    transition: color 0.3s ease-in-out;
+}
+
+#liens_Nav:hover{
+    color: var(--bleu10);
+    cursor: pointer;
+}
+
+#liens_Nav::after {
+    content: " ";
+    position: absolute;
+    left: 0px;
+    bottom: -5px;
+    width: 0;
+    height: 1px;
+    background-color: var(--bleu10);
+    transition: width 0.3s ease-in-out;
+}
+
+#liens_Nav:hover::after {
+    width: 100%;
+}
+
+/************************** CONTENU PAGE */
+.wrapper_spa, .wrapper{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: lighter;
+    font-size: x-large;
+}
+.wrapper_img{
+    display: flex;
+    width: 100%;
+    height: 300px;
+    background-image: url("photos/salle/restaurant4.jpg");
+    background-size: cover;
+    background-position: center;
+}
+.wrapper_img_spa{
+    display: flex;
+    width: 100%;
+    height: 300px;
+    background-image: url("photos/salle/spa.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.wrapper_texte{
+    width: 80%;
+}
+.bienvenue{
+    text-align: center;
+    width: 100%;
+    padding-top: 25px;
+}
+
+.cadre{
+    width: 100%;
+}
+
+.sous_titre{
+    padding-top: 50px;
+    padding-bottom: 10px;
+    color: #c27450;
+    font-size:xx-large;
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: bolder;
+}
+
+.wrapper_spa .sous_titre{
+    padding-top: 50px;
+    padding-bottom: 10px;
+    color: var(--bleu7);
+    font-size:xx-large;
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: bolder;
+}
+
+#first{
+    font-size: 60px;
+    text-align:center;
+}
+
+.text, ul{
+    text-align: justify;
+    color: #E2EFF6;
+}
+
+.bloc-1{
+    
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.sous_bloc1{
+    width: 50%;
+}
+.img_bloc1{
+    padding-top: 50px;
+}
+.bloc-2{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sous_bloc2{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.img_bloc2{
+    padding-top: 50px;
+}
+
+.venez{
+    padding-top: 20px;
+    width: 100%;
+
+}
+.sous_bloc2 ul{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+#avert{
+    color: rgba(139, 139, 139, 0.822);
+    font-size: 20px;
+    font-weight: 10px;
+    padding-bottom: 50px;
+}
+
+span {
+    font-weight: 500;
+}
