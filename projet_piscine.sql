@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 01 juin 2023 à 21:15
+-- Généré le : ven. 02 juin 2023 à 17:22
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -106,7 +106,7 @@ INSERT INTO `client` (`id_client`, `nom`, `prenom`, `adresse1`, `adresse2`, `vil
 
 DROP TABLE IF EXISTS `personnel`;
 CREATE TABLE IF NOT EXISTS `personnel` (
-  `id_coach` int NOT NULL,
+  `id_coach` varchar(255) NOT NULL,
   `nom` varchar(100) NOT NULL,
   `prenom` varchar(100) NOT NULL,
   `photo` varchar(255) NOT NULL,
@@ -122,7 +122,17 @@ CREATE TABLE IF NOT EXISTS `personnel` (
 --
 
 INSERT INTO `personnel` (`id_coach`, `nom`, `prenom`, `photo`, `specialite`, `video`, `cv`, `mail`, `mdp`) VALUES
-(1, 'testnom', 'testprenom', '', '', '', '', 'coach@coach', 'coach');
+('A1', 'Seven', 'Martin', 'photos\\activites sportives\\biking.png', 'Biking', '', 'cvbiking.html', 'martin.seven@omnesport.com\r\n', 'martinseven'),
+('A2', 'Paprika', 'Stephen', 'photos\\sport de competition\\basketball.png', 'Basketball', '', 'cvbasket.html', 'stephen.paprika@omnesport.com', 'stephenpaprika'),
+('A3', 'Gallego', 'Daniel', 'photos\\activites sportives\\cardio_training.png', 'Cardio Training', '', 'cvcardio.html', 'daniel.gallego@omnesport.com', 'danielgallego'),
+('A4', 'Javel', 'Aude', 'photos\\activites sportives\\cours_collectifs.png\r\n', 'Cours collectifs', '', 'cvcoco.html', 'aude.javel@omnesport.com', 'audejavel'),
+('A5', 'Lambert', 'Marie', 'photos\\sport de competition\\plongeon.png', 'Plongeon', '', 'cvplongeon.html', 'marie.lambert@omnesport.com', 'marielambert'),
+('A6', 'Dubois', 'Anne', 'photos\\activites sportives\\fitness.png\r\n', 'Fitness', '', 'cvfitness.html', 'anne.dubois@omnesport.com', 'annedubois'),
+('A7', 'Martin', 'Pierre', 'photos\\sport de competition\\football.png', 'Football', '', 'cvfoot.html', 'pierre.martin@omnesport.com', 'pierremartin'),
+('A8', 'Durand', 'Maxime', 'photos\\activites sportives\\musculation.png\r\n', 'Musculation', '', 'cvmuscu.html', 'maxime.durand@omnesport.com', 'maximedurand'),
+('A9', 'Patterson', 'Jonathan', 'photos\\sport de competition\\natation.png', 'Natation', '', 'cvnatation.html', 'jonathan.patterson@omnesport.com', 'jonathanpatterson'),
+('A10', 'Thomas', 'Aaron', 'photos\\sport de competition\\rugby.png', 'Rugby', '', 'cvrugby.html', 'aaron.thomas@omnesport.com', 'aaronthomas'),
+('A11', 'Leroy', 'Alexandre', 'photos\\sport de competition\\tennis.png\r\n', 'Tennis', '', 'cvtennis.html', 'alexandre.leroy@omnesport.com', 'alexandreleroy');
 
 -- --------------------------------------------------------
 
