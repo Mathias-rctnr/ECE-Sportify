@@ -403,7 +403,7 @@ header{
     flex-direction: column;
     justify-content: space-evenly;
     height: 35vh;
-    align-items: center;
+    text-align: left;
     color: var(--bleu10);
 }
 
