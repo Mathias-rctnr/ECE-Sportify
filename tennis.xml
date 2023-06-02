@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<cv>
+    <info_perso id="info_perso">
+        <nom>Leroy</nom>
+        <prenom>Alexandre</prenom>
+        <adresse>Paris, 75001</adresse>
+        <telephone>+33 6 12 43 65 79</telephone>
+        <email>alexandre.leroy@omnesport.com</email>
+        <image>photos\sport de competition\tennis.png</image>
+    </info_perso>
+
+    <experiences id="exp">
+        <poste>
+            <entreprise>Sportify</entreprise>
+            <date>2012-Présent</date>
+            <description>
+            <![CDATA[Encadrement des étudiants lors des compétitions et participation active à leur développement mental et physique.
+            Coordination avec d'autres professeurs de tennis pour des séances d'entraînement collectif et des événements spéciaux.
+            Gestion des inscriptions des étudiants, des horaires et des réservations des terrains.]]>
+            </description>
+        </poste>
+        <poste>
+            <entreprise>ActivLife Tennis</entreprise>
+            <date>2010-2012</date>
+            <description>
+            <![CDATA[Enseignement du tennis à des joueurs de tous niveaux, du débutant au compétiteur avancé.
+            Organisation de leçons individuelles et collectives pour améliorer les compétences techniques, tactiques et physiques des joueurs.
+            Développement et suivi de programmes d'entraînement personnalisés en fonction des objectifs individuels des joueurs.]]>
+            </description>
+        </poste>
+    </experiences>
+
+    <qualites id="qualites">
+        <qualite1>Dynamique</qualite1>
+        <qualite2>Ponctuel</qualite2>
+        <qualite3>Bonne communication</qualite3>
+        <qualite4>Patient</qualite4>
+    </qualites>
+    <formations id="formations">
+        <formation>
+            <etablissement>Fédération Francaise de Tennis</etablissement>
+            <diplome>Diplôme d'entraîneur de Tennis</diplome>
+            <date>2010</date>
+        </formation>
+        <formation>
+            <etablissement>Université de Paris </etablissement>
+            <diplome>Licence en Sciences du Sport </diplome>
+            <date>2006 - 2009</date>
+        </formation>
+        <formation>
+            <etablissement>Lycee Victor Hugo </etablissement>
+            <diplome>Baccalaureat scientifique</diplome>
+            <date>2005</date>
+        </formation>
+    </formations>
+
+</cv>

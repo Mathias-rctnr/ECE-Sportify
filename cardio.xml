@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<cv>
+    <info_perso id="info_perso">
+        <nom>Gallego</nom>
+        <prenom>Daniel</prenom>
+        <adresse>Monaco</adresse>
+        <telephone>+33 6 54 32 10 98</telephone>
+        <email>daniel.gallego@omnesport.com</email>
+        <image>photos\activites sportives\cardio_training.png</image>
+    </info_perso>
+
+    <experiences id="exp">
+        <poste>
+            <entreprise>Sportify</entreprise>
+            <date>2015-Présent</date>
+            <description>
+            <![CDATA[Conception et animation de cours de cardio training dynamiques et motivants
+            Utilisation d'une variété d'exercices cardiovasculaires
+            Encadrement des participants, en les motivant à atteindre leurs objectifs ]]>
+            </description>
+        </poste>
+        <poste>
+            <entreprise>ActivLife Gym</entreprise>
+            <date>2011-2014</date>
+            <description>
+            <![CDATA[Enseignement de cours de cardio training variés, y compris des séances de cycling, de danse fitness et de kickboxing cardio.
+            Programmation des séances d'entraînement
+            Encouragement des participants à s'engager dans des exercices cardiovasculaires réguliers pour améliorer leur endurance et leur santé globale.]]>
+            </description>
+        </poste>
+    </experiences>
+
+    <qualites id="qualites">
+        <qualite1>Dynamique</qualite1>
+        <qualite2>Expertise</qualite2>
+        <qualite3>Prudence</qualite3>
+        <qualite4>Plannification</qualite4>
+    </qualites>
+    <formations id="formations">
+        <formation>
+            <etablissement>Institut du Sport</etablissement>
+            <diplome>Certificat d'entraîneur de Cardio Training</diplome>
+            <date>2010</date>
+        </formation>
+        <formation>
+            <etablissement>Université de Marseille </etablissement>
+            <diplome>Licence en Sciences et Techniques des Activites Physiques et Sportives </diplome>
+            <date>2006 - 2009</date>
+        </formation>
+        <formation>
+            <etablissement>Lycee Marcel Pagnol </etablissement>
+            <diplome>Baccalaureat scientifique</diplome>
+            <date>2005</date>
+        </formation>
+    </formations>
+
+</cv>
