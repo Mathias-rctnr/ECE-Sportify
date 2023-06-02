@@ -1,4 +1,9 @@
 <?php
+session_start();
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 // Définition du nom de la base de données
 $database = "Projet_Piscine";
@@ -11,6 +16,8 @@ $db_found = mysqli_select_db($db_handle, $database);
 $mail = isset($_POST["mail"]) ? $_POST["mail"] : "";
 $mdp = isset($_POST["mdp"]) ? $_POST["mdp"] : "";
 
+$login_id_recup = "";
+
 if ($db_found) {
 
   $sql = "SELECT * FROM client WHERE mail = '$mail' AND mdp = '$mdp'";
@@ -18,8 +25,9 @@ if ($db_found) {
 
   if ($result->num_rows == 1) {
     $data = mysqli_fetch_assoc($result);
-    echo
-      "<p>Bonjour " . $data['nom'] . " " . $data['prenom'] . "(client)</p>";
+    echo "<p>Prenom : " . $data["prenom"] . "<p>";
+    $login_id_recup = $data["id_client"];
+    echo "id " . $login_id_recup;
   } 
   
   else {
@@ -27,8 +35,7 @@ if ($db_found) {
     $result_coach = mysqli_query($db_handle, $sql_coach);
     if ($result_coach->num_rows == 1) {
       $data = mysqli_fetch_assoc($result_coach);
-      echo
-        "<p>Bonjour " . $data['nom'] . " " . $data['prenom'] . "(coach)</p>";
+      $login_id_recup = $data["id_coach"];
     } 
     
     else {
@@ -36,8 +43,8 @@ if ($db_found) {
       $result_admin = mysqli_query($db_handle, $sql_admin);
       if ($result_admin->num_rows == 1) {
         $data = mysqli_fetch_assoc($result_admin);
-        echo
-          "<p>Bonjour " . $data['nom'] . " " . $data['prenom'] . "(admin)</p>";
+        $login_id_recup = $data["id"];
+
       } 
       
       else {
@@ -49,5 +56,12 @@ if ($db_found) {
 } else { // SI ON NE TROUVE PAS LA DATABASE
   echo 'probleme de base';
 }
+
+$_SESSION["login_id"] = $login_id_recup;
+echo "id " . $login_id_recup;
+echo "id " . $_SESSION["login_id"];
+
+header("Location: moncompte.php");
+exit;
 
 ?>
