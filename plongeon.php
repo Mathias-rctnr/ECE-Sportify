@@ -118,7 +118,7 @@
             <img class="Back" src="photos/sport de competition/plongeontete.png" alt="background_Gym">
         </div>
         <div id="coach">
-            <a href="">
+            <a href="cvplongeon.html">
                 <div class="cv_cache">
                     <img class="cv_coach" src="photos/activites sportives/cv.png" alt="cliquez pour voir cv">
                     <img class="photo_coach" src="photos/sport de competition/plongeon.png" alt="coach plongeon">

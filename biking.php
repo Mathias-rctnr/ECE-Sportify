@@ -119,7 +119,7 @@
             <img class="Back" src="photos/activites sportives/bikingtete.png" alt="background_Gym">
         </div>
         <div id="coach">
-            <a href="">
+            <a href="cvbiking.html">
                 <div class="cv_cache">
                     <img class="cv_coach" src="photos/activites sportives/cv.png" alt="cliquez pour voir cv">
                     <img class="photo_coach" src="photos/activites sportives/biking.png" alt="coach musclation">
