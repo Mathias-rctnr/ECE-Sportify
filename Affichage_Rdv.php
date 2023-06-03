@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <title>Rendez-vous</title>
         <link rel="stylesheet" href="Affichage_Rdv.css">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     </head>
     <body>
         <header>
@@ -22,18 +23,20 @@
             <div class="ContainerResult">
                 <div class="Titre">
                     <h1>Vos rendez-vous</h1>
-                    <div id="Input_cases">
-                        <form action="annulation.php" method="post">
-                            <p>ID_RDV: </p>
-                            <input id="Inp_ID_Rdv" name="Inp_Id_rdv">
-                            <button type="submit">Annuler</button>
-                        </form>
-                    </div>
                 </div>
                 <div class="Resultats">
                     <?php include("BDD_Rdv.php"); ?>
                 </div>
             </div>
+        </div>
+        <div id="Input_cases">
+            <form action="annulation.php" method="post">
+                <div class="Input">
+                    <p>ID_RDV: </p>
+                    <input id="Inp_ID_Rdv" name="Inp_Id_rdv" required>
+                    <button type="submit"><i class="fa fa-trash"></i></button>
+                </div>
+            </form>
         </div>
         <script src="BDD_Rdv.js"></script>
     </body>

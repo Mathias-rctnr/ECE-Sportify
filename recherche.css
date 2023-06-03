@@ -118,7 +118,6 @@ header{
     text-align: center;
     font-size: 60px;
     border-radius: 200px;
-    border: #3586e8 solid 2px;
     background-color: var(--bleu8);
     border: solid 10px var(--bleu5);
 }

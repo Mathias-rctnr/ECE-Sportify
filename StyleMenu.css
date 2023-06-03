@@ -454,7 +454,7 @@ header{
     align-items: center;
     background-color: rgb(25, 25, 25);
     width: 100vw;
-    height: 80vh;
+    height: 100vh;
     overflow: hidden;   /*? Cache ce qui depasse de la div */
 }
 
@@ -474,7 +474,7 @@ header{
     display: flex;
     justify-content:start;
     align-items: center;
-    height: 50vh;
+    height: 70vh;
     width: 70vw;
     overflow: hidden;
 }

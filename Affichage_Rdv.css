@@ -167,3 +167,47 @@ h1{
     font-size: 15px;
     color: var(--bleu7);
 }
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    margin-top: 100px;
+}
+
+.Input{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 40vw;
+}
+
+.Input button{
+    width: 8vh;
+    height: 8vh;
+    border-radius: 50%;
+    background-color: var(--bleu8);
+    border: solid 10px var(--bleu5);
+}
+
+.Input p{
+    color: var(--bleu7);
+    font-size: 50px;
+}
+
+Input{
+    overflow: hidden;
+    width: 20vw;
+    height: 8vh;
+    text-align: center;
+    font-size: 60px;
+    border-radius: 200px;
+    background-color: var(--bleu8);
+    border: solid 10px var(--bleu5);
+}
+
+button i{
+    scale: 3.5;
+}

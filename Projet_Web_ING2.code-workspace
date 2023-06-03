@@ -2,10 +2,9 @@
 	"folders": [
 		{
 			"path": "."
-		},
-		{
-			"path": "../../../../../Users/mathiasrechsteiner/Desktop/Cours ING 2/Web Dynamique/Exercices/TP4"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Paiement"
+	}
 }

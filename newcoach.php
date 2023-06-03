@@ -17,7 +17,7 @@
     $database = "Projet_Piscine";
 
     // Connexion à la base de données MySQL
-    $db_handle = mysqli_connect("127.0.0.1:3306", "root", "");
+    $db_handle = mysqli_connect("localhost", "root", "");
     $db_found = mysqli_select_db($db_handle, $database);
 
     $nom = $_POST['nom'];

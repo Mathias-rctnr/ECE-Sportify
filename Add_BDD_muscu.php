@@ -8,6 +8,8 @@
     $db_handle = mysqli_connect("localhost", "root", "");
     $db_found = mysqli_select_db($db_handle, $database);
 
+    $ID_Login = $_SESSION["login_id"];
+
     $ColRecup = isset($_POST["Num_Col"])? $_POST["Num_Col"] : "";
     $RowRecup = isset($_POST["Num_Lig"])? $_POST["Num_Lig"] : "";
 
@@ -23,8 +25,6 @@
     $_SESSION['id_Coach'] = $Id_Coach;
     $_SESSION['specialite'] = $Specialite;
 
-    $ID_Login = $_SESSION["login_id"];
-
     $date = array("Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi");
     $heure = array(9, 9, 10, 11, 12, 14, 14, 15, 16, 17, 17);
     $minutes = array(00, 45, 30, 15, 00, 00, 45, 30, 15, 00, 45);
@@ -39,7 +39,7 @@
                 $dbl_zero = "0";
             }
 
-        $requeteClient= "SELECT * FROM client WHERE client='$ID_Login'";
+        $requeteClient= "SELECT * FROM client WHERE id_client='$ID_Login'";
         $resultClient = mysqli_query($db_handle, $requeteClient);
 
         while($database = mysqli_fetch_assoc($resultClient)){
