@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;1,200&family=Maven+Pro&display=swap');
+
+:root {
+    --bleu1: #003A70;
+    --bleu2: #0F558F;
+    --bleu3: #1965A0;
+    --bleu4: #2476B1;
+    --bleu5: #2D82BD;
+    --bleu6: #4893C6;
+    --bleu7: #64A4CE;
+    --bleu8: #8DBEDC;
+    --bleu9: #B7D7EA;
+    --bleu10: #E2EFF6;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    height: auto;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bleu1);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+header {
+    z-index: 30;
+    position: fixed;
+    padding: 10px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(40, 40, 40);
+}
+
+/*****Total*/
+
+#total {
+  height: auto;
+}
+
+/*************************** LIENS DU NAVIGATEUR */
+
+.Titre_Sportify {
+  z-index: 3;
+  font-size: 40px;
+  color: var(--bleu9);
+  font-family: Moder;
+}
+
+.Wrapper_Liens {
+  z-index: 3;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 800px;
+}
+
+#liens_Nav {
+  z-index: 3;
+  position: relative;
+  text-decoration: none;
+  color: var(--bleu8);
+  transition: color 0.3s ease-in-out;
+}
+
+#liens_Nav:hover {
+  color: var(--bleu10);
+  cursor: pointer;
+}
+
+#liens_Nav::after {
+  content: " ";
+  position: absolute;
+  left: 0px;
+  bottom: -5px;
+  width: 0;
+  height: 1px;
+  background-color: var(--bleu10);
+  transition: width 0.3s ease-in-out;
+}
+
+#liens_Nav:hover::after {
+  width: 100%;
+}
+
+.Progression {
+  background-color: #839c49;
+  height: 3px;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 12;
+}
+
+/*Contenu*/
+
+#content {
+    /*display: flex;
+    align-items: end;
+    justify-content: center;*/
+    height: 80%;
+    width: 100vw;
+    margin-left: 140px;
+}
+
+/*************************** IMAGE DE FOND */
+
+#video-background {
+  position: absolute;
+  width: 100vw;
+  height: auto;
+}
+
+.calque {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.65);
+  box-shadow: inset 0 0 1000px rgba(0, 0, 0, 0.5);
+  width: 120vw;
+  height: 105vh;
+}
+
+/************Titre*/
+
+.Libere {
+  color: var(--bleu7);
+  font-size: 70px;
+}
+
+#titre{
+  align-content: center;
+  margin-bottom: 30px;
+}
+
+/***********************Chatroom*/
+
+.chat {
+  width: 1000px;
+  height: 500px;
+  border: 1px solid ;
+  overflow-y: auto;
+  border-radius: ;
+}
+
+#chatroom{
+  margin-left: 10px;
+  background-color: black;
+}
+
+#texte_droite{  
+  margin-left: 490px;
+  justify-content: right;
+  align-items: end;
+  background: var(--bleu10);
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--bleu10);
+}
+
+#texte_gauche{
+  justify-content: left;
+  align-items: end;
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: var(--bleu10);
+  border: 1px solid var(--bleu10);
+}
+
+#texte_gauche, #texte_droite{
+  margin-bottom: 7px;
+  width: 485px;
+  height: auto;
+}
+
+#contenu_message{
+  margin-left: 5px;
+  color: var(--bleu1);
+  font-size: larger;
+}
+
+#vous {
+  font-size: 9px;
+  color: var(--bleu3);
+  margin-left: 455px;
+}
+
+#coach{
+  font-size: 9px;
+  color: var(--bleu7);
+  margin-left: 7px;
+}
+
+/*******Envoie du messgage*/
+
+.ecrire {
+  margin-top: 10px;
+  position: relative;
+  bottom: 0;
+  justify-content: right;
+}
+
+#ecrire{
+  margin-left: 500px;
+}
+
+#contenu_envoi{
+  color: var(--bleu1);
+  font-size: 20px;
+  background-color: var(--bleu10);
+  margin-right: 30px;
+  margin-top: 15px;
+}
+
+#bouton_envoi {
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  align-content: center;
+  align-items: center;
+  border: solid 3px var(--bleu2);
+  background: var(--bleu4);
+  color: var(--bleu10);
+}
