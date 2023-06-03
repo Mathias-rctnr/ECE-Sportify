@@ -15,9 +15,9 @@
         <div class="Wrapper_Liens">
             <a class="Liens1" id="liens_Nav" href="menu.html">Accueil</a>
             <a class="Liens2" id="liens_Nav" href="Tout_parcourir.html">Tout Parcourir</a>
-            <a class="Liens3" id="liens_Nav" href="">Recherche</a>
+            <a class="Liens3" id="liens_Nav" href="recherche.html">Recherche</a>
             <a class="Liens4" id="liens_Nav" href="">Rendez-Vous</a>
-            <a class="Liens5" id="liens_Nav" href="">Votre Compte</a>
+            <a class="Liens5" id="liens_Nav" href="moncompte.php">Votre Compte</a>
         </div>
     </header>
     <div class="wrapper">
@@ -46,7 +46,7 @@
             if ($db_found) {
                 $sql = "SELECT * FROM client WHERE id_client = '$id'";
                 $result = mysqli_query($db_handle, $sql);
-
+                // AFFICHAGE DE LA PAGE MON COMPTE SELON LE TYPE DE COMPTE
                 if ($result->num_rows == 1) {
 
                     $data = mysqli_fetch_assoc($result);
@@ -113,11 +113,12 @@
                     echo "<p>N° Carte : " . $numCarteMasque . "</p>";
                     echo "<p>Date d'expiration : " . $data["date_exp"] . "</p>";
                     echo "<p>CCV : " . $data["ccv"] . "</p>";
+                    echo "<p>Abonnement : " . $data["abonnement"] . "</p>";
                     echo "</div>";
                     echo "</div>";
                     echo "</div>";
 
-                } else {
+                } else { // COMPTE POUR LES COACHS
                     $sql = "SELECT * FROM personnel WHERE id_coach = '$id'";
                     $result_coach = mysqli_query($db_handle, $sql);
                     if ($result_coach->num_rows == 1) {
@@ -141,6 +142,8 @@
                         echo "<p>Mail : " . $data["mail"] . "</p>";
                         echo "<p>Mot de passe : " . $mdpMasque . "</p>";
                         echo "<p>Spécialité : " . $data["specialite"] . "</p>";
+                        echo "<p>Lieu d'activité : " . $data["salle"] . "</p>";
+                        echo "</div>";
                         echo "</div>";
                         echo "</div>";
                         echo "<div class = 'contour_info_1' >";
@@ -154,7 +157,7 @@
                         echo "</div>";
                         echo "</div>";
                         echo "</div>";
-                    } else {
+                    } else { // COMPTE POUR LES ADMINS
                         $sql = "SELECT * FROM admin WHERE id = '$id'";
                         $result_admin = mysqli_query($db_handle, $sql);
                         if ($result_admin->num_rows == 1) {
@@ -180,9 +183,12 @@
                             echo "</div>";
                             echo "</div>";
                             echo "</div>";
+                            // FORM POUR AJOUTER DU PERSONNEL
                             echo "<p class = 'ajtcoach'>Ajout de Personnel</p>
+
+                            
                         <div class = 'contour_form' >
-                        <form  action = 'newcoach.php method ='post'>
+                        <form  action = 'newcoach.php' method ='post'>
                         <div class = 'contour_form_2' >
 
                         <div  class='user-box'>
@@ -206,6 +212,12 @@
                         </div>
                         <div class = 'contour_form_2' >
                         <div class='user-box'>
+                        <label>Salle</label>
+                        <select id = 'salle' name='salle'>
+                        <option value='Monaco'>Monaco</option>
+                        <option value='Paris'>Paris</option>
+                        <option value='St-Tropez'>St-Tropez</option>
+                        </select>
                         <label>Specialité</label>
                         <select id = 'specialite' name='specialite'>
                         <option value='Biking'>Biking</option>
@@ -224,16 +236,84 @@
                         </div>
                         <div class='user-box_spe'>
                         <label>CV(.xml)</label>
-                        <input  id='cv' type='file' name='cv' required=''>
+                        <input  id='cv' type='file' name='cv' required='' accept ='xml'>
 
                         </div>
                         <div class='user-box_spe'>
                         <label>Video</label>
                         <input  id='video' type='file' name='video' >
+                        </div>
+                        <div class='user-box_spe'>
+                        <label>Photo</label>
+                        <input  id='photo' type='file' name='photo' >
+                        </div>
+                        <input type = 'submit' class = 'card' value = 'AJOUTER'>
+                        </div>
+                        </form>
+                        </div>";
+
+                            // FORM POUR MOFIFIER DES INFOS DU PERSONNEL
+        
+                            echo "<p class = 'ajtcoach'>Modifier infos du Personnel</p>
+                        <div class = 'contour_form_modif' >
+                        <form  action = 'modifcoach.php' method ='post'>
+                        <div class = 'contour_form_2' >
+
+                        <div  class='user-box'>
+                        <label>ID Personnel</label>
+                        <input  id='id_perso' type='text' name='id_perso' required=''>
+                        </div>
+                        <div class='user-box'>
+                        <label>Type d'action</label>
+                        <select id = 'type_action' name='type_action'>
+                        <option value='1'>Suppression du personnel relié à cet ID</option>
+                        <option value='2'>Suppresion du fichier XML relié à cet ID</option>
+                        <option value='3'>Ajout d'un fichier XML(CV) à cet ID</option>
+                        <option value='4'>Modifier les RDV</option>
+                        </select>
 
                         </div>
+                        <div class='user-box_spe'>
+                        <label>fichier .xml(si vous décidez d'en ajouter un)</label>
+                        <input  id='cv' type='file' name='cv' accept ='xml'>
                         </div>
+                        <input type = 'submit' class = 'card' value = 'APPLIQUER LA MODIFICATION'>
+                        </div>
+                        </form>
                         </div>";
+
+                            // FORM POUR AJOUTER D ADMIN
+                            echo "<p class = 'ajtcoach'>Ajout d'Admin</p>
+                        <div class = 'contour_form_admin' >
+                        <form  action = 'newadmin.php' method ='post'>
+                        <div class = 'contour_form_2' >
+
+                        <div  class='user-box'>
+                        <label>Nom</label>
+                        <input  id='nom' type='text' name='nom' required=''>
+                        </div>
+                        <div class='user-box'>
+                        <label>Prenom</label>
+                        <input  id='prenom' type='text' name='prenom' required=''>
+                        </div>
+                        <div class = 'contour_form_2' >
+                        </div>
+                        <div class='user-box'>
+                        <label>Mail</label>
+                        <input  id='mail' type='email' name='mail' required=''>
+
+                        </div>
+                        <div class='user-box'>
+                        <label>Mot De Passe</label>
+                        <input  id='mdp' type='text' name='mdp' required=''>
+                        </div>
+
+
+                        </div>
+                        <input type = 'submit' class = 'card' value = 'AJOUTER'>
+                        </form>
+                        </div>";
+                            ;
                         } else {
                             echo "<p>pb identifiant client inconnu</p>";
                         }

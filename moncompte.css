@@ -233,12 +233,16 @@ header{
     transition: .3s;
   }
 
-  .contour_form{
+  .contour_form, .contour_form_modif, .contour_form_admin{
     width: 100%;
     height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .contour_form_admin form{
+    flex-direction: column;
   }
   .contour_form_2{
     height: 100%;
@@ -248,16 +252,32 @@ header{
     justify-content: space-evenly;
     flex-direction: column;
   }
+
+.contour_form_modif .contour_form_2{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+
+  .contour_form_modif .contour_form_2 .user-box, .contour_form_modif .contour_form_2 .user-box_spe{
+    width: 100%;
+
+  }
+
  .user-box input {
 width : 100%;
  }
-
+ 
 form{
     height: 100%;
     display: flex;
-    width : 80%;
+    width : 100%;
     align-items: center;
     justify-content: space-evenly;
+    padding-bottom: 20px;
 }
 .user-box:focus-within label{
     color: #fff;
@@ -280,3 +300,24 @@ form{
     color: #fff;
     font-size: 25px;
   }
+
+.container_error, .container_valid{
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(40,40,40);
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container_error{
+    color: rgb(190, 0, 0);
+}
+
+.container_valid{
+    color: rgb(0,190,0)
+}

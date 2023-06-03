@@ -39,7 +39,9 @@ if ($db_found) {
             $sqlInsert = "INSERT INTO client (id_client, nom, prenom, adresse1, adresse2, ville, cp, pays, tel, mail, mdp, num_etud) VALUES ('$newId', '$nom', '$prenom', '$adresse1', '$adresse2', '$ville', '$cp', '$pays', '$tel', '$mail', '$mdp', '$num_etu')";
             $results = mysqli_query($db_handle, $sqlInsert);
             if($results){
-                echo "nouveau client ajouté";
+                header("Location: moncompte.php");
+                exit;
+                
             }
             else
             {
@@ -50,7 +52,9 @@ if ($db_found) {
             $sqlInsert = "INSERT INTO client (id_client, nom, prenom, adresse1, adresse2, ville, cp, pays, tel, mail, mdp, num_etud) VALUES ('$newId', '$nom', '$prenom', '$adresse1', '$adresse2', '$ville', '$cp', '$pays', '$tel', '$mail', '$mdp', '$num_etu')";
             $results = mysqli_query($db_handle, $sqlInsert);
             if($results){
-                echo "nouveau client ajouté";
+                header("Location: moncompte.php");
+                exit;
+                
             }
             else
             {
