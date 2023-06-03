@@ -67,7 +67,7 @@
 
                     $compteur = 0;
 
-                    $_SESSION['id_Coach'] = 2;
+                    $_SESSION['id_Coach'] = "A10";
                     $_SESSION['specialite'] = 'rugby';
 
                     $database = "Projet_Piscine";                           //!                     ATTENTION AU NOM DE LA BDD 

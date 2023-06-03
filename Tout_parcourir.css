@@ -121,7 +121,7 @@ header{
 #Div_Activites, #Div_Sport_Compet, #Div_salle_Sport{
     border-radius: 30px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     width: 80vw;
     height: 30vh;
@@ -141,6 +141,7 @@ header{
     align-items: center;
     flex-direction: column;
     height: 25vh;
+    width: 45vw;
 }
 
 .Div_txt_Activites h1{
@@ -164,7 +165,7 @@ header{
 
 .btn_decouvrir1, .btn_decouvrir2, .btn_decouvrir3{
     height: 30vh;
-    width: 20vw;
+    width: 10vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -192,7 +193,6 @@ header{
 
 #flecheD1, #flecheD2, #flecheD3{
     font-size: 25px;
-    color: #191919;
     color: var(--bleu10);
 }
 

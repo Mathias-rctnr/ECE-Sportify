@@ -15,44 +15,40 @@
         <div class="Wrapper_Liens">
             <a class="Liens1" id="liens_Nav" href="menu.html">Accueil</a>
             <a class="Liens2" id="liens_Nav" href="Tout_parcourir.html">Tout Parcourir</a>
-            <a class="Liens3" id="liens_Nav" href="">Recherche</a>
-            <a class="Liens4" id="liens_Nav" href="">Rendez-Vous</a>
+            <a class="Liens3" id="liens_Nav" href="recherche.html">Recherche</a>
+            <a class="Liens4" id="liens_Nav" href="Affichage_Rdv.php">Rendez-Vous</a>
             <a class="Liens5" id="liens_Nav" href="">Votre Compte</a>
         </div>
     </header>
 
     <div class="Content">
         <div id="debut">
-            <img class="Back" src="photos/activites sportives/gym6.png" alt="background_Gym">
+            <img class="Back" src="photos/activites sportives/courstete.png" alt="background_Gym">
         </div>
         <div id="coach">
             <a href="">
                 <div class="cv_cache">
                     <img class="cv_coach" src="photos/activites sportives/cv.png" alt="cliquez pour voir cv">
-                    <img class="photo_coach" src="photos/activites sportives/musculation.png" alt="coach musclation">
+                    <img class="photo_coach" src="photos/activites sportives/cours_collectifs.png"
+                        alt="coach musclation">
             </a>
         </div>
         <div class="text_coach">
             <p class="nom_coach">
-                <span class="highlight">MAXIME DURAND</span><br>
-                <span class="bureau">SPORTIFY PARIS - 13 Place des Vosges, 75004 Paris France</span>
+                <span class="highlight">AUDE JAVEL</span><br>
+                <span class="bureau">SPORTIFY MONACO - 28 Boulvard des Moulins, Monaco</span>
             </p>
 
-            <p class="description_coach">Je m'appelle Maxime Durand et je suis un athlète professionnel <span
-                    class="highlight">passionné</span> par la culture physique.<br><br> Depuis mon plus jeune âge, j'ai
-                toujours été fasciné par les possibilités offertes par le corps
-                humain et les défis qu'il peut relever.<br><br> Au fil des ans, j'ai développé une expertise dans cette
-                magnifique discipline qu'est la musculation.
-                Aujourd'hui, je suis fier de dire que j'ai réussi à faire de ma passion mon métier.<br><br> J'ai décidé
-                de
-                <span class="highlight">partager</span> ma passion avec le plus grand nombre en aidant les gens à
-                <span class="highlight">atteindre leurs propres objectifs</span>
-                grâce à un accompagnement <span class="highlight">personnalisé</span>. Que ce soit pour <span
-                    class="highlight">perdre du poids</span>, <span class="highlight">gagner en masse
-                    musculaire</span>
-                ou <span class="highlight">améliorer leurs performances sportives</span>, je suis là pour les
-                aider à <span class="highlight">réaliser leur potentiel</span>.<br><br>
-                Merci de me permettre de partager ma passion avec vous.
+            <p class="description_coach">
+                Préparez-vous à rejoindre <span class="highlight">un groupe dynamique </span>et à vivre des moments d'entraînement stimulants et
+                motivants avec <span class="highlight">une coach passionnéee</span>.<BR><BR> Je possède une vaste expérience dans la
+                conception et la mise en œuvre de séances d'entraînement collectives variées, <span class="highlight">adaptées à tous les
+                niveaux et à tous les objectifs</span>.<BR><BR>
+                Lors de ces cours collectifs, vous serez guidé à travers une série d'exercices et d'activités qui vous
+                permettront de <span class="highlight">développer votre condition physique, votre force, votre agilité</span> dans une ambiance positive, 
+                motivante et le poussante au dépassement de soi.<BR><BR>
+                Je veillerai à ce que chaque séance soit à la fois stimulante et
+                accessible, <span class="highlight">adaptée aux besoins et aux capacités de chaque participant</span>.<br><br>J'espère vous voir parmis nous pour le prochain cours !
             </p>
         </div>
     </div>
@@ -72,8 +68,8 @@
 
                     $compteur = 0;
 
-                    $_SESSION['id_Coach'] = "A8";
-                    $_SESSION['specialite'] = 'musculation';
+                    $_SESSION['id_Coach'] = "A4";
+                    $_SESSION['specialite'] = 'cours collectifs';
 
                     $database = "Projet_Piscine";                           //!                     ATTENTION AU NOM DE LA BDD 
                     $db_handle = mysqli_connect("localhost", "root", "");
@@ -106,7 +102,7 @@
                                     $tempDate = $date[$col];
                                     $tempHeure = $heure[$row];
                                     $tempMinute = $minutes[$row];
-                                    $tempSpe = "musculation";
+                                    $tempSpe = 'cours collectifs';
                                     $requete = "SELECT * FROM rdv WHERE date = '$tempDate' AND heure_rdv = '$tempHeure' AND minutes_rdv = '$tempMinute' AND specialite = '$tempSpe'";
                                     $result = mysqli_query($db_handle, $requete);
 

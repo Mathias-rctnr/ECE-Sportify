@@ -14,8 +14,8 @@
             <div class="Wrapper_Liens">
                 <a class="Liens1" id="liens_Nav" href="menu.html">Accueil</a>
                 <a class="Liens2" id="liens_Nav" href="Tout_parcourir.html">Tout Parcourir</a>
-                <a class="Liens3" id="liens_Nav" href="">Recherche</a>
-                <a class="Liens4" id="liens_Nav" href="">Rendez-Vous</a>
+                <a class="Liens3" id="liens_Nav" href="recherche.html">Recherche</a>
+                <a class="Liens4" id="liens_Nav" href="Affichage_Rdv.php">Rendez-Vous</a>
                 <a class="Liens5" id="liens_Nav" href="">Votre Compte</a>
             </div>
         </header>
@@ -38,7 +38,7 @@
                 <div class="Txt_Validation">
                     <?php include("Add_BDD_muscu.php"); ?>
                     <div class="Wrapper_btn">
-                            <button value="2" id="btn_reserv"><div class="txt_btn2"><p>Voir mes réservations<i class="fa fa-arrow-right"></i></p></div></button>
+                            <button value="2" id="btn_reserv" onclick="window.location.href='Affichage_Rdv.php'"><div class="txt_btn2"><p>Voir mes réservations<i class="fa fa-arrow-right"></i></p></div></button>
                     </div>
                 </div>
             </div>

@@ -92,7 +92,6 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: #e8359a solid 2px;
 }
 
 .container{
@@ -100,7 +99,6 @@ header{
     height: 100vh;
     display: flex;
     justify-content: center;
-    border: #41e835 solid 2px;
     align-items: center;
 }
 
@@ -109,7 +107,6 @@ header{
     justify-content: space-evenly;
     align-items: center;
     width: 70vw;
-    border: #1965A0 solid 2px;
     height: 30vh;
     z-index: 40;
 }

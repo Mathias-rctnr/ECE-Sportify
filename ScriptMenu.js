@@ -77,7 +77,7 @@ btnOffres.addEventListener("click", (e) =>{
 //****************CAROUSEL
 
 btnNext.addEventListener("click", (e) =>{
-    if(compteur<3){
+    if(compteur<4){
         compteur++;
     }
     else{
@@ -94,7 +94,7 @@ btnPrev.addEventListener("click", (e) =>{
         compteur--;
     }
     else{
-        compteur=3;
+        compteur=4;
     }
     console.log(LargeurWrap);
     distance = LargeurWrap/3 * compteur - 5*compteur;

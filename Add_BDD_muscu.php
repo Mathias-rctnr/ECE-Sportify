@@ -23,6 +23,8 @@
     $_SESSION['id_Coach'] = $Id_Coach;
     $_SESSION['specialite'] = $Specialite;
 
+    $ID_Login = $_SESSION["login_id"];
+
     $date = array("Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi");
     $heure = array(9, 9, 10, 11, 12, 14, 14, 15, 16, 17, 17);
     $minutes = array(00, 45, 30, 15, 00, 00, 45, 30, 15, 00, 45);
@@ -37,6 +39,13 @@
                 $dbl_zero = "0";
             }
 
+        $requeteClient= "SELECT * FROM client WHERE client='$ID_Login'";
+        $resultClient = mysqli_query($db_handle, $requeteClient);
+
+        while($database = mysqli_fetch_assoc($resultClient)){
+            $PrenomClient = $database['prenom'];
+        }
+
         $requeteMaxID = "SELECT MAX(id_rdv) AS max_id FROM rdv";
         $result = mysqli_query($db_handle, $requeteMaxID);
 
@@ -46,12 +55,17 @@
 
         $MaxID = $MaxID + 1;
 
-        $_SESSION['id'] = $MaxID;
-
-        $requete = "INSERT INTO rdv (id_rdv, id_coach, id_client, date, specialite, adresse1, adresse2, doc_sup, info_sup, heure_rdv, minutes_rdv) VALUES ('$MaxID', '$Id_Coach', '1', '$tempDate', '$Specialite', 'a', 'a', 'a', 'a', '$tempHeure', '$tempMinute')";
+        $requete = "INSERT INTO rdv (id_rdv, id_coach, id_client, date, specialite, adresse1, adresse2, doc_sup, info_sup, heure_rdv, minutes_rdv) VALUES ('$MaxID', '$Id_Coach', '$ID_Login', '$tempDate', '$Specialite', ' ', ' ', ' ', ' ', '$tempHeure', '$tempMinute')";
         $result = mysqli_query($db_handle, $requete);
 
-        echo "<p class='txt_recap'>Bonjour " . $MaxID . ", Nous vous confirmons la réservation de votre cours de " . $Specialite . " avec " . $Id_Coach . " le " . $tempDate . " à " . $tempHeure . "h:" . $tempMinute . $dbl_zero . " !</p>";
+        $requeteCoach = "SELECT * FROM personnel WHERE id_coach='$Id_Coach'";
+        $resultCoach = mysqli_query($db_handle, $requeteCoach);
 
+        while($database = mysqli_fetch_assoc($resultCoach)){
+            $NomCoach = $database['nom'];
+            $PrenomCoach = $database['prenom'];
+        }
+
+        echo "<p class='txt_recap'>Bonjour " . $PrenomClient . ", Nous vous confirmons la réservation de votre cours de " . $Specialite . " avec " . $PrenomCoach . " " . $NomCoach . " le " . $tempDate . " à " . $tempHeure . "h:" . $tempMinute . $dbl_zero . " !</p>";
     }
 ?>

@@ -307,7 +307,7 @@ header{
     border: 1px solid rgba(141, 190, 220, 0.31);
     transition: 0.5s ease-in-out;
 }
- .Offres2{
+.Offres2{
     display: flex;
     opacity: 0;
     flex-direction: column;
@@ -475,7 +475,7 @@ header{
     justify-content:start;
     align-items: center;
     height: 50vh;
-    background-color: darkorange;
+    background-color: rgb(55, 255, 0);
     width: 70vw;
     overflow: hidden;
 }
@@ -488,11 +488,18 @@ header{
 }
 
 .Div_Actu{
+    display: flex;
+    justify-content: start;
+    align-items: start;
     width: 20vw;
     height: 45vh;
     background-color: fuchsia;
 }
 
+.imgActu{
+    width: 15vw;
+    height: auto;
+}
 .Div_Actu:nth-child(2n){
     background-color: rgb(17, 0, 255);
 }

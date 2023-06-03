@@ -21,7 +21,7 @@
         </div>
     </header>
 
-    <<div class="Content">
+    <div class="Content">
         <div id="debut">
             <img class="Back" src="photos/sport de competition/footballtete.png" alt="background_Gym">
         </div>
@@ -66,7 +66,7 @@
 
                     $compteur = 0;
 
-                    $_SESSION['id_Coach'] = 1;
+                    $_SESSION['id_Coach'] = "A7";
                     $_SESSION['specialite'] = 'football';
 
                     $database = "Projet_Piscine";                           //!                     ATTENTION AU NOM DE LA BDD 
