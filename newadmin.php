@@ -49,7 +49,7 @@
             // trouver le plus haut ID en chiffre dans une colonne contenant des valeurs telles que C1, C2, C3, etc. 
             $sql = "SELECT MAX(CAST(SUBSTRING(id, 2) AS UNSIGNED)) AS highest_id FROM admin WHERE id REGEXP '^C[0-9]+$'";
             $result_id = mysqli_query($db_handle, $sql);
-            if ($result->num_rows > 0) {
+            if ($result_id->num_rows > 0) {
                 $row_id = mysqli_fetch_array($result_id);
                 $highest_id = $row_id['highest_id'];
                 // Incrémenter le plus haut ID
