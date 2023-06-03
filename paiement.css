@@ -1,0 +1,323 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(15, 15, 15);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#Wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-gap: 10px;
+    padding: 10px;
+    width: 40vw;
+    height: 100vh;
+}
+
+#W_Entree{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    height: 20vh;
+    flex-grow: 1;
+    background-color: rgb(15, 15, 15);
+}
+
+#W_Carte{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    flex-grow: 1;
+    background-color:rgb(15, 15, 15);
+    height: 40vh;
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+#carte, .Dos_Carte{
+    
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.46);
+    width: 30vw;
+    height: 30vh;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px;
+    display: grid;
+    grid-template-rows: 2fr 1fr 1fr;
+    backface-visibility: hidden;
+    position: absolute;
+    min-width: 378px;
+    min-height: 223px;
+}
+
+.fondIMG{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -3;
+}
+
+.fondIMGDos{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform: scaleX(-1);
+    z-index: -3;
+}
+
+#Entree{
+    display: grid;
+    width: 35vw;
+    height: 25vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    grid-template-rows: repeat(2, 1fr);
+    border: solid 2px rgb(0, 106, 255);
+    border-radius: 20px;
+    background-color: aliceblue;
+    padding: 10px;
+    min-width: 529px;
+    min-height: 223px;
+}
+
+label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+input{
+    height: 40px;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: solid 2px blue;
+}
+
+#Num_carte, #Titulaire{
+    width: 250px;
+}
+
+#CVV {
+    width: 80px;
+}
+
+.bouton{
+    width: 30vw;
+}
+
+#Partie1{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+
+#Partie2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 2vw;
+}
+
+#btn_submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Carte_Inf{
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+}
+
+#Carte_Sup{
+    margin-top: 5px;
+    display: flex;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: start;
+    padding: 15px;
+}
+
+#Carte_Bas{
+    display: flex;
+    height: 60px;
+    border-radius: 10px;
+}
+
+#Puce{
+    width: 100px;
+    height: 70px;
+}
+
+#ID_CARTE{
+    font-size: 1.9em;
+    text-shadow: 1px 1px 1px #202020;
+}
+
+#Carte_Bas{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+label{
+    color: rgb(26, 26, 26);
+}
+
+#NOM_CARTE{
+    margin-left: 5px;
+    padding: 5px;
+    text-shadow: 1px 1px 1px #202020;
+    font-family: "halter", sans-serif;
+    font-size: 1.3em;
+    width: 20vw;
+    overflow: hidden;
+}
+
+#DATE_CARTE_M, #DATE_CARTE_Y, #slash{
+    text-shadow: 1px 1px 1px #202020;
+    font-family: "halter", sans-serif;
+    font-size: 1.15em;
+}
+
+#Carte_Sup img{
+    width: 70px;
+    height: auto;
+}
+
+.indication{
+    font-size: 0.8em;
+    padding-inline: 10px;
+    text-decoration: underline;
+}
+
+.colonne_basG, .colonne_basD{
+    height: 30px;
+}
+
+.colonne_basG{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.colonne_basD{
+    display: flex;
+    margin-right: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 6vw;
+}
+
+#Ind_Carte_Num{
+    align-self: flex-start;
+}
+
+.Dos_Carte{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: rotateY(-180deg);
+    order: 1;
+}
+
+#full_carte{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+}
+
+#Bande_Noir{
+    width: 200%;
+    height: 50px;
+    background-color: rgb(15, 15, 15);
+}
+
+#Signature{
+    width: 100%;
+    height: 7vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: antiquewhite;
+    border-radius: 10px;
+}
+
+#Case_CVV{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4vw;
+    height: 5vh;
+    font-size: 4vh;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    font-family: "halter", sans-serif;
+    float: right;
+    font-size: 1.4em;
+    color: rgb(17, 17, 17);
+}
+
+.expire{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.txt_Expire{
+    font-size: 0.8em;
+    text-decoration: underline;
+}
+
+.Div_Dos_Carte{
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.Wrapper_Signature{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    width: 90%;
+}
+
+.CVV_txt{
+    padding: 10px;
+    font-size: 0.8em;
+}

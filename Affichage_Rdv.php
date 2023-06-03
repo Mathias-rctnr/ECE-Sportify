@@ -22,11 +22,19 @@
             <div class="ContainerResult">
                 <div class="Titre">
                     <h1>Vos rendez-vous</h1>
+                    <div id="Input_cases">
+                        <form action="annulation.php" method="post">
+                            <p>ID_RDV: </p>
+                            <input id="Inp_ID_Rdv" name="Inp_Id_rdv">
+                            <button type="submit">Annuler</button>
+                        </form>
+                    </div>
                 </div>
                 <div class="Resultats">
                     <?php include("BDD_Rdv.php"); ?>
                 </div>
             </div>
         </div>
+        <script src="BDD_Rdv.js"></script>
     </body>
 </html>

@@ -9,7 +9,7 @@
     $db_found = mysqli_select_db($db_handle, $database);
 
 
-    $ID_utilisateur = $_SESSION["login_id"];
+    $ID_utilisateur = 0;//$_SESSION["login_id"];
 
     if($db_found){
 
@@ -23,7 +23,7 @@
                 $dbl_zero = "0";
             }
             //echo $_SESSION["login_id"];
-            echo "<div id='WrappBDD'>";
+            echo "<div id='WrappBDD' data-idrdv='" . $database['id_rdv'] . "'>";
                 echo "<p class='dateRdv'>" . $database['date'] ."</p>";
                 echo "<div class='txt_perso'>";
                     echo "<p class='HeureRdv'>" . $database['heure_rdv'] . ":" . $database['minutes_rdv']. $dbl_zero ."</p></br>";

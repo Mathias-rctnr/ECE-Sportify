@@ -475,7 +475,6 @@ header{
     justify-content:start;
     align-items: center;
     height: 50vh;
-    background-color: rgb(55, 255, 0);
     width: 70vw;
     overflow: hidden;
 }
@@ -493,21 +492,17 @@ header{
     align-items: start;
     width: 20vw;
     height: 45vh;
-    background-color: fuchsia;
 }
 
 .imgActu{
-    width: 15vw;
+    width: 20vw;
     height: auto;
-}
-.Div_Actu:nth-child(2n){
-    background-color: rgb(17, 0, 255);
+    border-radius: 15px;
 }
 
 .Sliders_Actu{
     width: 50px;
     height: 50px;
-    border: solid 2px brown;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -523,7 +518,6 @@ header{
 .Wrapper_Elements_Actu{
     display: flex;
     gap: 3vw;
-    background-color: greenyellow;
     align-items: center;
     justify-content: space-evenly;
     transition: all 0.3s;
