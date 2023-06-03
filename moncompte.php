@@ -16,7 +16,7 @@
             <a class="Liens1" id="liens_Nav" href="menu.html">Accueil</a>
             <a class="Liens2" id="liens_Nav" href="Tout_parcourir.html">Tout Parcourir</a>
             <a class="Liens3" id="liens_Nav" href="recherche.html">Recherche</a>
-            <a class="Liens4" id="liens_Nav" href="">Rendez-Vous</a>
+            <a class="Liens4" id="liens_Nav" href="affichage_Rdv.php">Rendez-Vous</a>
             <a class="Liens5" id="liens_Nav" href="moncompte.php">Votre Compte</a>
         </div>
     </header>
@@ -36,7 +36,7 @@
 // Définition du nom de la base de données
         $database = "projet_piscine";
         // Connexion à la base de données MySQL
-        $db_handle = mysqli_connect("127.0.0.1:3306", "root", "");
+        $db_handle = mysqli_connect("localhost", "root", "");
         $db_found = mysqli_select_db($db_handle, $database);
 
         if ($_SESSION["login_id"]) {
@@ -55,7 +55,10 @@
         
                     // Définir le nombre de caractères à masquer (nombre de caractères précédents à remplacer par des astérisques)
                     $nbCaracteresMasques = strlen($numCarte) - 4; // Dans cet exemple, nous masquons tous les caractères précédents, sauf les 4 derniers chiffres
-        
+                    if($nbCaracteresMasques < 0)
+                    {
+                        $nbCaracteresMasques = 0;
+                    }
                     // Générer une chaîne de caractères composée d'astérisques du même nombre que les caractères masqués
                     $caracteresMasques = str_repeat("*", $nbCaracteresMasques);
 
@@ -64,6 +67,11 @@
 
                     $mdp = $data['mdp'];
                     $nbCaracteresMasquesmdp = strlen($mdp) - 2;
+                    if($nbCaracteresMasquesmdp < 0)
+                    {
+                        $nbCaracteresMasquesmdp = 0;
+                    }
+
                     $caracteresMasquesmdp = str_repeat("*", $nbCaracteresMasquesmdp);
                     $mdpMasque = $caracteresMasquesmdp . substr($mdp, -2);
 
@@ -108,15 +116,18 @@
                     echo "<p>Type de carte : " . $data["type_carte"] . "</p>";
                     echo "<p>Prénom carte : " . $data["prenom_carte"] . "</p>";
                     echo "<p>Nom carte : " . $data["nom_carte"] . "</p>";
+                    echo "<p>Abonnement : " . $data["abonnement"] . "</p>";
                     echo "</div>";
                     echo "<div class = 'contour_info_2' >";
                     echo "<p>N° Carte : " . $numCarteMasque . "</p>";
                     echo "<p>Date d'expiration : " . $data["date_exp"] . "</p>";
                     echo "<p>CCV : " . $data["ccv"] . "</p>";
-                    echo "<p>Abonnement : " . $data["abonnement"] . "</p>";
                     echo "</div>";
                     echo "</div>";
-                    echo "</div>";
+                    echo "</div>
+                    <form action = 'deconnexion.php'>
+                    <input type='submit' class = 'deconnexion' value = 'DECONNEXION'></div>
+                    </form>";
 
                 } else { // COMPTE POUR LES COACHS
                     $sql = "SELECT * FROM personnel WHERE id_coach = '$id'";
@@ -156,7 +167,10 @@
                         echo "<a href = '" . $data["cv"] . "' class = 'card'>CV</a>";
                         echo "</div>";
                         echo "</div>";
-                        echo "</div>";
+                        echo "</div>
+                        <form action = 'deconnexion.php'>
+                        <input type='submit' class = 'deconnexion' value = 'DECONNEXION'></div>
+                        </form>";
                     } else { // COMPTE POUR LES ADMINS
                         $sql = "SELECT * FROM admin WHERE id = '$id'";
                         $result_admin = mysqli_query($db_handle, $sql);
@@ -269,7 +283,7 @@
                         <option value='1'>Suppression du personnel relié à cet ID</option>
                         <option value='2'>Suppresion du fichier XML relié à cet ID</option>
                         <option value='3'>Ajout d'un fichier XML(CV) à cet ID</option>
-                        <option value='4'>Modifier les RDV</option>
+                        <option value='4'>Supprimer les RDV relié à cet ID</option>
                         </select>
 
                         </div>
@@ -312,8 +326,10 @@
                         </div>
                         <input type = 'submit' class = 'card' value = 'AJOUTER'>
                         </form>
-                        </div>";
-                            ;
+                        </div>
+                        <form action = 'deconnexion.php'>
+                        <input type='submit' class = 'deconnexion' value = 'DECONNEXION'></div>
+                        </form>";
                         } else {
                             echo "<p>pb identifiant client inconnu</p>";
                         }

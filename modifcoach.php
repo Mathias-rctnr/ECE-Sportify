@@ -75,12 +75,16 @@
                 }
             } else if ($choix == 4) { // MODIFIER LES RDV 
     
-                //            MATHIAS      MATHIAS      MATHIAS      MATHIAS      MATHIAS      MATHIAS      MATHIAS
-                //      MATHIAS      MATHIAS      MATHIAS      MATHIAS      MATHIAS      MATHIAS      MATHIAS
-                //            MATHIAS      MATHIAS      MATHIAS      MATHIAS      MATHIAS      MATHIAS      MATHIAS
-                //      MATHIAS      MATHIAS      MATHIAS      MATHIAS      MATHIAS      MATHIAS      MATHIAS
-                //            MATHIAS      MATHIAS      MATHIAS      MATHIAS      MATHIAS      MATHIAS      MATHIAS
-    
+                $sql = "DELETE FROM rdv WHERE id_coach = '$id_perso'";
+                $result_b = mysqli_query($db_handle, $sql);
+
+                if ($result_b) {
+                    echo "<div class = 'container_valid'><p>SUPPRESSION REUSSIE !<p><a href = 'menu.html' class = 'card'>
+                RETOURNER A L'ACCUEIL</a></div>";
+                } else {
+                    echo "<div class = 'container_error'><p>SUPPRESSION IMPOSSIBLE : IL N'Y A PEUT ÊTRE AUCUN RDV À SUPPRIMER DANS LA BDD 'PROJET_PISCINE' <p><a href = 'menu.html' class = 'card'>
+        RETOURNER A L'ACCUEIL</a></div>";
+                }
             }
         }
     } else {

@@ -315,6 +315,24 @@ header{
     padding-bottom: 3vh;
    }
 
+   .title{
+    font-family: 'Libre Franklin', sans-serif;
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #ffffff;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    background-color: var(--bleu11);
+    border-radius: 10px;
+    transition: .3s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+    border: none;
+   }
+
    input{
     overflow: hidden;
     width: 100px;
