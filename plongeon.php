@@ -42,7 +42,7 @@
             AND id_coach > 'A5'";
 
             $result_coach = mysqli_query($db_handle, $sql);
-// SI UN AUTRE COACH EXISTE
+            // SI UN AUTRE COACH EXISTE
             if ($result_coach->num_rows > 0) {
 
                 $coach_base = mysqli_fetch_assoc($result_coach);
@@ -52,12 +52,11 @@
                 $sql = "SELECT * FROM personnel where id_coach = '$coach'";
                 $resultat_b = mysqli_query($db_handle, $sql);
 
-                if ($resultat_b->num_rows > 0) 
-                {
-                $data = mysqli_fetch_assoc($resultat_b);
-                // ON CREER UN LIEN VERS SA PAGE AUTO GENERE
-                echo "
-                <a href = '". $data['page_web'] ."'>
+                if ($resultat_b->num_rows > 0) {
+                    $data = mysqli_fetch_assoc($resultat_b);
+                    // ON CREER UN LIEN VERS SA PAGE AUTO GENERE
+                    echo "
+                <a href = '" . $data['page_web'] . "'>
                     <div class = 'prochain_coach'>
                     VOIR AUTRE COACH
                     </div
@@ -91,7 +90,7 @@
                 apprendrez les mouvements acrobatiques, les sauts périlleux, les entrées en eau spectaculaires et les
                 figures complexes qui caractérisent cet art aquatique. Je vous vous aidera à développer votre
                 coordination, votre maîtrise du corps et votre confiance en vous, <span class="highlight">tout en veillant à votre sécurité et à
-                votre progression constante</span>.<br><br> <span class="highlight">Rejoignez</span> mes cours de plongeon artistique et découvrez la magie de
+                    votre progression constante</span>.<br><br> <span class="highlight">Rejoignez</span> mes cours de plongeon artistique et découvrez la magie de
                 l'envol, la grâce de la chute et la beauté de l'expression artistique dans l'eau.
             </p>
         </div>
@@ -103,8 +102,8 @@
         <div id="rdv">
             <div class="container_edt">
                 <div class="edt">
-                <?php
-                
+                    <?php
+
                     $compteur = 0;
 
                     $_SESSION['id_Coach'] = "A5";
@@ -121,45 +120,45 @@
                     $minutes = array(00, 45, 30, 15, 00, 00, 45, 30, 15, 00, 45);
                     $Reserv = "reserv";
 
-                    if($db_found){
-                            echo "<table>";
+                    if ($db_found) {
+                        echo "<table>";
 
+                        echo "<tr>";
+                        for ($i = 0; $i < 6; $i++) {
+                            echo "<th><p>" . $date[$i] . "</p></th>";
+                        }
+                        echo "</tr>";
+                        for ($row = 0; $row < 11; $row++) {
                             echo "<tr>";
-                            for($i=0; $i<6 ;$i++){
-                                echo "<th><p>" . $date[$i] . "</p></th>";
+
+                            $dbl_zero = "";
+                            if ($minutes[$row] === 0) {
+                                $dbl_zero = "0";
+                            }
+
+                            for ($col = 0; $col < 6; $col++) {
+                                $tempDate = $date[$col];
+                                $tempHeure = $heure[$row];
+                                $tempMinute = $minutes[$row];
+                                $tempSpe = 'plongeon';
+                                $requete = "SELECT * FROM rdv WHERE date = '$tempDate' AND heure_rdv = '$tempHeure' AND minutes_rdv = '$tempMinute' AND specialite = '$tempSpe'";
+                                $result = mysqli_query($db_handle, $requete);
+
+                                if (mysqli_num_rows($result) === 0) {
+                                    $Reserv = "libre";
+                                } else {
+                                    $Reserv = "reserv";
+                                }
+
+                                $compteur++;
+
+                                echo "<td><button class='" . $Reserv . "' name='" . $compteur . "' id='cases' data-row='" . $row . "' data-col='" . $col . "'>" . $heure[$row] . ":" . $minutes[$row] . $dbl_zero . "</button></td>";
                             }
                             echo "</tr>";
-                            for($row=0; $row<11; $row++){
-                                echo "<tr>";
+                        }
+                        echo "</table>";
 
-                                $dbl_zero = "";
-                                if($minutes[$row] === 0){
-                                    $dbl_zero = "0";
-                                }
-
-                                for ($col = 0; $col < 6; $col++) {
-                                    $tempDate = $date[$col];
-                                    $tempHeure = $heure[$row];
-                                    $tempMinute = $minutes[$row];
-                                    $tempSpe = 'plongeon';
-                                    $requete = "SELECT * FROM rdv WHERE date = '$tempDate' AND heure_rdv = '$tempHeure' AND minutes_rdv = '$tempMinute' AND specialite = '$tempSpe'";
-                                    $result = mysqli_query($db_handle, $requete);
-
-                                    if (mysqli_num_rows($result) === 0) {
-                                        $Reserv = "libre";
-                                    } else {
-                                        $Reserv = "reserv";
-                                    }
-
-                                    $compteur++;
-
-                                    echo "<td><button class='" . $Reserv . "' name='". $compteur ."' id='cases' data-row='" . $row ."' data-col='" . $col ."'>" . $heure[$row] .":". $minutes[$row] . $dbl_zero ."</button></td>";
-                                }
-                                echo "</tr>";
-                            }
-                            echo "</table>";
-
-                            $_SESSION['specialite'] = $tempSpe;
+                        $_SESSION['specialite'] = $tempSpe;
                     }
                     ?>
                 </div>
@@ -167,27 +166,33 @@
         </div>
 
         <form action="confirmation.php" method="post">
-                <div id="Input_cases">
-                    <p>Colonne: </p>
-                    <input id="Inp_Col" name="Num_Col" required>
-                    <p>Ligne:</p>
-                    <input id="Inp_Row" name="Num_Lig" required>
-                </div>
+            <div id="Input_cases">
+                <p>Colonne: </p>
+                <input id="Inp_Col" name="Num_Col" required>
+                <p>Ligne:</p>
+                <input id="Inp_Row" name="Num_Lig" required>
             </div>
-        <div class = "button">
+    </div>
+    <div class="button">
         <div class="card">
             <button type="submit" class="card">
                 <p class="title">VALIDER</p>
             </button>
-            </div>
+        </div>
+    </div>
+    </form>
 
+
+    <div class="button">
         <div class="card">
             <div class="card-info">
-                <p class="title">ME CONTACTER</p>
+                <form name="form_contact" method="POST" action="chat.php">
+                    <input type="hidden" name="id_coach" value="A5" />
+                    <input type="submit" value='ME CONTACTER' />
+                </form>
             </div>
-            </div>
-            </div>
-        </form>
+        </div>
+    </div>
     <script src="musculation.js"></script>
 </body>
 

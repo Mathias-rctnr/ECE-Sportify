@@ -53,12 +53,11 @@
                 $sql = "SELECT * FROM personnel where id_coach = '$coach'";
                 $resultat_b = mysqli_query($db_handle, $sql);
 
-                if ($resultat_b->num_rows > 0) 
-                {
-                $data = mysqli_fetch_assoc($resultat_b);
+                if ($resultat_b->num_rows > 0) {
+                    $data = mysqli_fetch_assoc($resultat_b);
 
-                echo "
-                <a href = '". $data['page_web'] ."'>
+                    echo "
+                <a href = '" . $data['page_web'] . "'>
                     <div class = 'prochain_coach'>
                     VOIR AUTRE COACH
                     </div
@@ -109,7 +108,7 @@
         <div id="rdv">
             <div class="container_edt">
                 <div class="edt">
-                <?php
+                    <?php
 
                     $compteur = 0;
 
@@ -173,12 +172,11 @@
         </div>
 
         <form action="confirmation.php" method="post">
-                <div id="Input_cases">
-                    <p>Colonne: </p>
-                    <input id="Inp_Col" name="Num_Col" required>
-                    <p>Ligne:</p>
-                    <input id="Inp_Row" name="Num_Lig" required>
-                </div>
+            <div id="Input_cases">
+                <p>Colonne: </p>
+                <input id="Inp_Col" name="Num_Col" required>
+                <p>Ligne:</p>
+                <input id="Inp_Row" name="Num_Lig" required>
             </div>
     </div>
     <div class="button">
@@ -187,14 +185,20 @@
                 <p class="title">VALIDER</p>
             </button>
         </div>
+    </div>
+    </form>
 
+
+    <div class="button">
         <div class="card">
             <div class="card-info">
-                <p class="title">ME CONTACTER</p>
+                <form name="form_contact" method="POST" action="chat.php">
+                    <input type="hidden" name="id_coach" value="A7" />
+                    <input type="submit" value='ME CONTACTER' />
+                </form>
             </div>
         </div>
     </div>
-    </form>
     <script src="musculation.js"></script>
 </body>
 

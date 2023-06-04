@@ -38,7 +38,7 @@ if ($db_found) {
 
     $sql = "SELECT MIN(id_coach) AS prochain_id
     FROM personnel
-    WHERE specialite = 'Basket'
+    WHERE specialite = 'Basketball'
     AND id_coach > 'A2'";
 
     $result_coach = mysqli_query($db_handle, $sql);
@@ -172,7 +172,6 @@ if ($db_found) {
                     <p>Ligne:</p>
                     <input id="Inp_Row" name="Num_Lig" required>
                 </div>
-            </div>
     </div>
     <div class="button">
         <div class="card">
@@ -180,14 +179,20 @@ if ($db_found) {
                 <p class="title">VALIDER</p>
             </button>
         </div>
+    </div>
+    </form>
 
+    
+    <div class="button">
         <div class="card">
             <div class="card-info">
-                <p class="title">ME CONTACTER</p>
+                <form name="form_contact" method="POST" action="chat.php">
+                    <input type="hidden" name="id_coach" value="A2" />
+                    <input type="submit" value='ME CONTACTER' />
+                </form>
             </div>
         </div>
     </div>
-    </form>
     <script src="musculation.js"></script>
 </body>
 

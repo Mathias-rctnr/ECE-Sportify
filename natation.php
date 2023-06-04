@@ -29,46 +29,45 @@
         //*** COMMENTAIRES IDENTIQUES A MUSCULATION.PHP */
         <?php   // VERIFIER SI UN AUTRE COACH EST DISPONIBLE DANS LA BDD 
 
-session_start();
-// Définition du nom de la base de données
-$database = "projet_piscine";
-// Connexion à la base de données MySQL
-$db_handle = mysqli_connect("localhost", "root", "");
-$db_found = mysqli_select_db($db_handle, $database);
-if ($db_found) {
+        session_start();
+        // Définition du nom de la base de données
+        $database = "projet_piscine";
+        // Connexion à la base de données MySQL
+        $db_handle = mysqli_connect("localhost", "root", "");
+        $db_found = mysqli_select_db($db_handle, $database);
+        if ($db_found) {
 
-    $sql = "SELECT MIN(id_coach) AS prochain_id
+            $sql = "SELECT MIN(id_coach) AS prochain_id
     FROM personnel
     WHERE specialite = 'Natation'
     AND id_coach > 'A9'";
 
-    $result_coach = mysqli_query($db_handle, $sql);
+            $result_coach = mysqli_query($db_handle, $sql);
 
-    if ($result_coach->num_rows > 0) {
+            if ($result_coach->num_rows > 0) {
 
-        $coach_base = mysqli_fetch_assoc($result_coach);
-        $coach = $coach_base["prochain_id"];
-        $_SESSION['prochaincoach_id'] = $coach;
+                $coach_base = mysqli_fetch_assoc($result_coach);
+                $coach = $coach_base["prochain_id"];
+                $_SESSION['prochaincoach_id'] = $coach;
 
-        $sql = "SELECT * FROM personnel where id_coach = '$coach'";
-        $resultat_b = mysqli_query($db_handle, $sql);
+                $sql = "SELECT * FROM personnel where id_coach = '$coach'";
+                $resultat_b = mysqli_query($db_handle, $sql);
 
-        if ($resultat_b->num_rows > 0) 
-        {
-        $data = mysqli_fetch_assoc($resultat_b);
+                if ($resultat_b->num_rows > 0) {
+                    $data = mysqli_fetch_assoc($resultat_b);
 
-        echo "
-        <a href = '". $data['page_web'] ."'>
+                    echo "
+        <a href = '" . $data['page_web'] . "'>
             <div class = 'prochain_coach'>
             VOIR AUTRE COACH
             </div
             </a>
         ";
+                }
+            }
         }
-    }
-}
 
-?>
+        ?>
 
         <div id="coach">
             <a href="cvnatation.html">
@@ -80,7 +79,7 @@ if ($db_found) {
         <div class="text_coach">
             <p class="nom_coach">
                 <span class="highlight">Jonathan Patterson<br><br> A9</span><br>
-                <span class="bureau">SPORTIFY ST-TROPEZ - 99 Rue du General Allard, 83990 Saint-Tropez France<</span>
+                <span class="bureau">SPORTIFY ST-TROPEZ - 99 Rue du General Allard, 83990 Saint-Tropez France<< /span>
             </p>
 
             <p class="description_coach">
@@ -103,7 +102,7 @@ if ($db_found) {
         <div id="rdv">
             <div class="container_edt">
                 <div class="edt">
-                <?php
+                    <?php
 
                     $compteur = 0;
 
@@ -121,45 +120,45 @@ if ($db_found) {
                     $minutes = array(00, 45, 30, 15, 00, 00, 45, 30, 15, 00, 45);
                     $Reserv = "reserv";
 
-                    if($db_found){
-                            echo "<table>";
+                    if ($db_found) {
+                        echo "<table>";
 
+                        echo "<tr>";
+                        for ($i = 0; $i < 6; $i++) {
+                            echo "<th><p>" . $date[$i] . "</p></th>";
+                        }
+                        echo "</tr>";
+                        for ($row = 0; $row < 11; $row++) {
                             echo "<tr>";
-                            for($i=0; $i<6 ;$i++){
-                                echo "<th><p>" . $date[$i] . "</p></th>";
+
+                            $dbl_zero = "";
+                            if ($minutes[$row] === 0) {
+                                $dbl_zero = "0";
+                            }
+
+                            for ($col = 0; $col < 6; $col++) {
+                                $tempDate = $date[$col];
+                                $tempHeure = $heure[$row];
+                                $tempMinute = $minutes[$row];
+                                $tempSpe = 'natation';
+                                $requete = "SELECT * FROM rdv WHERE date = '$tempDate' AND heure_rdv = '$tempHeure' AND minutes_rdv = '$tempMinute' AND specialite = '$tempSpe'";
+                                $result = mysqli_query($db_handle, $requete);
+
+                                if (mysqli_num_rows($result) === 0) {
+                                    $Reserv = "libre";
+                                } else {
+                                    $Reserv = "reserv";
+                                }
+
+                                $compteur++;
+
+                                echo "<td><button class='" . $Reserv . "' name='" . $compteur . "' id='cases' data-row='" . $row . "' data-col='" . $col . "'>" . $heure[$row] . ":" . $minutes[$row] . $dbl_zero . "</button></td>";
                             }
                             echo "</tr>";
-                            for($row=0; $row<11; $row++){
-                                echo "<tr>";
+                        }
+                        echo "</table>";
 
-                                $dbl_zero = "";
-                                if($minutes[$row] === 0){
-                                    $dbl_zero = "0";
-                                }
-
-                                for ($col = 0; $col < 6; $col++) {
-                                    $tempDate = $date[$col];
-                                    $tempHeure = $heure[$row];
-                                    $tempMinute = $minutes[$row];
-                                    $tempSpe = 'natation';
-                                    $requete = "SELECT * FROM rdv WHERE date = '$tempDate' AND heure_rdv = '$tempHeure' AND minutes_rdv = '$tempMinute' AND specialite = '$tempSpe'";
-                                    $result = mysqli_query($db_handle, $requete);
-
-                                    if (mysqli_num_rows($result) === 0) {
-                                        $Reserv = "libre";
-                                    } else {
-                                        $Reserv = "reserv";
-                                    }
-
-                                    $compteur++;
-
-                                    echo "<td><button class='" . $Reserv . "' name='". $compteur ."' id='cases' data-row='" . $row ."' data-col='" . $col ."'>" . $heure[$row] .":". $minutes[$row] . $dbl_zero ."</button></td>";
-                                }
-                                echo "</tr>";
-                            }
-                            echo "</table>";
-
-                            $_SESSION['specialite'] = $tempSpe;
+                        $_SESSION['specialite'] = $tempSpe;
                     }
                     ?>
                 </div>
@@ -167,27 +166,33 @@ if ($db_found) {
         </div>
 
         <form action="confirmation.php" method="post">
-                <div id="Input_cases">
-                    <p>Colonne: </p>
-                    <input id="Inp_Col" name="Num_Col" required>
-                    <p>Ligne:</p>
-                    <input id="Inp_Row" name="Num_Lig" required>
-                </div>
+            <div id="Input_cases">
+                <p>Colonne: </p>
+                <input id="Inp_Col" name="Num_Col" required>
+                <p>Ligne:</p>
+                <input id="Inp_Row" name="Num_Lig" required>
             </div>
-        <div class = "button">
+    </div>
+    <div class="button">
         <div class="card">
             <button type="submit" class="card">
                 <p class="title">VALIDER</p>
             </button>
-            </div>
+        </div>
+    </div>
+    </form>
 
+
+    <div class="button">
         <div class="card">
             <div class="card-info">
-                <p class="title">ME CONTACTER</p>
+                <form name="form_contact" method="POST" action="chat.php">
+                    <input type="hidden" name="id_coach" value="A9" />
+                    <input type="submit" value='ME CONTACTER' />
+                </form>
             </div>
-            </div>
-            </div>
-        </form>
+        </div>
+    </div>
     <script src="musculation.js"></script>
 </body>
 

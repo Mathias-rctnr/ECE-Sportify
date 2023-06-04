@@ -42,7 +42,7 @@
             AND id_coach > 'A8'";
 
             $result_coach = mysqli_query($db_handle, $sql);
-// SI UN AUTRE COACH EXISTE
+            // SI UN AUTRE COACH EXISTE
             if ($result_coach->num_rows > 0) {
 
                 $coach_base = mysqli_fetch_assoc($result_coach);
@@ -52,12 +52,11 @@
                 $sql = "SELECT * FROM personnel where id_coach = '$coach'";
                 $resultat_b = mysqli_query($db_handle, $sql);
 
-                if ($resultat_b->num_rows > 0) 
-                {
-                $data = mysqli_fetch_assoc($resultat_b);
-                // ON CREER UN LIEN VERS SA PAGE AUTO GENERE
-                echo "
-                <a href = '". $data['page_web'] ."'>
+                if ($resultat_b->num_rows > 0) {
+                    $data = mysqli_fetch_assoc($resultat_b);
+                    // ON CREER UN LIEN VERS SA PAGE AUTO GENERE
+                    echo "
+                <a href = '" . $data['page_web'] . "'>
                     <div class = 'prochain_coach'>
                     VOIR AUTRE COACH
                     </div
@@ -82,8 +81,7 @@
                 <span class="bureau">SPORTIFY ST-TROPEZ - 99 Rue du General Allard, 83990 Saint-Tropez France</span>
             </p>
 
-            <p class="description_coach">Je m'appelle Maxime Durand et je suis un athlète professionnel <span
-                    class="highlight">passionné</span> par la culture physique.<br><br> Depuis mon plus jeune âge, j'ai
+            <p class="description_coach">Je m'appelle Maxime Durand et je suis un athlète professionnel <span class="highlight">passionné</span> par la culture physique.<br><br> Depuis mon plus jeune âge, j'ai
                 toujours été fasciné par les possibilités offertes par le corps
                 humain et les défis qu'il peut relever.<br><br> Au fil des ans, j'ai développé une expertise dans cette
                 magnifique discipline qu'est la musculation.
@@ -91,8 +89,7 @@
                 de
                 <span class="highlight">partager</span> ma passion avec le plus grand nombre en aidant les gens à
                 <span class="highlight">atteindre leurs propres objectifs</span>
-                grâce à un accompagnement <span class="highlight">personnalisé</span>. Que ce soit pour <span
-                    class="highlight">perdre du poids</span>, <span class="highlight">gagner en masse
+                grâce à un accompagnement <span class="highlight">personnalisé</span>. Que ce soit pour <span class="highlight">perdre du poids</span>, <span class="highlight">gagner en masse
                     musculaire</span>
                 ou <span class="highlight">améliorer leurs performances sportives</span>, je suis là pour les
                 aider à <span class="highlight">réaliser leur potentiel</span>.<br><br>
@@ -107,9 +104,9 @@
         <div id="rdv">
             <div class="container_edt">
                 <div class="edt">
-                <?php   //VOIR COMMENTIARES DANS BASKET.PHP
+                    <?php   //VOIR COMMENTIARES DANS BASKET.PHP
 
-            // IDENTIQUE A BASKET.PHP
+                    // IDENTIQUE A BASKET.PHP
 
                     $compteur = 0;
 
@@ -127,45 +124,45 @@
                     $minutes = array(00, 45, 30, 15, 00, 00, 45, 30, 15, 00, 45);
                     $Reserv = "reserv";
 
-                    if($db_found){
-                            echo "<table>";
+                    if ($db_found) {
+                        echo "<table>";
 
+                        echo "<tr>";
+                        for ($i = 0; $i < 6; $i++) {
+                            echo "<th><p>" . $date[$i] . "</p></th>";
+                        }
+                        echo "</tr>";
+                        for ($row = 0; $row < 11; $row++) {
                             echo "<tr>";
-                            for($i=0; $i<6 ;$i++){
-                                echo "<th><p>" . $date[$i] . "</p></th>";
+
+                            $dbl_zero = "";
+                            if ($minutes[$row] === 0) {
+                                $dbl_zero = "0";
+                            }
+
+                            for ($col = 0; $col < 6; $col++) {
+                                $tempDate = $date[$col];
+                                $tempHeure = $heure[$row];
+                                $tempMinute = $minutes[$row];
+                                $tempSpe = "musculation";
+                                $requete = "SELECT * FROM rdv WHERE date = '$tempDate' AND heure_rdv = '$tempHeure' AND minutes_rdv = '$tempMinute' AND specialite = '$tempSpe'";
+                                $result = mysqli_query($db_handle, $requete);
+
+                                if (mysqli_num_rows($result) === 0) {
+                                    $Reserv = "libre";
+                                } else {
+                                    $Reserv = "reserv";
+                                }
+
+                                $compteur++;
+
+                                echo "<td><button class='" . $Reserv . "' name='" . $compteur . "' id='cases' data-row='" . $row . "' data-col='" . $col . "'>" . $heure[$row] . ":" . $minutes[$row] . $dbl_zero . "</button></td>";
                             }
                             echo "</tr>";
-                            for($row=0; $row<11; $row++){
-                                echo "<tr>";
+                        }
+                        echo "</table>";
 
-                                $dbl_zero = "";
-                                if($minutes[$row] === 0){
-                                    $dbl_zero = "0";
-                                }
-
-                                for ($col = 0; $col < 6; $col++) {
-                                    $tempDate = $date[$col];
-                                    $tempHeure = $heure[$row];
-                                    $tempMinute = $minutes[$row];
-                                    $tempSpe = "musculation";
-                                    $requete = "SELECT * FROM rdv WHERE date = '$tempDate' AND heure_rdv = '$tempHeure' AND minutes_rdv = '$tempMinute' AND specialite = '$tempSpe'";
-                                    $result = mysqli_query($db_handle, $requete);
-
-                                    if (mysqli_num_rows($result) === 0) {
-                                        $Reserv = "libre";
-                                    } else {
-                                        $Reserv = "reserv";
-                                    }
-
-                                    $compteur++;
-
-                                    echo "<td><button class='" . $Reserv . "' name='". $compteur ."' id='cases' data-row='" . $row ."' data-col='" . $col ."'>" . $heure[$row] .":". $minutes[$row] . $dbl_zero ."</button></td>";
-                                }
-                                echo "</tr>";
-                            }
-                            echo "</table>";
-
-                            $_SESSION['specialite'] = $tempSpe;
+                        $_SESSION['specialite'] = $tempSpe;
                     }
                     ?>
                 </div>
@@ -173,27 +170,31 @@
         </div>
 
         <form action="confirmation.php" method="post">
-                <div id="Input_cases">
-                    <p>Colonne: </p>
-                    <input id="Inp_Col" name="Num_Col" required>
-                    <p>Ligne:</p>
-                    <input id="Inp_Row" name="Num_Lig" required>
-                </div>
+            <div id="Input_cases">
+                <p>Colonne: </p>
+                <input id="Inp_Col" name="Num_Col" required>
+                <p>Ligne:</p>
+                <input id="Inp_Row" name="Num_Lig" required>
             </div>
-        <div class = "button">
+    </div>
+    <div class="button">
         <div class="card">
             <button type="submit" class="card">
                 <p class="title">VALIDER</p>
             </button>
-            </div>
-
+        </div>
+    </div>
+    </form>
+    <div class="button">
         <div class="card">
             <div class="card-info">
-                <p class="title">ME CONTACTER</p>
+                <form name="form_contact" method="POST" action="chat.php">
+                    <input type="hidden" name="id_coach" value="A8" />
+                    <input type="submit" value='ME CONTACTER' />
+                </form>
             </div>
-            </div>
-            </div>
-        </form>
+        </div>
+    </div>
     <script src="musculation.js"></script>
 </body>
 
