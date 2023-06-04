@@ -22,9 +22,58 @@
     </header>
 
     <div class="Content">
+
         <div id="debut">
             <img class="Back" src="photos/sport de competition/footballtete.png" alt="background_Gym">
         </div>
+
+        <?php   // VERIFIER SI UN AUTRE COACH EST DISPONIBLE DANS LA BDD 
+
+        session_start();
+
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);
+        // Définition du nom de la base de données
+        $database = "projet_piscine";
+        // Connexion à la base de données MySQL
+        $db_handle = mysqli_connect("localhost", "root", "");
+        $db_found = mysqli_select_db($db_handle, $database);
+        if ($db_found) {
+
+            $sql = "SELECT MIN(id_coach) AS prochain_id
+            FROM personnel
+            WHERE specialite = 'Football'
+            AND id_coach > 'A7'";
+
+            $result_coach = mysqli_query($db_handle, $sql);
+
+            if ($result_coach->num_rows > 0) {
+
+                $coach_base = mysqli_fetch_assoc($result_coach);
+                $coach = $coach_base["prochain_id"];
+                $_SESSION['prochaincoach_id'] = $coach;
+
+                $sql = "SELECT * FROM personnel where id_coach = '$coach'";
+                $resultat_b = mysqli_query($db_handle, $sql);
+
+                if ($resultat_b->num_rows > 0) 
+                {
+                $data = mysqli_fetch_assoc($resultat_b);
+
+                echo "
+                <a href = '". $data['page_web'] ."'>
+                    <div class = 'prochain_coach'>
+                    VOIR AUTRE COACH
+                    </div
+                    </a>
+                ";
+                }
+            }
+        }
+
+        ?>
+
         <div id="coach">
             <a href="cvfoot.html">
                 <div class="cv_cache">
@@ -39,13 +88,20 @@
             </p>
 
             <p class="description_coach">
-                Préparez-vous à vivre <span class="highlight">une aventure extraordinaire</span> dans le monde du football avec un coach passionné qui
-                saura vous guider vers la réussite.<BR><BR> Ce coach de football possède une connaissance approfondie du jeu,
-                une passion débordante et un véritable talent pour <span class="highlight">vous motiver à donner le meilleur de vous-même</span>. <BR><BR>Sa méthode d'enseignement innovante, associée à son approche personnalisée, vous permettra de
-                développer <span class="highlight">vos compétences techniques, d'améliorer votre condition physique et de renforcer votre esprit
-                d'équipe</span>. Son enthousiasme communicatif et son engagement inébranlable en font bien plus qu'un simple
+                Préparez-vous à vivre <span class="highlight">une aventure extraordinaire</span> dans le monde du
+                football avec un coach passionné qui
+                saura vous guider vers la réussite.<BR><BR> Ce coach de football possède une connaissance approfondie du
+                jeu,
+                une passion débordante et un véritable talent pour <span class="highlight">vous motiver à donner le
+                    meilleur de vous-même</span>. <BR><BR>Sa méthode d'enseignement innovante, associée à son approche
+                personnalisée, vous permettra de
+                développer <span class="highlight">vos compétences techniques, d'améliorer votre condition physique et
+                    de renforcer votre esprit
+                    d'équipe</span>. Son enthousiasme communicatif et son engagement inébranlable en font bien plus
+                qu'un simple
                 coach : il est votre mentor, votre modèle et votre plus grand supporter.<BR><BR> Ne
-                manquez pas cette opportunité de vous épanouir dans le football et de <span class="highlight">repousser vos limites</span> aux côtés de
+                manquez pas cette opportunité de vous épanouir dans le football et de <span class="highlight">repousser
+                    vos limites</span> aux côtés de
                 ce coach inspirant.
             </p>
         </div>
@@ -69,7 +125,7 @@
                     $_SESSION['id_Coach'] = "A7";
                     $_SESSION['specialite'] = 'football';
 
-                    $database = "Projet_Piscine";                           //!                     ATTENTION AU NOM DE LA BDD 
+                    $database = "Projet_Piscine"; //!                     ATTENTION AU NOM DE LA BDD 
                     $db_handle = mysqli_connect("localhost", "root", "");
                     $db_found = mysqli_select_db($db_handle, $database);
 
@@ -80,45 +136,45 @@
                     $minutes = array(00, 45, 30, 15, 00, 00, 45, 30, 15, 00, 45);
                     $Reserv = "reserv";
 
-                    if($db_found){
-                            echo "<table>";
+                    if ($db_found) {
+                        echo "<table>";
 
+                        echo "<tr>";
+                        for ($i = 0; $i < 6; $i++) {
+                            echo "<th><p>" . $date[$i] . "</p></th>";
+                        }
+                        echo "</tr>";
+                        for ($row = 0; $row < 11; $row++) {
                             echo "<tr>";
-                            for($i=0; $i<6 ;$i++){
-                                echo "<th><p>" . $date[$i] . "</p></th>";
+
+                            $dbl_zero = "";
+                            if ($minutes[$row] === 0) {
+                                $dbl_zero = "0";
+                            }
+
+                            for ($col = 0; $col < 6; $col++) {
+                                $tempDate = $date[$col];
+                                $tempHeure = $heure[$row];
+                                $tempMinute = $minutes[$row];
+                                $tempSpe = 'football';
+                                $requete = "SELECT * FROM rdv WHERE date = '$tempDate' AND heure_rdv = '$tempHeure' AND minutes_rdv = '$tempMinute' AND specialite = '$tempSpe'";
+                                $result = mysqli_query($db_handle, $requete);
+
+                                if (mysqli_num_rows($result) === 0) {
+                                    $Reserv = "libre";
+                                } else {
+                                    $Reserv = "reserv";
+                                }
+
+                                $compteur++;
+
+                                echo "<td><button class='" . $Reserv . "' name='" . $compteur . "' id='cases' data-row='" . $row . "' data-col='" . $col . "'>" . $heure[$row] . ":" . $minutes[$row] . $dbl_zero . "</button></td>";
                             }
                             echo "</tr>";
-                            for($row=0; $row<11; $row++){
-                                echo "<tr>";
+                        }
+                        echo "</table>";
 
-                                $dbl_zero = "";
-                                if($minutes[$row] === 0){
-                                    $dbl_zero = "0";
-                                }
-
-                                for ($col = 0; $col < 6; $col++) {
-                                    $tempDate = $date[$col];
-                                    $tempHeure = $heure[$row];
-                                    $tempMinute = $minutes[$row];
-                                    $tempSpe = 'football';
-                                    $requete = "SELECT * FROM rdv WHERE date = '$tempDate' AND heure_rdv = '$tempHeure' AND minutes_rdv = '$tempMinute' AND specialite = '$tempSpe'";
-                                    $result = mysqli_query($db_handle, $requete);
-
-                                    if (mysqli_num_rows($result) === 0) {
-                                        $Reserv = "libre";
-                                    } else {
-                                        $Reserv = "reserv";
-                                    }
-
-                                    $compteur++;
-
-                                    echo "<td><button class='" . $Reserv . "' name='". $compteur ."' id='cases' data-row='" . $row ."' data-col='" . $col ."'>" . $heure[$row] .":". $minutes[$row] . $dbl_zero ."</button></td>";
-                                }
-                                echo "</tr>";
-                            }
-                            echo "</table>";
-
-                            $_SESSION['specialite'] = $tempSpe;
+                        $_SESSION['specialite'] = $tempSpe;
                     }
                     ?>
                 </div>
@@ -133,20 +189,21 @@
                     <input id="Inp_Row" name="Num_Lig" required>
                 </div>
             </div>
-        <div class = "button">
+    </div>
+    <div class="button">
         <div class="card">
             <button type="submit" class="card">
                 <p class="title">VALIDER</p>
             </button>
-            </div>
+        </div>
 
         <div class="card">
             <div class="card-info">
                 <p class="title">ME CONTACTER</p>
             </div>
-            </div>
-            </div>
-        </form>
+        </div>
+    </div>
+    </form>
     <script src="musculation.js"></script>
 </body>
 

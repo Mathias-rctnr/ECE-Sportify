@@ -36,7 +36,7 @@
         <div class="text_coach">
             <p class="nom_coach">
                 <span class="highlight">DANIEL GALLEGO<br><br> A3</span><br>
-                <span class="bureau">SPORTIFY PARIS - 13 Place des Vosges, 75004 Paris France</span>
+                <span class="bureau">SPORTIFY MONACO - 28 Boulvard des Moulins, Monaco</span>
             </p>
 
             <p class="description_coach">
