@@ -26,8 +26,8 @@
             <img class="Back" src="photos/activites sportives/bikingtete.png" alt="background_Gym">
         </div>
         //*** COMMENTAIRES IDENTIQUES A MUSCULATION.PHP */
-        <?php   // VERIFIER SI UN AUTRE COACH EST DISPONIBLE DANS LA BDD 
-
+        <?php // VERIFIER SI UN AUTRE COACH EST DISPONIBLE DANS LA BDD 
+        
         session_start();
         $database = "projet_piscine";
         // Connexion à la base de données MySQL
@@ -83,13 +83,17 @@
             <p class="description_coach">
                 Rencontrez un professeur <span class="highlight">passionné de biking</span> qui saura vous motiver à
                 chaque coup de pédale.<br><br> Mes cours
-                de biking sont conçus pour vous faire <span class="highlight">transpirer</span>, <span class="highlight">renforcer votre endurance</span> et vous aider à <span class="highlight">atteindre
-                    vos objectifs</span> de <span class="highlight">remise en forme</span>. Avec moi, chaque séance sera un mélange parfait de musique
-                entraînante, de variations d'intensité et de conseils d'experts.<br><br> <span class="highlight">Je suis là pour vous guider</span>,
+                de biking sont conçus pour vous faire <span class="highlight">transpirer</span>, <span
+                    class="highlight">renforcer votre endurance</span> et vous aider à <span class="highlight">atteindre
+                    vos objectifs</span> de <span class="highlight">remise en forme</span>. Avec moi, chaque séance sera
+                un mélange parfait de musique
+                entraînante, de variations d'intensité et de conseils d'experts.<br><br> <span class="highlight">Je suis
+                    là pour vous guider</span>,
                 vous
                 encourager et vous aider à repousser vos limites, tout en respectant votre niveau de condition physique.
                 Rejoignez-moi sur le vélo et découvrez une manière amusante et dynamique de vous entraîner. Ensemble,
-                nous irons <span class="highlight">au-delà de vos attentes</span> et vous ressentirez les bienfaits d'une séance de biking
+                nous irons <span class="highlight">au-delà de vos attentes</span> et vous ressentirez les bienfaits
+                d'une séance de biking
                 intense.<br><br>
                 Prêt à relever le défi ? Faisons équipe et pédalons vers votre meilleur moi.
             </p>
@@ -109,7 +113,7 @@
                     $_SESSION['id_Coach'] = "A1";
                     $_SESSION['specialite'] = 'Biking';
 
-                    $database = "Projet_Piscine";                           //!                     ATTENTION AU NOM DE LA BDD 
+                    $database = "Projet_Piscine"; //!                     ATTENTION AU NOM DE LA BDD 
                     $db_handle = mysqli_connect("localhost", "root", "");
                     $db_found = mysqli_select_db($db_handle, $database);
 
