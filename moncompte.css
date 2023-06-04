@@ -295,10 +295,6 @@ form{
     transition: .3s;
   }
 
-
-#salle{
-    height: 100px;
-}
 .user-box_spe:focus-within label{
     color: #fff;
     font-size: 25px;

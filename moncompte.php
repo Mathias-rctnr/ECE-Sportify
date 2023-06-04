@@ -43,7 +43,7 @@
                 $result = mysqli_query($db_handle, $sql);
                 // AFFICHAGE DE LA PAGE MON COMPTE SELON LE TYPE DE COMPTE
                 if ($result->num_rows == 1) {
-
+                     // COMPTE POUR LES CLIENTS
                     $data = mysqli_fetch_assoc($result);
                     // Récupérer le numéro de carte depuis la base de données
                     $numCarte = $data['num_carte']; // Remplacez cette variable par la valeur récupérée de votre base de données
@@ -60,6 +60,7 @@
                     // Concaténer la chaîne de caractères masqués avec les derniers chiffres du numéro de carte
                     $numCarteMasque = $caracteresMasques . substr($numCarte, -4);
 
+                    // PAREIL POUR LE MDP
                     $mdp = $data['mdp'];
                     $nbCaracteresMasquesmdp = strlen($mdp) - 2;
                     if($nbCaracteresMasquesmdp < 0)
@@ -235,7 +236,7 @@
                         </div>
                         <div class='user-box'>
                         <label>Salle</label>
-                        <select id = 'salle' name='salle'>
+                        <select name='salle'>
                         <option value='Monaco'>Monaco</option>
                         <option value='Paris'>Paris</option>
                         <option value='St-Tropez'>St-Tropez</option>
