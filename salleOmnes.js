@@ -7,7 +7,7 @@ function afficherboutons() {
 
     if (afficher == "false") {
         optionsDiv.style.display = "block";
-        calque.innerHTML = ".calque {height: 590vh;}";
+        calque.innerHTML = ".calque {height: 710vh;}";
         afficher = "true";
     }
 

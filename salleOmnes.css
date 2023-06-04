@@ -220,6 +220,7 @@ header {
     border: solid 3px var(--bleu2);
     background: var(--bleu4);
     color: var(--bleu10);
+    margin-bottom: 30px;
 }
 
 .texte_bouton {
@@ -341,7 +342,7 @@ header {
     align-content: center;
     align-items: center;
     display: flex;
-    height: 35vh;
+    height: 45vh;
     width: 80vw;
     padding: 40px;
     margin-top: 30px;
@@ -451,7 +452,7 @@ header {
 #Carroussel_conseil {
     display: flex;
     flex-direction: column;
-    width: 1100px;
+    width: 1000px;
     display: flex;
     height: auto;
     border-radius: 16px;
