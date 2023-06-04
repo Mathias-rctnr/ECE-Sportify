@@ -1,7 +1,7 @@
 const header = document.querySelector("header");
 const body = document.body;
 
-let DessinValid = anime({
+let DessinValid = anime({       //Animation du svg
     targets: 'svg path',
     strokeDashoffset: [anime.setDashoffset, 0],
     easing: 'easeInOutSine',
@@ -13,6 +13,8 @@ let DessinValid = anime({
         isAnime = true;
     }
 });
+
+//? CODE PERMETTANT L'ENVOIE DE SMS AUTOMATIQUE
 
 /* const accountSid = 'AC539ed8bc5ced29ddc5cf5dd0fa89ce08';
 const authToken = '5c57c30318073c68e33ebbc875a25491';

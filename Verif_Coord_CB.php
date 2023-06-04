@@ -11,27 +11,28 @@
 
     $Abonnement = "";
 
-    if (isset($_POST['btn'])) {
+    if (isset($_POST['btn'])) {     //Selon le bouton cliqué, on déduie le prix a payer
         $boutonClick = $_POST['btn'];
         
         if ($boutonClick == 'Essentiel') {
-            $_SESSION["prix"]=20;
+            $_SESSION["prix"]=60;
             $Abonnement = 'Essentiel';
         } else if ($boutonClick == 'Partenaire') {
-            $_SESSION["prix"]=30;
+            $_SESSION["prix"]=100;
             $Abonnement = 'Partenaire';
         } else if ($boutonClick == 'Part_Plus') {
-            $_SESSION["prix"]=40;
+            $_SESSION["prix"]=200;
             $Abonnement = 'Partenaire+';
         }
     }
 
     $LoginID = $_SESSION['login_id'];
-    echo "test" . $LoginID;
 
     if($LoginID){
 
         if($db_found){
+            
+            //Changement et ajout des nouvelles informations bancaires
 
             $requeteAbo = "UPDATE client SET abonnement = '$Abonnement' WHERE id_client = '$LoginID'";
             $resultAbo = mysqli_query($db_handle, $requeteAbo);
@@ -43,10 +44,10 @@
                 $row = mysqli_fetch_assoc($result);
                 $numCarte = $row['num_carte'];
                 echo "testNumCarte: " . $numCarte;
-                if($numCarte!=="" && $numCarte!==NULL && $numCarte!=="0"){
-                    header("Location: validationPaiement.php");
+                if($numCarte!=="" && $numCarte!==NULL && $numCarte!=="0"){      //Si il possède deja des codes bancaires dans la BDD, alors ...
+                    header("Location: validationPaiement.php");                 //Animation de validation de paiement
                 }
-                else if($numCarte==="" || $numCarte==="0" || $numCarte===NULL){
+                else if($numCarte==="" || $numCarte==="0" || $numCarte===NULL){ //Si il n'en possède pas, on lui demande de les rentrées
                     header("Location: Paiement.php");
                 }
             } else {

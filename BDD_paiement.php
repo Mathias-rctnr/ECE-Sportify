@@ -11,7 +11,7 @@
     $ID_Login = $_SESSION["login_id"];
 
     if($_SESSION["login_id"]){
-        $NumEspace = isset($_POST["Num_Carte"])? $_POST["Num_Carte"] : "";
+        $NumEspace = isset($_POST["Num_Carte"])? $_POST["Num_Carte"] : "";  //Récupération d'informations
         $Titulaire = isset($_POST["Titulaire"])? $_POST["Titulaire"] : "";
         $TypeCarte = isset($_POST["type_Carte"])? $_POST["type_Carte"] : "";
         $Mois = isset($_POST["mois"])? $_POST["mois"] : "";
@@ -20,7 +20,7 @@
 
         $Groupe = "";
 
-        if($TypeCarte==="01"){
+        if($TypeCarte==="01"){      //On récupère le type de carte
             $Groupe="VISA";
         }
         else if($TypeCarte==="02"){
@@ -33,21 +33,21 @@
             $Groupe="American Express";
         }
 
-        $Num_Carte = str_replace(' ', '', $NumEspace);
+        $Num_Carte = str_replace(' ', '', $NumEspace);  //On supprime les espaces entre les chiffres
 
-        $TitulaireSepar = explode(" ", $Titulaire);
+        $TitulaireSepar = explode(" ", $Titulaire);     //On divise en deux le nom et prenom récupérer
         $Nom = trim($TitulaireSepar[0]);
         $Prenom = trim($TitulaireSepar[1]);
 
-        $DateExp = $Annee . "-" . $Mois . "-01"; 
+        $DateExp = $Annee . "-" . $Mois . "-01";        //On mets la date dans le bon format
 
         if($db_found){
             $requeteClient = "UPDATE client SET num_carte = '$Num_Carte', nom_carte = '$Nom', prenom_carte = '$Prenom', date_exp = '$DateExp', type_carte = '$Groupe', ccv = '$CVV' WHERE id_client = '$ID_Login'";
             $resultClient = mysqli_query($db_handle, $requeteClient);
         }
-        header("Location: validationPaiement.php");
+        header("Location: validationPaiement.php");     //Quand finis, validation Paiement
     }
     else{
-        header("Location: login.html");
+        header("Location: login.html");     //Si pas connecter,...
     }
 ?>

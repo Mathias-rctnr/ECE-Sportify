@@ -321,3 +321,19 @@ label{
     padding: 10px;
     font-size: 0.8em;
 }
+
+.Prix{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    top: 50px;
+    position: absolute;
+}
+
+.txt_prix{
+    color: var(--bleu8);
+    font-size: 40px;
+    font-weight: bold;
+    z-index: 90;
+}

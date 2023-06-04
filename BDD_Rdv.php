@@ -7,7 +7,7 @@
 
     if($_SESSION["login_id"]){
 
-        $ID_utilisateur = $_SESSION["login_id"];
+        $ID_utilisateur = $_SESSION["login_id"];        //Utilisateur connecter
 
         if($db_found){
             $requeteClient = "SELECT * FROM rdv WHERE id_client='$ID_utilisateur'";
@@ -15,11 +15,12 @@
     
             while($database = mysqli_fetch_assoc($resultClient)){
     
-                $dbl_zero = "";
+                $dbl_zero = "";         //Doubles zéros
                 if($database['minutes_rdv'] == 0){
                     $dbl_zero = "0";
                 }
-    
+                
+                //On injecte le code en html pour afficher les rdv
                 echo "<div id='WrappBDD' data-idrdv='" . $database['id_rdv'] . "'>";
                     echo "<p class='dateRdv'>" . $database['date'] ."</p>";
                     echo "<div class='txt_perso'>";

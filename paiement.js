@@ -1,4 +1,4 @@
-const CarteSUP = document.querySelector("#Carte_Sup");
+const CarteSUP = document.querySelector("#Carte_Sup");      //Récuperation des éléments
 const CarteMIL = document.querySelector("#Carte_Inf");
 const CarteINF = document.querySelector("#Carte_Bas")
 const Date_affi_mois = document.querySelector("#DATE_CARTE_M");
@@ -17,7 +17,7 @@ const Inp_CVV = document.querySelector("#CVV");
 const form = document.getElementById('FormCB');
 const sub_Btn = document.getElementById("sub_Btn");
 
-Inp_Num_Carte.addEventListener("input", (e) =>{
+Inp_Num_Carte.addEventListener("input", (e) =>{     //On mets des espaces automatiques tout les 4 chiffres et on supprime les lettres dans le code plus bas
     Num_affi.innerHTML = Inp_Num_Carte.value;
 
     let value = e.target.value;
@@ -26,13 +26,13 @@ Inp_Num_Carte.addEventListener("input", (e) =>{
     e.target.value = value;
 })
 
-Inp_Titu_Carte.addEventListener("input", (e) =>{
+Inp_Titu_Carte.addEventListener("input", (e) =>{    //On mets des Automatiquement en majuscule le titulaire et on annule les chiffres dans le code plus bas
     let nomRecup = Inp_Titu_Carte.value;
     nomRecup = nomRecup.toUpperCase();
     Nom_affi.innerHTML = nomRecup;
 })
 
-Inp_Exp_Mois.addEventListener("input", (e) =>{
+Inp_Exp_Mois.addEventListener("input", (e) =>{      //Recuperation de la date
     Date_affi_mois.innerHTML = Inp_Exp_Mois.value;
 })
 
@@ -44,19 +44,19 @@ Inp_CVV.addEventListener("input", (e) =>{
     CVV_affi.innerHTML = Inp_CVV.value;
 })
 
-Inp_CVV.addEventListener("focus", (e) => {
+Inp_CVV.addEventListener("focus", (e) => {          //Changement de coté de la carte
     console.log("TEST FOCUS");
     const Dos_Carte = document.querySelector("#W_Carte");
     Dos_Carte.style.transform = "rotateY(180deg)";
 })
 
-Inp_CVV.addEventListener("blur", (e) => {
+Inp_CVV.addEventListener("blur", (e) => {           //Changement de coté de la carte
     console.log("TEST BLUR");
     const Dos_Carte = document.querySelector("#W_Carte");
     Dos_Carte.style.transform = "rotateY(0deg)";
 })
 
-Inp_Titu_Carte.addEventListener('input', function(e) {
+Inp_Titu_Carte.addEventListener('input', function(e) {  
     var newValue = this.value.replace(/[^a-zA-Z\s]/g, '');
     if (this.value !== newValue) {
         this.value = newValue;
@@ -70,7 +70,7 @@ Inp_Num_Carte.addEventListener('input', function(e) {
     }
 });
 
-Inp_CVV.addEventListener('input', function(e) {
+Inp_CVV.addEventListener('input', function(e) {     //Blindage du CVV
     var newValue = this.value.replace(/[^0-9]/g, '');
     if (this.value !== newValue) {
         this.value = newValue;
@@ -98,7 +98,7 @@ function VerifChampsDate() {
     }
 }
 
-InpType.addEventListener("input", (e) =>{
+InpType.addEventListener("input", (e) =>{       //On change l'image du logo selon l'input
     console.log(logo);
     console.log(InpType.value);
 

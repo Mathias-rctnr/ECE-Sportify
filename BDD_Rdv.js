@@ -5,17 +5,11 @@ let compteur = 0;
 
 document.addEventListener('click', (e) => {
     if (e.target.id === 'WrappBDD') {
-        let valeurID = e.target.dataset.idrdv;
+        let valeurID = e.target.dataset.idrdv;      //Récupération des valeurs datas
         
-        console.log(valeurID, typeof valeurID);
+        console.log(valeurID, typeof valeurID);     //Affichage des valeurs
         
         console.log(InpID, typeof InpID);
-        InpID.value = valeurID;
-        /* const button = document.querySelector(`#cases[data-row='${valeurLigne}'][data-col='${valeurColonne}']`);
-        console.log(button);
-        
-        const classe = button.className;
-        console.log(classe); */
+        InpID.value = valeurID;         //On injecte la data recupéré dans l'input
     }
-    console.log("test");
 });

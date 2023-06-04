@@ -1,7 +1,7 @@
 const header = document.querySelector("header");
 const body = document.body;
 
-let DessinValid = anime({
+let DessinValid = anime({       //animation du svg
     targets: 'svg path',
     strokeDashoffset: [anime.setDashoffset, 0],
     easing: 'easeInOutSine',

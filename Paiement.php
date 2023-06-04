@@ -7,6 +7,12 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     </head>
     <body>
+        <div class="Prix">
+            <?php
+                session_start();        //Affichage du prix a payer
+                echo "<p class='txt_prix'>" . $_SESSION["prix"] . "&#8364</p>";
+            ?>
+        </div>
         <div id="Wrapper">
             <div id="W_Carte">
                 <div id="full_carte">

@@ -17,9 +17,13 @@
         $requete1 = "SELECT * FROM rdv WHERE id_rdv = '$ID_Recup'";
         $result2 = mysqli_query($db_handle, $requete1);
 
+        //Affichage du message de confirmation
+
         while($database = mysqli_fetch_assoc($result2)){
             echo "<p class='txt_recap'>Bonjour, Nous vous confirmons l'annulation de votre réservation.</p>";
         }
+
+        //Suppression du rdv dns la BDD
 
         $requeteMax = "DELETE FROM rdv WHERE id_rdv = '$ID_Recup'";
         $result = mysqli_query($db_handle, $requeteMax);
