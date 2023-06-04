@@ -106,9 +106,9 @@
         <div class="Wrapper_Liens">
             <a class="Liens1" id="liens_Nav" href="menu.html">Accueil</a>
             <a class="Liens2" id="liens_Nav" href="Tout_parcourir.html">Tout Parcourir</a>
-            <a class="Liens3" id="liens_Nav" href="">Recherche</a>
-            <a class="Liens4" id="liens_Nav" href="">Rendez-Vous</a>
-            <a class="Liens5" id="liens_Nav" href="">Votre Compte</a>
+            <a class="Liens3" id="liens_Nav" href="recherche.html">Recherche</a>
+            <a class="Liens4" id="liens_Nav" href="Affichage_Rdv.php">Rendez-Vous</a>
+            <a class="Liens5" id="liens_Nav" href="moncompte.php">Votre Compte</a>
         </div>
     </header>
 
@@ -149,7 +149,7 @@
         <div id="rdv">
             <div class="container_edt">
                 <div class="edt">
-                <?php
+                    <?php
                     session_start();
 
                     ini_set('display_errors', 1);
@@ -172,45 +172,45 @@
                     $minutes = array(00, 45, 30, 15, 00, 00, 45, 30, 15, 00, 45);
                     $Reserv = "reserv";
 
-                    if($db_found){
-                            echo "<table>";
+                    if ($db_found) {
+                        echo "<table>";
 
+                        echo "<tr>";
+                        for ($i = 0; $i < 6; $i++) {
+                            echo "<th><p>" . $date[$i] . "</p></th>";
+                        }
+                        echo "</tr>";
+                        for ($row = 0; $row < 11; $row++) {
                             echo "<tr>";
-                            for($i=0; $i<6 ;$i++){
-                                echo "<th><p>" . $date[$i] . "</p></th>";
+
+                            $dbl_zero = "";
+                            if ($minutes[$row] === 0) {
+                                $dbl_zero = "0";
+                            }
+
+                            for ($col = 0; $col < 6; $col++) {
+                                $tempDate = $date[$col];
+                                $tempHeure = $heure[$row];
+                                $tempMinute = $minutes[$row];
+                                $tempSpe = 'basket';
+                                $requete = "SELECT * FROM rdv WHERE date = '$tempDate' AND heure_rdv = '$tempHeure' AND minutes_rdv = '$tempMinute' AND specialite = '$tempSpe'";
+                                $result = mysqli_query($db_handle, $requete);
+
+                                if (mysqli_num_rows($result) === 0) {
+                                    $Reserv = "libre";
+                                } else {
+                                    $Reserv = "reserv";
+                                }
+
+                                $compteur++;
+
+                                echo "<td><button class='" . $Reserv . "' name='" . $compteur . "' id='cases' data-row='" . $row . "' data-col='" . $col . "'>" . $heure[$row] . ":" . $minutes[$row] . $dbl_zero . "</button></td>";
                             }
                             echo "</tr>";
-                            for($row=0; $row<11; $row++){
-                                echo "<tr>";
+                        }
+                        echo "</table>";
 
-                                $dbl_zero = "";
-                                if($minutes[$row] === 0){
-                                    $dbl_zero = "0";
-                                }
-
-                                for ($col = 0; $col < 6; $col++) {
-                                    $tempDate = $date[$col];
-                                    $tempHeure = $heure[$row];
-                                    $tempMinute = $minutes[$row];
-                                    $tempSpe = 'basket';
-                                    $requete = "SELECT * FROM rdv WHERE date = '$tempDate' AND heure_rdv = '$tempHeure' AND minutes_rdv = '$tempMinute' AND specialite = '$tempSpe'";
-                                    $result = mysqli_query($db_handle, $requete);
-
-                                    if (mysqli_num_rows($result) === 0) {
-                                        $Reserv = "libre";
-                                    } else {
-                                        $Reserv = "reserv";
-                                    }
-
-                                    $compteur++;
-
-                                    echo "<td><button class='" . $Reserv . "' name='". $compteur ."' id='cases' data-row='" . $row ."' data-col='" . $col ."'>" . $heure[$row] .":". $minutes[$row] . $dbl_zero ."</button></td>";
-                                }
-                                echo "</tr>";
-                            }
-                            echo "</table>";
-
-                            $_SESSION['specialite'] = $tempSpe;
+                        $_SESSION['specialite'] = $tempSpe;
                     }
                     ?>
                 </div>
@@ -218,27 +218,27 @@
         </div>
 
         <form action="confirmation.php" method="post">
-                <div id="Input_cases">
-                    <p>Colonne: </p>
-                    <input id="Inp_Col" name="Num_Col">
-                    <p>Ligne:</p>
-                    <input id="Inp_Row" name="Num_Lig">
-                </div>
+            <div id="Input_cases">
+                <p>Colonne: </p>
+                <input id="Inp_Col" name="Num_Col">
+                <p>Ligne:</p>
+                <input id="Inp_Row" name="Num_Lig">
             </div>
-        <div class = "button">
+    </div>
+    <div class="button">
         <div class="card">
             <button type="submit" class="card-info">
                 <p class="title">VALIDER</p>
             </button>
-            </div>
+        </div>
 
         <div class="card">
             <div class="card-info">
                 <p class="title">ME CONTACTER</p>
             </div>
-            </div>
-            </div>
-        </form>
+        </div>
+    </div>
+    </form>
     <script src="musculation.js"></script>
 </body>
 

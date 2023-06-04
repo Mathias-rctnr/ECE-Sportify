@@ -16,7 +16,7 @@
         $resultCoach = mysqli_query($db_handle, $requeteCoach);
 
         while($database = mysqli_fetch_assoc($resultCoach)){
-            echo "<a href='" . $database["cv"] .  "'>";
+            echo "<a href='" . $database["page_web"] .  "'>";
             echo "<div id='WrappBDD'>";
                 echo "<img class='imgRecherche' src='" . $database['photo'] ."' alt='imgCoach'>";
                 echo "<div class='txt_perso'>";

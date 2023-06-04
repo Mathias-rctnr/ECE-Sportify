@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="cv.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+        //Charger le fichier XML
         function loadXMLDoc() {
             const xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
@@ -16,7 +17,7 @@
             xhttp.open("GET", "basket.xml", true);
             xhttp.send();
         }
-
+        //Afficher données du fichiers XML
         function displayXML(xml) {
             const xmlDoc = xml.responseXML;
 
@@ -70,7 +71,7 @@
             let formations = xmlDoc.getElementsByTagName("formations")[0];
             let formationElements = formations.getElementsByTagName("formation");
 
-            // Parcourir les postes d'expérience et les afficher aux emplacements souhaités
+            // Parcourir les formations et les afficher aux emplacements souhaités
             let formationsHtml = "";
             for (let i = 0; i < formationElements.length; i++) {
                 let etablissement = formationElements[i].getElementsByTagName("etablissement")[0].textContent;
@@ -96,7 +97,7 @@
     <div class="Container">
         <div class="Wrapper">
             <div class="en-tete">
-                <div class="Nom">
+                <div class="Nom"><!--Afficher le nom, prenom et photo sur le CV-->
                     <p><span id="nom"></span></p>
                     <p><span id="prenom"></span></p>
                 </div>
@@ -105,16 +106,15 @@
             <div class="Corps">
                 <div id="info_perso">
                     <h2>Informations personnelles</h2>
-                    <div class="Donnee_Info">
+                    <div class="Donnee_Info"><!--Afficher l'adresse, téléphone et le mail sur le CV-->
                         <p><span id="adresse"></span></p>
                         <p><span id="telephone"></span></p>
                         <p><span id="email"></span></p>
                     </div>
                 </div>
-                <div class="Exp_Pro">
+                <div class="Exp_Pro"><!--Afficher les expériences sur le CV-->
                     <h2>Exp&eacuteriences professionnelles</h2>
                     <div id="experiences">
-                        <!-- !METTRE DIV1 ET DIV2 POUR EXP1 ET EXP2 -->
                     </div>
                 </div>
             </div>
@@ -122,14 +122,14 @@
             <div class="Footer">
                 <div id="qualites">
                     <h2>Qualit&eacutes</h2>
-                    <div class="Liste_qualites">
+                    <div class="Liste_qualites"><!--Afficher les qualités-->
                         <p><span id="qualite1"></span></p>
                         <p><span id="qualite2"></span></p>
                         <p><span id="qualite3"></span></p>
                         <p><span id="qualite4"></span></p>
                     </div>
                 </div>
-                <div class="educ">
+                <div class="educ"><!--Afficher la formation-->
                     <h2>Education</h2>
                     <div id="formations">
 
