@@ -25,6 +25,50 @@
         <div id="debut">
             <img class="Back" src="photos/activites sportives/gym6.png" alt="background_Gym">
         </div>
+
+        <?php   // VERIFIER SI UN AUTRE COACH EST DISPONIBLE DANS LA BDD 
+
+        session_start();
+        // Définition du nom de la base de données
+        $database = "projet_piscine";
+        // Connexion à la base de données MySQL
+        $db_handle = mysqli_connect("localhost", "root", "");
+        $db_found = mysqli_select_db($db_handle, $database);
+        if ($db_found) {
+            // ON SELECTIONNE LE PROCHAIN ID DANS LA BASE
+            $sql = "SELECT MIN(id_coach) AS prochain_id
+            FROM personnel
+            WHERE specialite = 'Musculation'
+            AND id_coach > 'A8'";
+
+            $result_coach = mysqli_query($db_handle, $sql);
+// SI UN AUTRE COACH EXISTE
+            if ($result_coach->num_rows > 0) {
+
+                $coach_base = mysqli_fetch_assoc($result_coach);
+                $coach = $coach_base["prochain_id"];
+                $_SESSION['prochaincoach_id'] = $coach;
+
+                $sql = "SELECT * FROM personnel where id_coach = '$coach'";
+                $resultat_b = mysqli_query($db_handle, $sql);
+
+                if ($resultat_b->num_rows > 0) 
+                {
+                $data = mysqli_fetch_assoc($resultat_b);
+                // ON CREER UN LIEN VERS SA PAGE AUTO GENERE
+                echo "
+                <a href = '". $data['page_web'] ."'>
+                    <div class = 'prochain_coach'>
+                    VOIR AUTRE COACH
+                    </div
+                    </a>
+                ";
+                }
+            }
+        }
+
+        ?>
+
         <div id="coach">
             <a href="cvmuscu.html">
                 <div class="cv_cache">
@@ -35,7 +79,7 @@
         <div class="text_coach">
             <p class="nom_coach">
                 <span class="highlight">MAXIME DURAND<br><br> A8</span><br>
-                <span class="bureau">SPORTIFY ST-TROPEZ - 99 Rue du General Allard, 83990 Saint-Tropez France<</span>
+                <span class="bureau">SPORTIFY ST-TROPEZ - 99 Rue du General Allard, 83990 Saint-Tropez France</span>
             </p>
 
             <p class="description_coach">Je m'appelle Maxime Durand et je suis un athlète professionnel <span
@@ -63,12 +107,9 @@
         <div id="rdv">
             <div class="container_edt">
                 <div class="edt">
-                <?php
-                    session_start();        //VOIR COMMENTIARES DANS BASKET.PHP
+                <?php   //VOIR COMMENTIARES DANS BASKET.PHP
 
-                    ini_set('display_errors', 1);
-                    ini_set('display_startup_errors', 1);
-                    error_reporting(E_ALL);
+            // IDENTIQUE A BASKET.PHP
 
                     $compteur = 0;
 

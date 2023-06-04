@@ -26,14 +26,10 @@
         <div id="debut">
             <img class="Back" src="photos/sport de competition/footballtete.png" alt="background_Gym">
         </div>
-
+        //*** COMMENTAIRES IDENTIQUES A MUSCULATION.PHP */
         <?php   // VERIFIER SI UN AUTRE COACH EST DISPONIBLE DANS LA BDD 
 
         session_start();
-
-        ini_set('display_errors', 1);
-        ini_set('display_startup_errors', 1);
-        error_reporting(E_ALL);
         // Définition du nom de la base de données
         $database = "projet_piscine";
         // Connexion à la base de données MySQL
@@ -114,11 +110,6 @@
             <div class="container_edt">
                 <div class="edt">
                 <?php
-                    session_start();        //VOIR COMMENTIARES DANS BASKET.PHP
-
-                    ini_set('display_errors', 1);
-                    ini_set('display_startup_errors', 1);
-                    error_reporting(E_ALL);
 
                     $compteur = 0;
 

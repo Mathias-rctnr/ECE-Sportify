@@ -26,6 +26,50 @@
         <div id="debut">
             <img class="Back" src="photos/activites sportives/fitnesstete.png" alt="background_Gym">
         </div>
+        
+//*** COMMENTAIRES IDENTIQUES A MUSCULATION.PHP */
+        <?php   // VERIFIER SI UN AUTRE COACH EST DISPONIBLE DANS LA BDD 
+
+// Définition du nom de la base de données
+$database = "projet_piscine";
+// Connexion à la base de données MySQL
+$db_handle = mysqli_connect("localhost", "root", "");
+$db_found = mysqli_select_db($db_handle, $database);
+if ($db_found) {
+
+    $sql = "SELECT MIN(id_coach) AS prochain_id
+    FROM personnel
+    WHERE specialite = 'Fitness'
+    AND id_coach > 'A6'";
+
+    $result_coach = mysqli_query($db_handle, $sql);
+
+    if ($result_coach->num_rows > 0) {
+
+        $coach_base = mysqli_fetch_assoc($result_coach);
+        $coach = $coach_base["prochain_id"];
+        $_SESSION['prochaincoach_id'] = $coach;
+
+        $sql = "SELECT * FROM personnel where id_coach = '$coach'";
+        $resultat_b = mysqli_query($db_handle, $sql);
+
+        if ($resultat_b->num_rows > 0) 
+        {
+        $data = mysqli_fetch_assoc($resultat_b);
+
+        echo "
+        <a href = '". $data['page_web'] ."'>
+            <div class = 'prochain_coach'>
+            VOIR AUTRE COACH
+            </div
+            </a>
+        ";
+        }
+    }
+}
+
+?>
+
         <div id="coach">
             <a href="cvfitness.html">
                 <div class="cv_cache">
@@ -61,13 +105,7 @@
         <div id="rdv">
             <div class="container_edt">
                 <div class="edt">
-                <?php
-                    session_start();        //VOIR COMMENTIARES DANS BASKET.PHP
-
-                    ini_set('display_errors', 1);
-                    ini_set('display_startup_errors', 1);
-                    error_reporting(E_ALL);
-
+                <?php      //VOIR COMMENTIARES DANS BASKET.PHP
                     $compteur = 0;
 
                     $_SESSION['id_Coach'] = "A6";
