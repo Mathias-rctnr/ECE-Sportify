@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Libre+Franklin:ital,wght@0,100;0,500;1,200&display=swap');
 
-:root{
+:root {
     --bleu1: #003A70;
     --bleu2: #0F558F;
     --bleu3: #1965A0;
@@ -11,17 +11,17 @@
     --bleu8: #8DBEDC;
     --bleu9: #B7D7EA;
     --bleu10: #E2EFF6;
-    --bleu11 : rgba(0,23,55, 0.7);
+    --bleu11: rgba(0, 23, 55, 0.7);
 }
 
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
     caret-color: transparent;
 }
 
-body{
+body {
     height: auto;
     width: 100vw;
     align-items: center;
@@ -30,7 +30,7 @@ body{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-header{
+header {
     z-index: 30;
     position: fixed;
     padding: 10px;
@@ -43,14 +43,14 @@ header{
 
 /*************************** LIENS DU NAVIGATEUR */
 
-.Titre_Sportify{
+.Titre_Sportify {
     z-index: 3;
     font-size: 40px;
     color: var(--bleu9);
     font-family: Moder;
 }
 
-.Wrapper_Liens{
+.Wrapper_Liens {
     z-index: 3;
     display: flex;
     justify-content: space-evenly;
@@ -66,7 +66,7 @@ header{
     transition: color 0.3s ease-in-out;
 }
 
-#liens_Nav:hover{
+#liens_Nav:hover {
     color: var(--bleu10);
     cursor: pointer;
 }
@@ -87,7 +87,8 @@ header{
 }
 
 /************************** CONTENU PAGE */
-.wrapper_spa, .wrapper{
+.wrapper_spa,
+.wrapper {
     width: 100%;
     height: fit-content;
     display: flex;
@@ -97,7 +98,8 @@ header{
     font-weight: lighter;
     font-size: x-large;
 }
-.wrapper_img{
+
+.wrapper_img {
     display: flex;
     width: 100%;
     height: 300px;
@@ -105,7 +107,8 @@ header{
     background-size: cover;
     background-position: center;
 }
-.wrapper_img_spa{
+
+.wrapper_img_spa {
     display: flex;
     width: 100%;
     height: 300px;
@@ -114,87 +117,95 @@ header{
     background-position: center;
 }
 
-.wrapper_texte{
+.wrapper_texte {
     width: 80%;
 }
-.bienvenue{
+
+.bienvenue {
     text-align: center;
     width: 100%;
     padding-top: 25px;
 }
 
-.cadre{
+.cadre {
     width: 100%;
 }
 
-.sous_titre{
+.sous_titre {
     padding-top: 50px;
     padding-bottom: 10px;
     color: #c27450;
-    font-size:xx-large;
+    font-size: xx-large;
     font-family: 'Libre Franklin', sans-serif;
     font-weight: bolder;
 }
 
-.wrapper_spa .sous_titre{
+.wrapper_spa .sous_titre {
     padding-top: 50px;
     padding-bottom: 10px;
     color: var(--bleu7);
-    font-size:xx-large;
+    font-size: xx-large;
     font-family: 'Libre Franklin', sans-serif;
     font-weight: bolder;
 }
 
-#first{
+#first {
     font-size: 60px;
-    text-align:center;
+    text-align: center;
 }
 
-.text, ul{
+.text,
+ul {
     text-align: justify;
     color: #E2EFF6;
 }
 
-.bloc-1{
-    
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-.sous_bloc1{
-    width: 50%;
-}
-.img_bloc1{
-    padding-top: 50px;
-}
-.bloc-2{
+.bloc-1 {
+
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
-.sous_bloc2{
+.sous_bloc1 {
+    width: 50%;
+}
+
+.img_bloc1 {
+    padding-top: 50px;
+}
+
+.bloc-2 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sous_bloc2 {
     width: 50%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.img_bloc2{
+
+.img_bloc2 {
     padding-top: 50px;
 }
 
-.venez{
+.venez {
     padding-top: 20px;
     width: 100%;
 
 }
-.sous_bloc2 ul{
+
+.sous_bloc2 ul {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
-#avert{
+
+#avert {
     color: rgba(139, 139, 139, 0.822);
     font-size: 20px;
     font-weight: 10px;
@@ -206,19 +217,19 @@ span {
 }
 
 
-#dispo{
+#dispo {
     background-color: black;
     justify-content: center;
-    display : flex;
+    display: flex;
     color: #E2EFF6;
     flex-direction: column;
     width: 100vw;
     max-width: 2000px;
     align-items: center;
-    padding:1vw;
+    padding: 1vw;
 }
 
-#rdv{
+#rdv {
     display: flex;
     width: 100vw;
     height: 80vh;
@@ -228,13 +239,14 @@ span {
     flex-direction: column;
     align-items: center;
 }
-.rdv_text{
+
+.rdv_text {
     font-family: 'Libre Franklin', sans-serif;
     font-size: 70px;
     padding-bottom: 30px;
 }
 
-.container_edt{
+.container_edt {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -249,14 +261,14 @@ span {
     border: 1px solid rgba(255, 255, 255, 1);
 }
 
-.edt{
+.edt {
     display: flex;
     width: 50vw;
     justify-content: center;
     align-items: end;
 }
 
-.bouton_prise_rdv{
+.bouton_prise_rdv {
     font-family: 'Libre Franklin', sans-serif;
     display: flex;
     width: 15vw;
@@ -288,20 +300,20 @@ span {
     margin-top: 40px;
     letter-spacing: 4px;
     border: none;
-  }
-  
-   
-   .card:hover {
+}
+
+
+.card:hover {
     background: var(--bleu7);
     color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 5px var(--bleu7),
-      0 0 25px var(--bleu7),
-      0 0 50px var(--bleu7),
-      0 0 100px var(--bleu7);
-  }
-   
-   .card-info {
+        0 0 25px var(--bleu7),
+        0 0 50px var(--bleu7),
+        0 0 100px var(--bleu7);
+}
+
+.card-info {
     font-family: 'Libre Franklin', sans-serif;
     color: white;
     display: flex;
@@ -311,22 +323,22 @@ span {
     height: 100%;
     overflow: visible;
     border-radius: .9rem;
-   }
-   
-   .card .title {
+}
+
+.card .title {
     letter-spacing: .1em;
-   }
-   
-   .button{
+}
+
+.button {
     flex-direction: row;
-    width : 50vw;
+    width: 50vw;
     justify-content: space-evenly;
     align-items: center;
-    display : flex;
+    display: flex;
     padding-bottom: 3vh;
-   }
+}
 
-   .title{
+.title {
     font-family: 'Libre Franklin', sans-serif;
     position: relative;
     display: inline-block;
@@ -342,9 +354,9 @@ span {
     margin-top: 40px;
     letter-spacing: 4px;
     border: none;
-   }
+}
 
-   input{
+input {
     overflow: hidden;
     width: 100px;
     height: 25px;
@@ -353,90 +365,94 @@ span {
     border-radius: 10px;
     color: var(--bleu1);
     font-size: 20px;
-   }
+}
 
-   #Input_cases{
+#Input_cases {
     display: grid;
     gap: 10px;
     justify-content: center;
     align-items: center;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto 1fr;
-   }
+}
 
 
 /* !PHP */
 
 
 
-table th, table td{
+table th,
+table td {
     text-align: center;
     width: 8vw;
     height: 5vh;
 }
 
-table{
+table {
     overflow: hidden;
     border-radius: 30px;
 }
 
-.Div_Wrap{
+.Div_Wrap {
     width: 100vw;
     height: 100vh;
 }
 
-th{
+th {
     border: 3px solid rgb(46, 46, 46);
 }
 
-td button{
+td button {
     width: 100%;
     height: 100%;
     font-size: 13px;
     border: 3px solid rgb(46, 46, 46);
 }
 
-table tr{
+table tr {
     background-color: var(--bleu1);
 }
 
-.reserv{
+.reserv {
     background-color: rgb(65, 65, 65);
     color: aliceblue;
 }
 
-.libre{
+.libre {
     background-color: var(--bleu6);
     color: aliceblue;
     transition: all 0.15s;
 }
 
-.libre:hover{
+.libre:hover {
     background-color: var(--bleu8);
     color: aliceblue;
 }
 
-.animation-shake{
-    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+.animation-shake {
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
 }
 
 @keyframes shake {
-    0%{
+    0% {
         translate: 0px 0px;
         background-color: var(--bleu8);
         border: 2px solid var(--bleu4);
     }
-    25%{
+
+    25% {
         translate: 6px 0;
         background-color: rgb(224, 38, 38);
         border: solid 2px rgb(179, 51, 51);
     }
-    50%{
+
+    50% {
         translate: -6px 0;
         background-color: rgb(224, 38, 38);
         border: solid 2px rgb(179, 51, 51);
     }
-    75%{
+
+    75% {
         translate: 6px 0;
         background-color: var(--bleu8);
         border: 2px solid var(--bleu4);

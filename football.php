@@ -27,8 +27,8 @@
             <img class="Back" src="photos/sport de competition/footballtete.png" alt="background_Gym">
         </div>
         //*** COMMENTAIRES IDENTIQUES A MUSCULATION.PHP */
-        <?php   // VERIFIER SI UN AUTRE COACH EST DISPONIBLE DANS LA BDD 
-
+        <?php // VERIFIER SI UN AUTRE COACH EST DISPONIBLE DANS LA BDD 
+        
         session_start();
         // Définition du nom de la base de données
         $database = "projet_piscine";

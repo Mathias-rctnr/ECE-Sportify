@@ -1,4 +1,4 @@
-:root{
+:root {
     --bleu1: #003A70;
     --bleu2: #0F558F;
     --bleu3: #1965A0;
@@ -11,17 +11,17 @@
     --bleu10: #E2EFF6;
 }
 
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
-html{
+html {
     overflow-x: hidden;
 }
 
-svg{
+svg {
     position: absolute;
     width: 100vw;
     margin-top: 8vh;
@@ -29,20 +29,20 @@ svg{
     z-index: -4;
 }
 
-.monChemin{
+.monChemin {
     fill: none;
     stroke: var(--bleu7);
-    stroke-width:4;
+    stroke-width: 4;
 }
 
-body{
+body {
     height: auto;
     width: 100vw;
     background-color: #0f0f0f;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-header{
+header {
     z-index: 30;
     position: fixed;
     padding: 10px;
@@ -55,14 +55,14 @@ header{
 
 /*************************** LIENS DU NAVIGATEUR */
 
-.Titre_Sportify{
+.Titre_Sportify {
     z-index: 3;
     font-size: 40px;
     color: var(--bleu9);
     font-family: Moder;
 }
 
-.Wrapper_Liens{
+.Wrapper_Liens {
     z-index: 3;
     display: flex;
     justify-content: space-evenly;
@@ -78,7 +78,7 @@ header{
     transition: color 0.3s ease-in-out;
 }
 
-#liens_Nav:hover{
+#liens_Nav:hover {
     color: var(--bleu10);
     cursor: pointer;
 }
@@ -100,7 +100,7 @@ header{
 
 /* ************* DIV CENTRALE */
 
-.Titre{
+.Titre {
     padding: 30px;
     font-size: 70px;
     margin-top: 60px;
@@ -108,7 +108,7 @@ header{
     text-align: center;
 }
 
-.Wrapper_Parcourir{
+.Wrapper_Parcourir {
     display: flex;
     gap: 20px;
     justify-content: space-evenly;
@@ -118,7 +118,9 @@ header{
     height: 140vh;
 }
 
-#Div_Activites, #Div_Sport_Compet, #Div_salle_Sport{
+#Div_Activites,
+#Div_Sport_Compet,
+#Div_salle_Sport {
     border-radius: 30px;
     display: flex;
     justify-content: space-between;
@@ -135,7 +137,7 @@ header{
     opacity: 0;
 } */
 
-.Div_txt_Activites{
+.Div_txt_Activites {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -144,13 +146,13 @@ header{
     width: 45vw;
 }
 
-.Div_txt_Activites h1{
+.Div_txt_Activites h1 {
     color: var(--bleu8);
     font-size: 35px;
 }
 
 
-.IMG_Div{
+.IMG_Div {
     width: auto;
     height: 30vh;
     border-radius: 30px 0 0 30px;
@@ -158,12 +160,14 @@ header{
     max-width: 30vw;
 }
 
-.txt_Descri{
+.txt_Descri {
     padding: 30px;
     color: var(--bleu10);
 }
 
-.btn_decouvrir1, .btn_decouvrir2, .btn_decouvrir3{
+.btn_decouvrir1,
+.btn_decouvrir2,
+.btn_decouvrir3 {
     height: 30vh;
     width: 10vw;
     display: flex;
@@ -176,29 +180,34 @@ header{
     border: 5px solid var(--bleu1);
 }
 
-.btn_decouvrir1:active, .btn_decouvrir2:active, .btn_decouvrir3:active{
+.btn_decouvrir1:active,
+.btn_decouvrir2:active,
+.btn_decouvrir3:active {
     background-color: var(--bleu1);
     border: 5px solid var(--bleu2);
 }
 
 @keyframes vibration {
-    0%{
+    0% {
         translate: 0px 0;
     }
-    100%{
+
+    100% {
         translate: 100px 0;
     }
 }
 
 
-#flecheD1, #flecheD2, #flecheD3{
+#flecheD1,
+#flecheD2,
+#flecheD3 {
     font-size: 25px;
     color: var(--bleu10);
 }
 
 /************* FOOTER  */
 
-footer{
+footer {
     margin-top: 7vh;
     display: flex;
     flex-direction: column;
@@ -207,19 +216,20 @@ footer{
     padding: 30px;
 }
 
-footer h1{
+footer h1 {
     padding: 20px;
     margin-bottom: 40px;
     font-size: 70px;
     color: var(--bleu8);
 }
 
-footer p, footer li{
+footer p,
+footer li {
     color: var(--bleu9);
     font-size: 20px;
 }
 
-.Container_Footer{
+.Container_Footer {
     margin-top: 20px;
     display: flex;
     width: 90vw;
@@ -228,7 +238,7 @@ footer p, footer li{
     align-items: center;
 }
 
-.Wrapper_Txt_Footer ul{
+.Wrapper_Txt_Footer ul {
     display: flex;
     height: 30vh;
     justify-content: space-evenly;
@@ -237,51 +247,51 @@ footer p, footer li{
     margin-bottom: 30px;
 }
 
-.Maps{
+.Maps {
     width: auto;
     height: auto;
 }
 
-.Image_Maps{
+.Image_Maps {
     border-radius: 30px;
     width: 30vw;
     height: 50vh;
 }
 
-.Liens_Réseaux{
+.Liens_Réseaux {
     display: flex;
     margin-top: 20px;
     justify-content: space-evenly;
     align-items: center;
 }
 
-.Liens_Réseaux i{
+.Liens_Réseaux i {
     color: var(--bleu10);
     font-size: 30px;
     transition: color 0.3s ease-in-out, scale 0.4s;
 }
 
-#insta:hover{
+#insta:hover {
     color: #c32aa3;
     scale: 1.3;
 }
 
-#twitter:hover{
+#twitter:hover {
     color: #1DA1F2;
     scale: 1.3;
 }
 
-#youtube:hover{
+#youtube:hover {
     color: #FF0000;
     scale: 1.3;
 }
 
-#twitch:hover{
+#twitch:hover {
     color: #6441a4;
     scale: 1.3;
 }
 
-#facebook:hover{
+#facebook:hover {
     color: #3b5998;
     scale: 1.3;
 }

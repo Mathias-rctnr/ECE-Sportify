@@ -26,7 +26,7 @@
             <img class="Back" src="photos/activites sportives/cardio_trainingTETE.png" alt="background_Gym">
         </div>
 
-        <?php   // VERIFIER SI UN AUTRE COACH EST DISPONIBLE DANS LA BDD 
+        <?php // VERIFIER SI UN AUTRE COACH EST DISPONIBLE DANS LA BDD 
         //*** COMMENTAIRES IDENTIQUES A MUSCULATION.PHP */
         session_start();
         // Définition du nom de la base de données
@@ -72,7 +72,8 @@
             <a href="cvcardio.html">
                 <div class="cv_cache">
                     <img class="cv_coach" src="photos/activites sportives/cv.png" alt="cliquez pour voir cv">
-                    <img class="photo_coach" src="photos/activites sportives/cardio_training.png" alt="coach musclation">
+                    <img class="photo_coach" src="photos/activites sportives/cardio_training.png"
+                        alt="coach musclation">
             </a>
         </div>
         <div class="text_coach">
@@ -82,11 +83,15 @@
             </p>
 
             <p class="description_coach">
-                Rencontrez un coach de cardio training passionné qui vous aidera à <span class="highlight">repousser vos limites et à atteindre
-                    de nouveaux sommets</span> de condition physique.</br></br> Avec moi, chaque séance sera un défi exaltant, conçu pour
-                <span class="highlight">brûler des calories, améliorer votre endurance et renforcer votre cœur</span>. Je vous accompagnerai à chaque
+                Rencontrez un coach de cardio training passionné qui vous aidera à <span class="highlight">repousser vos
+                    limites et à atteindre
+                    de nouveaux sommets</span> de condition physique.</br></br> Avec moi, chaque séance sera un défi
+                exaltant, conçu pour
+                <span class="highlight">brûler des calories, améliorer votre endurance et renforcer votre cœur</span>.
+                Je vous accompagnerai à chaque
                 étape du chemin, vous encourageant à donner le meilleur de vous-même et à surpasser vos propres
-                attentes. Mon approche <span class="highlight">personnalisée et dynamique</span> vous permettra de rester motivé et de progresser
+                attentes. Mon approche <span class="highlight">personnalisée et dynamique</span> vous permettra de
+                rester motivé et de progresser
                 constamment. Ensemble, nous construirons un programme d'entraînement varié, alliant exercices
                 cardiovasculaires, renforcement musculaire et articulaire.</br></br>
                 Rejoignez-moi et découvrez une nouvelle dimension
@@ -108,7 +113,7 @@
                     $_SESSION['id_Coach'] = "A3";
                     $_SESSION['specialite'] = 'Cardio Training';
 
-                    $database = "Projet_Piscine";                           //!                     ATTENTION AU NOM DE LA BDD 
+                    $database = "Projet_Piscine"; //!                     ATTENTION AU NOM DE LA BDD 
                     $db_handle = mysqli_connect("localhost", "root", "");
                     $db_found = mysqli_select_db($db_handle, $database);
 

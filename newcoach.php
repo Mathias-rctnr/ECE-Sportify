@@ -56,7 +56,7 @@
             $result_id = mysqli_query($db_handle, $sql);
 
             if ($result_id->num_rows > 0) {
-                
+
                 $row_id = mysqli_fetch_array($result_id);
                 $highest_id = $row_id['highest_id'];
                 // Incrémenter le plus haut ID
@@ -65,8 +65,7 @@
             } else {
                 $new_id = 'B1';
             }
-            if($photo == "")
-            {
+            if ($photo == "") {
                 $photo = 'photos/activites sportives/pas_de_photo.png';
             }
             // On ajoute l element a la bdd

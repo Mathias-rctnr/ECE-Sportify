@@ -26,8 +26,8 @@
             <img class="Back" src="photos/sport de competition/rugbytete.png" alt="background_Gym">
         </div>
         //*** COMMENTAIRES IDENTIQUES A MUSCULATION.PHP */
-        <?php   // VERIFIER SI UN AUTRE COACH EST DISPONIBLE DANS LA BDD 
-
+        <?php // VERIFIER SI UN AUTRE COACH EST DISPONIBLE DANS LA BDD 
+        
         session_start();
         // Définition du nom de la base de données
         $database = "projet_piscine";
@@ -82,14 +82,19 @@
             </p>
 
             <p class="description_coach">
-                Préparez-vous à vivre <span class="highlight">une expérience inoubliable</span> dans le monde du rugby avec un coach passionné qui vous
+                Préparez-vous à vivre <span class="highlight">une expérience inoubliable</span> dans le monde du rugby
+                avec un coach passionné qui vous
                 emmènera vers de nouveaux sommets.C Ce coach de rugby possède une connaissance approfondie du jeu, une
-                énergie contagieuse et un véritable dévouement pour vous aider à atteindre vos objectifs.<br><br> Avec lui, vous
+                énergie contagieuse et un véritable dévouement pour vous aider à atteindre vos objectifs.<br><br> Avec
+                lui, vous
                 découvrirez les fondamentaux du rugby, les techniques de plaquage, les passes précises et les stratégies
-                de jeu gagnantes. Son <span class="highlight">approche pédagogique personnalisée</span> vous permettra de développer vos compétences
+                de jeu gagnantes. Son <span class="highlight">approche pédagogique personnalisée</span> vous permettra
+                de développer vos compétences
                 techniques, d'améliorer votre condition physique et de renforcer votre esprit d'équipe.<br><br>
-                Son enthousiasme et son soutien constant <span class="highlight">feront de vous un joueur plus fort, plus compétent et plus
-                    passionné</span>. Rejoignez ses cours de rugby et préparez-vous à vivre des moments intenses, à forger des
+                Son enthousiasme et son soutien constant <span class="highlight">feront de vous un joueur plus fort,
+                    plus compétent et plus
+                    passionné</span>. Rejoignez ses cours de rugby et préparez-vous à vivre des moments intenses, à
+                forger des
                 liens solides avec vos coéquipiers et à créer des souvenirs durables.
         </div>
     </div>
@@ -108,7 +113,7 @@
                     $_SESSION['id_Coach'] = "A10";
                     $_SESSION['specialite'] = 'Rugby';
 
-                    $database = "Projet_Piscine";                           //!                     ATTENTION AU NOM DE LA BDD 
+                    $database = "Projet_Piscine"; //!                     ATTENTION AU NOM DE LA BDD 
                     $db_handle = mysqli_connect("localhost", "root", "");
                     $db_found = mysqli_select_db($db_handle, $database);
 

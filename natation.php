@@ -27,8 +27,8 @@
         </div>
 
         //*** COMMENTAIRES IDENTIQUES A MUSCULATION.PHP */
-        <?php   // VERIFIER SI UN AUTRE COACH EST DISPONIBLE DANS LA BDD 
-
+        <?php // VERIFIER SI UN AUTRE COACH EST DISPONIBLE DANS LA BDD 
+        
         session_start();
         // Définition du nom de la base de données
         $database = "projet_piscine";
@@ -83,14 +83,19 @@
             </p>
 
             <p class="description_coach">
-                Découvrez les joies de l'eau et laissez-vous guider par <span class="highlight">un coach passionné</span> de natation.<br><br> Avec une
+                Découvrez les joies de l'eau et laissez-vous guider par <span class="highlight">un coach
+                    passionné</span> de natation.<br><br> Avec une
                 expertise approfondie dans le domaine, ce coach saura vous accompagner tout au long de votre parcours
-                aquatique. Que vous soyez <span class="highlight">débutant ou nageur confirmé</span>, ce coach vous aidera à perfectionner votre
-                technique de nage, à améliorer votre respiration, votre endurance et votre efficacité dans l'eau.<br><br> Doté
+                aquatique. Que vous soyez <span class="highlight">débutant ou nageur confirmé</span>, ce coach vous
+                aidera à perfectionner votre
+                technique de nage, à améliorer votre respiration, votre endurance et votre efficacité dans
+                l'eau.<br><br> Doté
                 d'une pédagogie adaptée et d'un soutien constant, il créera un environnement sûr et stimulant pour vous
-                permettre de <span class="highlight">repousser vos limites</span> et d'atteindre vos objectifs de natation. Rejoignez ses cours de
+                permettre de <span class="highlight">repousser vos limites</span> et d'atteindre vos objectifs de
+                natation. Rejoignez ses cours de
                 natation et découvrez le plaisir de glisser dans l'eau en toute fluidité, de vous sentir à l'aise et en
-                confiance. <br><br>Ne manquez pas cette occasion de <span class="highlight">vous épanouir</span> dans la natation et de devenir un nageur
+                confiance. <br><br>Ne manquez pas cette occasion de <span class="highlight">vous épanouir</span> dans la
+                natation et de devenir un nageur
                 compétent, aux côtés de ce coach inspirant.
             </p>
         </div>
@@ -109,7 +114,7 @@
                     $_SESSION['id_Coach'] = "A9";
                     $_SESSION['specialite'] = 'Natation';
 
-                    $database = "Projet_Piscine";                           //!                     ATTENTION AU NOM DE LA BDD 
+                    $database = "Projet_Piscine"; //!                     ATTENTION AU NOM DE LA BDD 
                     $db_handle = mysqli_connect("localhost", "root", "");
                     $db_found = mysqli_select_db($db_handle, $database);
 

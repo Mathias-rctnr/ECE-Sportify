@@ -576,7 +576,7 @@ footer li {
     font-size: 30px;
 }
 
-.sous_titre_detente{
+.sous_titre_detente {
     color: var(--bleu7);
 }
 
@@ -599,11 +599,11 @@ footer li {
     border: 1px solid rgba(141, 190, 220, 0.31);
 }
 
-#texte_detente p{
+#texte_detente p {
     font-size: 30px;
     margin-bottom: 40px;
 }
 
-.texte_detente p{    
+.texte_detente p {
     color: var(--bleu7);
 }

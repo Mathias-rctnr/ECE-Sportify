@@ -26,7 +26,7 @@
             <img class="Back" src="photos/activites sportives/courstete.png" alt="background_Gym">
         </div>
 
-        <?php   // VERIFIER SI UN AUTRE COACH EST DISPONIBLE DANS LA BDD 
+        <?php // VERIFIER SI UN AUTRE COACH EST DISPONIBLE DANS LA BDD 
         //*** COMMENTAIRES IDENTIQUES A MUSCULATION.PHP */
         session_start();
         // Définition du nom de la base de données
@@ -72,7 +72,8 @@
             <a href="cvcoco.html">
                 <div class="cv_cache">
                     <img class="cv_coach" src="photos/activites sportives/cv.png" alt="cliquez pour voir cv">
-                    <img class="photo_coach" src="photos/activites sportives/cours_collectifs.png" alt="coach musclation">
+                    <img class="photo_coach" src="photos/activites sportives/cours_collectifs.png"
+                        alt="coach musclation">
             </a>
         </div>
         <div class="text_coach">
@@ -82,15 +83,20 @@
             </p>
 
             <p class="description_coach">
-                Préparez-vous à rejoindre <span class="highlight">un groupe dynamique </span>et à vivre des moments d'entraînement stimulants et
-                motivants avec <span class="highlight">une coach passionnéee</span>.<BR><BR> Je possède une vaste expérience dans la
-                conception et la mise en œuvre de séances d'entraînement collectives variées, <span class="highlight">adaptées à tous les
+                Préparez-vous à rejoindre <span class="highlight">un groupe dynamique </span>et à vivre des moments
+                d'entraînement stimulants et
+                motivants avec <span class="highlight">une coach passionnéee</span>.<BR><BR> Je possède une vaste
+                expérience dans la
+                conception et la mise en œuvre de séances d'entraînement collectives variées, <span
+                    class="highlight">adaptées à tous les
                     niveaux et à tous les objectifs</span>.<BR><BR>
                 Lors de ces cours collectifs, vous serez guidé à travers une série d'exercices et d'activités qui vous
-                permettront de <span class="highlight">développer votre condition physique, votre force, votre agilité</span> dans une ambiance positive,
+                permettront de <span class="highlight">développer votre condition physique, votre force, votre
+                    agilité</span> dans une ambiance positive,
                 motivante et le poussante au dépassement de soi.<BR><BR>
                 Je veillerai à ce que chaque séance soit à la fois stimulante et
-                accessible, <span class="highlight">adaptée aux besoins et aux capacités de chaque participant</span>.<br><br>J'espère vous voir parmis nous pour le prochain cours !
+                accessible, <span class="highlight">adaptée aux besoins et aux capacités de chaque
+                    participant</span>.<br><br>J'espère vous voir parmis nous pour le prochain cours !
             </p>
         </div>
     </div>
@@ -108,7 +114,7 @@
                     $_SESSION['id_Coach'] = "A4";
                     $_SESSION['specialite'] = 'Cours collectifs';
 
-                    $database = "Projet_Piscine";                           //!                     ATTENTION AU NOM DE LA BDD 
+                    $database = "Projet_Piscine"; //!                     ATTENTION AU NOM DE LA BDD 
                     $db_handle = mysqli_connect("localhost", "root", "");
                     $db_found = mysqli_select_db($db_handle, $database);
 

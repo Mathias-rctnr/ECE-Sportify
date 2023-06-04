@@ -28,8 +28,8 @@
         </div>
 
         //*** COMMENTAIRES IDENTIQUES A MUSCULATION.PHP */
-        <?php   // VERIFIER SI UN AUTRE COACH EST DISPONIBLE DANS LA BDD 
-
+        <?php // VERIFIER SI UN AUTRE COACH EST DISPONIBLE DANS LA BDD 
+        
         // Définition du nom de la base de données
         $database = "projet_piscine";
         // Connexion à la base de données MySQL
@@ -84,12 +84,15 @@
 
             <p class="description_coach">
                 Je suis une coach fitness passionnée et dévouée à votre réussite.</br></br>
-                Avec moi, vous trouverez une source inépuisable de motivation et d'inspiration pour <span class="highlight">atteindre vos objectifs</span>.</br></br> Mon approche personnalisée et
-                attentive vous permettra de <span class="highlight">repousser vos limites</span> et de <span class="highlight">dépasser vos attentes</span>.<br><br> Ensemble, nous
+                Avec moi, vous trouverez une source inépuisable de motivation et d'inspiration pour <span
+                    class="highlight">atteindre vos objectifs</span>.</br></br> Mon approche personnalisée et
+                attentive vous permettra de <span class="highlight">repousser vos limites</span> et de <span
+                    class="highlight">dépasser vos attentes</span>.<br><br> Ensemble, nous
                 construirons un plan d'entraînement adapté <span class="highlight">à votre niveau</span> et à vos
                 besoins spécifiques. Je serai là à
                 chaque étape du parcours pour vous encourager, vous soutenir et vous guider vers un mode de vie plus
-                sain et plus actif.</br></br> Rejoignez-moi dans cette aventure fitness et découvrez <span class="highlight">la meilleure version de
+                sain et plus actif.</br></br> Rejoignez-moi dans cette aventure fitness et découvrez <span
+                    class="highlight">la meilleure version de
                     vous-même</span>.
             </p>
         </div>
@@ -101,13 +104,13 @@
         <div id="rdv">
             <div class="container_edt">
                 <div class="edt">
-                    <?php      //VOIR COMMENTIARES DANS BASKET.PHP
+                    <?php //VOIR COMMENTIARES DANS BASKET.PHP
                     $compteur = 0;
 
                     $_SESSION['id_Coach'] = "A6";
                     $_SESSION['specialite'] = 'Fitness';
 
-                    $database = "Projet_Piscine";                           //!                     ATTENTION AU NOM DE LA BDD 
+                    $database = "Projet_Piscine"; //!                     ATTENTION AU NOM DE LA BDD 
                     $db_handle = mysqli_connect("localhost", "root", "");
                     $db_found = mysqli_select_db($db_handle, $database);
 

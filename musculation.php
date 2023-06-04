@@ -26,8 +26,8 @@
             <img class="Back" src="photos/activites sportives/gym6.png" alt="background_Gym">
         </div>
 
-        <?php   // VERIFIER SI UN AUTRE COACH EST DISPONIBLE DANS LA BDD 
-
+        <?php // VERIFIER SI UN AUTRE COACH EST DISPONIBLE DANS LA BDD 
+        
         session_start();
         // Définition du nom de la base de données
         $database = "projet_piscine";
@@ -81,7 +81,8 @@
                 <span class="bureau">SPORTIFY ST-TROPEZ - 99 Rue du General Allard, 83990 Saint-Tropez France</span>
             </p>
 
-            <p class="description_coach">Je m'appelle Maxime Durand et je suis un athlète professionnel <span class="highlight">passionné</span> par la culture physique.<br><br> Depuis mon plus jeune âge, j'ai
+            <p class="description_coach">Je m'appelle Maxime Durand et je suis un athlète professionnel <span
+                    class="highlight">passionné</span> par la culture physique.<br><br> Depuis mon plus jeune âge, j'ai
                 toujours été fasciné par les possibilités offertes par le corps
                 humain et les défis qu'il peut relever.<br><br> Au fil des ans, j'ai développé une expertise dans cette
                 magnifique discipline qu'est la musculation.
@@ -89,7 +90,8 @@
                 de
                 <span class="highlight">partager</span> ma passion avec le plus grand nombre en aidant les gens à
                 <span class="highlight">atteindre leurs propres objectifs</span>
-                grâce à un accompagnement <span class="highlight">personnalisé</span>. Que ce soit pour <span class="highlight">perdre du poids</span>, <span class="highlight">gagner en masse
+                grâce à un accompagnement <span class="highlight">personnalisé</span>. Que ce soit pour <span
+                    class="highlight">perdre du poids</span>, <span class="highlight">gagner en masse
                     musculaire</span>
                 ou <span class="highlight">améliorer leurs performances sportives</span>, je suis là pour les
                 aider à <span class="highlight">réaliser leur potentiel</span>.<br><br>
@@ -104,16 +106,16 @@
         <div id="rdv">
             <div class="container_edt">
                 <div class="edt">
-                    <?php   //VOIR COMMENTIARES DANS BASKET.PHP
-
+                    <?php //VOIR COMMENTIARES DANS BASKET.PHP
+                    
                     // IDENTIQUE A BASKET.PHP
-
+                    
                     $compteur = 0;
 
                     $_SESSION['id_Coach'] = "A8";
                     $_SESSION['specialite'] = 'musculation';
 
-                    $database = "Projet_Piscine";                           //!                     ATTENTION AU NOM DE LA BDD 
+                    $database = "Projet_Piscine"; //!                     ATTENTION AU NOM DE LA BDD 
                     $db_handle = mysqli_connect("localhost", "root", "");
                     $db_found = mysqli_select_db($db_handle, $database);
 

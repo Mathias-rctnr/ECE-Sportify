@@ -20,9 +20,9 @@ if (!($_SESSION["login_id"])) {
 
 <body>
     <?php
-    ini_set('display_startup_errors', 1);//En cas de mauvais demarrage
-    error_reporting(E_ALL);//Affiche toutes les erreurs
-
+    ini_set('display_startup_errors', 1); //En cas de mauvais demarrage
+    error_reporting(E_ALL); //Affiche toutes les erreurs
+    
 
     // 
     // Définition du nom de la base de données
@@ -31,9 +31,9 @@ if (!($_SESSION["login_id"])) {
     $db_handle = mysqli_connect("localhost", "root", "");
     $db_found = mysqli_select_db($db_handle, $database);
 
-    if (!($_SESSION["login_id"])) {//Si l'utilisateur n'est pas connecté
+    if (!($_SESSION["login_id"])) { //Si l'utilisateur n'est pas connecté
         header("Location: login.html");
-    } else if ($_SESSION["login_id"]) {//Sinon on affiche
+    } else if ($_SESSION["login_id"]) { //Sinon on affiche
         $id = $_SESSION["login_id"];
         //div du header
         echo " 
@@ -50,45 +50,45 @@ if (!($_SESSION["login_id"])) {
             </header>
             <div class='calque'></div><!--Couleur de fond-->";
 
-        if ($db_found) {//si on est bien connecte a la base de donne
+        if ($db_found) { //si on est bien connecte a la base de donne
             $sql = "SELECT * FROM client WHERE id_client = '$id'";
             $result = mysqli_query($db_handle, $sql);
             // AFFICHAGE DE LA CHATROOM SELON LE TYPE DE COMPTE
-            if ($result->num_rows == 1) {//SI c'est un client qui est connecte
+            if ($result->num_rows == 1) { //SI c'est un client qui est connecte
                 $data = mysqli_fetch_assoc($result);
-                $nom = $data['prenom'];//On recupere son prenom
+                $nom = $data['prenom']; //On recupere son prenom
                 $_SESSION['nom'] = $nom;
 
-                $ID_client = $id;//ainsi que son ID
+                $ID_client = $id; //ainsi que son ID
                 $_SESSION['ID_client'] = $ID_client;
 
-                $ID_coach = $_POST['id_coach'];//On recupere du form avec valeur constante l'ID du coach
+                $ID_coach = $_POST['id_coach']; //On recupere du form avec valeur constante l'ID du coach
                 $_SESSION['ID_coach'] = $ID_coach;
-                echo "<div id='titre'><span class='Libere'><br>Votre Chatroom avec votre coach</span></div><!--Titre-->";//affichage du titre
+                echo "<div id='titre'><span class='Libere'><br>Votre Chatroom avec votre coach</span></div><!--Titre-->"; //affichage du titre
             } else { // CHATROOM POUR LES COACHS
                 $sql1 = "SELECT * FROM personnel WHERE id_coach = '$id'";
                 $result_coach = mysqli_query($db_handle, $sql1);
 
-                if ($result_coach->num_rows == 1) {//SI c'est un coach
-                    $data1 = mysqli_fetch_assoc($result_coach);//recupere ses donnes
-                    $nom = $data1["prenom"];//Son nom
+                if ($result_coach->num_rows == 1) { //SI c'est un coach
+                    $data1 = mysqli_fetch_assoc($result_coach); //recupere ses donnes
+                    $nom = $data1["prenom"]; //Son nom
                     $_SESSION['nom'] = $nom;
 
-                    $ID_coach = $id;//Son id
+                    $ID_coach = $id; //Son id
                     $_SESSION['ID_coach'] = $ID_coach;
 
-                    $nom_client = $_POST['nom_client'];//recupere le nom du client grâce au form sur "votre compte" des coachs
-                    $sql2 = "SELECT * FROM client WHERE nom = '$nom_client'";//requete pour rechercher le client
+                    $nom_client = $_POST['nom_client']; //recupere le nom du client grâce au form sur "votre compte" des coachs
+                    $sql2 = "SELECT * FROM client WHERE nom = '$nom_client'"; //requete pour rechercher le client
                     $result_client = mysqli_query($db_handle, $sql2);
 
-                    if ($result_client->num_rows == 1) {//Si un client a ce nom on recupere ses données et son ID
+                    if ($result_client->num_rows == 1) { //Si un client a ce nom on recupere ses données et son ID
                         $data2 = mysqli_fetch_assoc($result_client);
                         $ID_client = $data2["id_client"];
-                    } else {//Sinon on retourne a la page pour rentrer le nom du client
+                    } else { //Sinon on retourne a la page pour rentrer le nom du client
                         header("Location: coach_contacter.html");
                     }
 
-                    echo "<div id='titre'><span class='Libere'><br>Votre Chatroom avec votre client</span></div><!--Titre-->";//on affiche le titre
+                    echo "<div id='titre'><span class='Libere'><br>Votre Chatroom avec votre client</span></div><!--Titre-->"; //on affiche le titre
                 }
             }
         }
@@ -102,7 +102,7 @@ if (!($_SESSION["login_id"])) {
                 <div id='chatbox'>";
         //on ouvre le fichier ID_client.ID_coach.'html' si il existe et qu'il a du contenu
         if (file_exists($ID_client . $ID_coach . '.html') && filesize($ID_client . $ID_coach . '.html') > 0) {
-            $contents = file_get_contents($ID_client . $ID_coach . '.html');//on affiche le contenu
+            $contents = file_get_contents($ID_client . $ID_coach . '.html'); //on affiche le contenu
             echo $contents;
         }
         echo "
@@ -113,15 +113,15 @@ if (!($_SESSION["login_id"])) {
                     </form>
                 </div>
             </div>";
-            //form pour ecrire un message et l'envoyer
+        //form pour ecrire un message et l'envoyer
     }
 
     ?>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript">
         // jQuery Document
-        $(document).ready(function() {
-            $("#submitmsg").click(function() {//Si on appuie sur le input envoyer
+        $(document).ready(function () {
+            $("#submitmsg").click(function () {//Si on appuie sur le input envoyer
                 var msg = $("#usermsg").val();//on déclare une variable message
                 $.post("chat_traitement.php", {//on redirige vers la page chat_traitement.php
                     text: msg
@@ -135,7 +135,7 @@ if (!($_SESSION["login_id"])) {
                 $.ajax({
                     url: '<?php echo $ID_client . $ID_coach; ?>' + '.html',
                     cache: false,
-                    success: function(html) {
+                    success: function (html) {
                         $("#chatbox").html(html); //Insérez le log de chat dans la #chatbox div
                         //Auto-scroll 
                         var newscrollHeight = $("#chatbox")[0].scrollHeight - 20; //Hauteur de défilement apres la requête

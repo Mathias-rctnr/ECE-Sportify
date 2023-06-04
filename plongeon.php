@@ -26,8 +26,8 @@
             <img class="Back" src="photos/sport de competition/plongeontete.png" alt="background_Gym">
         </div>
         //*** COMMENTAIRES IDENTIQUES A MUSCULATION.PHP */
-        <?php   // VERIFIER SI UN AUTRE COACH EST DISPONIBLE DANS LA BDD 
-
+        <?php // VERIFIER SI UN AUTRE COACH EST DISPONIBLE DANS LA BDD 
+        
         session_start();
         // Définition du nom de la base de données
         $database = "projet_piscine";
@@ -82,15 +82,19 @@
             </p>
 
             <p class="description_coach">
-                Préparez-vous à plonger dans un monde d'élégance et de grâce avec <span class="highlight">la coach passionnée</span> de plongeon
+                Préparez-vous à plonger dans un monde d'élégance et de grâce avec <span class="highlight">la coach
+                    passionnée</span> de plongeon
                 artistique que je suis.<br><br> Je possède une connaissance approfondie des techniques de plongeon
                 artistique, une
-                créativité débordante et un talent exceptionnel pour <span class="highlight">vous guider vers la perfection</span>.<br><br> Avec moi,
+                créativité débordante et un talent exceptionnel pour <span class="highlight">vous guider vers la
+                    perfection</span>.<br><br> Avec moi,
                 vous
                 apprendrez les mouvements acrobatiques, les sauts périlleux, les entrées en eau spectaculaires et les
                 figures complexes qui caractérisent cet art aquatique. Je vous vous aidera à développer votre
-                coordination, votre maîtrise du corps et votre confiance en vous, <span class="highlight">tout en veillant à votre sécurité et à
-                    votre progression constante</span>.<br><br> <span class="highlight">Rejoignez</span> mes cours de plongeon artistique et découvrez la magie de
+                coordination, votre maîtrise du corps et votre confiance en vous, <span class="highlight">tout en
+                    veillant à votre sécurité et à
+                    votre progression constante</span>.<br><br> <span class="highlight">Rejoignez</span> mes cours de
+                plongeon artistique et découvrez la magie de
                 l'envol, la grâce de la chute et la beauté de l'expression artistique dans l'eau.
             </p>
         </div>
@@ -109,7 +113,7 @@
                     $_SESSION['id_Coach'] = "A5";
                     $_SESSION['specialite'] = 'Plongeon';
 
-                    $database = "Projet_Piscine";                           //!                     ATTENTION AU NOM DE LA BDD 
+                    $database = "Projet_Piscine"; //!                     ATTENTION AU NOM DE LA BDD 
                     $db_handle = mysqli_connect("localhost", "root", "");
                     $db_found = mysqli_select_db($db_handle, $database);
 
