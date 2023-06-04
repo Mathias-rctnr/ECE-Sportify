@@ -73,7 +73,7 @@
 
         <div id="Div_Menu_Offres">
             <h1 id="section-cible">Nos offres</h1>
-            <div class="Carroussel_Offres">
+            <form class="Carroussel_Offres" action="Verif_Coord_CB.php" method="post">
                 <div class="Offres1">
                     <p>Abonnement Essentiel</p>
                     <ul>
@@ -81,7 +81,7 @@
                         <li>Entrainement collectifs <span>virtuels</span> sur téléphone</li>
                         <li>Accès <span>illimité</span> à un notre assistant virtuel</li>
                     </ul>
-                    <button>Essentiel</button>
+                    <button type="submit" value="Essentiel" name="btn">Essentiel</button>
                 </div>
                 <div class="Offres2">
                     <p>Abonnement Partenaire</p>
@@ -91,7 +91,7 @@
                         <li>Accès à nos <span>terrains</span> de sport ainsi<br> que nos <span>piscines</span></li>
                         <li>Accès aux avantages de <br>l'abonnement Essentiel</li>
                     </ul>
-                    <button>Comfort</button>
+                    <button type="submit" value="Partenaire" name="btn">Partenaire</button>
                 </div>
                 <div class="Offres3">
                     <p>Abonnement Partenaire<span>+</span></p>
@@ -102,9 +102,9 @@
                         <li>Accés <span>exclusif</span> à notre spa haut de gamme</li>
                         <li>Accès à nos <span>services de conciergerie</span> dedié</li>
                     </ul>
-                    <button>Premium</button>
+                    <button type="submit" value="Part_Plus" name="btn">Partenaire+</button>
                 </div>
-        </div>
+            </form>
 
         <div id="Div_Menu_Actualite">
             <h1>Actualités</h1>

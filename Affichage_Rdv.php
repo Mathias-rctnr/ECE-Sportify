@@ -33,7 +33,7 @@
             <form action="annulation.php" method="post">
                 <div class="Input">
                     <p>ID_RDV: </p>
-                    <input id="Inp_ID_Rdv" name="Inp_Id_rdv" required>
+                        <input id="Inp_ID_Rdv" name="Inp_Id_rdv" required>
                     <button type="submit"><i class="fa fa-trash"></i></button>
                 </div>
             </form>
