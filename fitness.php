@@ -105,7 +105,7 @@
                     $compteur = 0;
 
                     $_SESSION['id_Coach'] = "A6";
-                    $_SESSION['specialite'] = 'fitness';
+                    $_SESSION['specialite'] = 'Fitness';
 
                     $database = "Projet_Piscine";                           //!                     ATTENTION AU NOM DE LA BDD 
                     $db_handle = mysqli_connect("localhost", "root", "");
@@ -138,7 +138,7 @@
                                 $tempDate = $date[$col];
                                 $tempHeure = $heure[$row];
                                 $tempMinute = $minutes[$row];
-                                $tempSpe = 'fitness';
+                                $tempSpe = 'Fitness';
                                 $requete = "SELECT * FROM rdv WHERE date = '$tempDate' AND heure_rdv = '$tempHeure' AND minutes_rdv = '$tempMinute' AND specialite = '$tempSpe'";
                                 $result = mysqli_query($db_handle, $requete);
 
