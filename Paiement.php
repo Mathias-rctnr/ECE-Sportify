@@ -11,10 +11,10 @@
             <div id="W_Carte">
                 <div id="full_carte">
                     <div id="carte">
-                        <img class="fondIMG" src="/photos/FondCB.jpeg">
+                        <img class="fondIMG" src="photos/FondCB.jpeg">
                         <div id="Carte_Sup">
-                            <img id="Puce" src="/photos/Puce_Carte.png"></img>
-                            <img src="/photos/logo_mastercard.png">
+                            <img id="Puce" src="photos/Puce_Carte.png"></img>
+                            <img id="logo" src="photos/logo_mastercard.png">
                         </div>
                         <div id="Carte_Inf">
                             <p id="ID_CARTE">#### #### #### ####</p>
@@ -48,7 +48,7 @@
                 </div>
             </div>
             <div id="W_Entree">
-                <form id="FormCB">
+                <form id="FormCB" method="post" action="BDD_paiement.php">
                     <div id="Entree">
                         <div id="Partie1">
                             <p id="Inp_Num_carte" class="Champs" pattern="[0-9]*">Numero de carte:</p>
@@ -58,6 +58,13 @@
                         </div>
                         <div id="Partie2">
                             <div class="Div_InpMois">
+                                <select name="type_Carte" id="InpType" required>
+                                    <option value="999" disabled>Carte</option>
+                                    <option value="01">VISA</option>
+                                    <option value="02">MasterCard</option>
+                                    <option value="03">PayPal</option>
+                                    <option value="04">American Express</option>
+                                </select>
                                 <p class="Champs">Expiration (MM):</p>
                                 <select name="mois" id="InpMois" required>
                                     <option value="999" disabled>Mois</option>

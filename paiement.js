@@ -11,6 +11,8 @@ const Inp_Num_Carte = document.querySelector("#Num_carte");
 const Inp_Titu_Carte = document.querySelector("#Titulaire");
 const Inp_Exp_Mois = document.querySelector("#InpMois");
 const Inp_Exp_Annee = document.querySelector("#InpAnnee");
+const InpType = document.querySelector("#InpType");
+const logo = document.querySelector("#logo");
 const Inp_CVV = document.querySelector("#CVV");
 const form = document.getElementById('FormCB');
 const sub_Btn = document.getElementById("sub_Btn");
@@ -95,3 +97,21 @@ function VerifChampsDate() {
         sub_Btn.disabled = true; // Désactiver le bouton de soumission
     }
 }
+
+InpType.addEventListener("input", (e) =>{
+    console.log(logo);
+    console.log(InpType.value);
+
+    if(InpType.value==="01"){
+        logo.src = "photos/logo visa.png";
+    }
+    else if(InpType.value==="02"){
+        logo.src = "photos/logo_mastercard.png";
+    }
+    else if(InpType.value==="03"){
+        logo.src = "photos/logo paypal.png";
+    }
+    else if(InpType.value==="04"){
+        logo.src = "photos/Logo American Express.png";
+    }
+})

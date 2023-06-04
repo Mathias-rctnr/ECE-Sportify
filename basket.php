@@ -104,11 +104,11 @@
     <header>
         <div class="Titre_Sportify">Sportify</div>
         <div class="Wrapper_Liens">
-            <a class="Liens1" id="liens_Nav" href="menu.html">Accueil</a>
-            <a class="Liens2" id="liens_Nav" href="Tout_parcourir.html">Tout Parcourir</a>
-            <a class="Liens3" id="liens_Nav" href="recherche.html">Recherche</a>
-            <a class="Liens4" id="liens_Nav" href="Affichage_Rdv.php">Rendez-Vous</a>
-            <a class="Liens5" id="liens_Nav" href="moncompte.php">Votre Compte</a>
+        <a class="Liens1" id="liens_Nav" href="menu.html">Accueil</a>
+                <a class="Liens2" id="liens_Nav" href="Tout_parcourir.html">Tout Parcourir</a>
+                <a class="Liens3" id="liens_Nav" href="recherche.html">Recherche</a>
+                <a class="Liens4" id="liens_Nav" href="Affichage_Rdv.php">Rendez-Vous</a>
+                <a class="Liens5" id="liens_Nav" href="moncompte.php">Votre Compte</a>
         </div>
     </header>
 
@@ -218,16 +218,17 @@
         </div>
 
         <form action="confirmation.php" method="post">
-            <div id="Input_cases">
-                <p>Colonne: </p>
-                <input id="Inp_Col" name="Num_Col">
-                <p>Ligne:</p>
-                <input id="Inp_Row" name="Num_Lig">
+                <div id="Input_cases">
+                    <p>Colonne: </p>
+                    <input id="Inp_Col" name="Num_Col" required>
+                    <p>Ligne:</p>
+                    <input id="Inp_Row" name="Num_Lig" required>
+                </div>
             </div>
     </div>
     <div class="button">
         <div class="card">
-            <button type="submit" class="card-info">
+            <button type="submit" class="card">
                 <p class="title">VALIDER</p>
             </button>
         </div>

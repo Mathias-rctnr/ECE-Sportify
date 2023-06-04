@@ -36,9 +36,9 @@
                     </svg>
                 </div>
                 <div class="Txt_Validation">
-                    <?php include("Add_BDD_muscu.php"); ?>
+                    <p class="txt_Valid">Merci d'avoir choisi notre salle de sport ! Nous sommes ravis de vous accueillir parmi nos nouveaux membres.</p>
                     <div class="Wrapper_btn">
-                            <button value="2" id="btn_reserv" onclick="window.location.href='Affichage_Rdv.php'"><div class="txt_btn2"><p>Voir mes réservations<i class="fa fa-arrow-right"></i></p></div></button>
+                            <button value="2" id="btn_reserv" onclick="window.location.href='menu.html'"><div class="txt_btn5"><p>Accueil<i class="fa fa-arrow-right"></i></p></div></button>
                     </div>
                 </div>
             </div>

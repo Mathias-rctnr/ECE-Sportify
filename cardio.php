@@ -130,14 +130,14 @@
         <form action="confirmation.php" method="post">
                 <div id="Input_cases">
                     <p>Colonne: </p>
-                    <input id="Inp_Col" name="Num_Col">
+                    <input id="Inp_Col" name="Num_Col" required>
                     <p>Ligne:</p>
-                    <input id="Inp_Row" name="Num_Lig">
+                    <input id="Inp_Row" name="Num_Lig" required>
                 </div>
             </div>
         <div class = "button">
         <div class="card">
-            <button type="submit" class="card-info">
+            <button type="submit" class="card">
                 <p class="title">VALIDER</p>
             </button>
             </div>

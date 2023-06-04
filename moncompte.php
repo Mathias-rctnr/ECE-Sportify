@@ -16,7 +16,7 @@
             <a class="Liens1" id="liens_Nav" href="menu.html">Accueil</a>
             <a class="Liens2" id="liens_Nav" href="Tout_parcourir.html">Tout Parcourir</a>
             <a class="Liens3" id="liens_Nav" href="recherche.html">Recherche</a>
-            <a class="Liens4" id="liens_Nav" href="affichage_Rdv.php">Rendez-Vous</a>
+            <a class="Liens4" id="liens_Nav" href="Affichage_Rdv.php">Rendez-Vous</a>
             <a class="Liens5" id="liens_Nav" href="moncompte.php">Votre Compte</a>
         </div>
     </header>
@@ -26,11 +26,6 @@
         echo "<div class = 'id' ><img class='Back' src='photos/salle/moncompte_tete.png' alt='image mon compte'></div>";
 
         session_start();
-
-        ini_set('display_errors', 1);
-        ini_set('display_startup_errors', 1);
-        error_reporting(E_ALL);
-
 
         // 
 // Définition du nom de la base de données

@@ -12,7 +12,7 @@
 
     if($db_found){
 
-        $requeteCoach = "SELECT * FROM personnel WHERE nom='$Recherche' OR prenom='$Recherche' OR id_coach='$Recherche' OR specialite='$Recherche'";
+        $requeteCoach = "SELECT * FROM personnel WHERE nom='$Recherche' OR prenom='$Recherche' OR id_coach='$Recherche' OR specialite='$Recherche' OR salle='$Recherche'";
         $resultCoach = mysqli_query($db_handle, $requeteCoach);
 
         while($database = mysqli_fetch_assoc($resultCoach)){
