@@ -1,4 +1,4 @@
-:root{
+:root {
     --bleu1: #003A70;
     --bleu2: #0F558F;
     --bleu3: #1965A0;
@@ -11,13 +11,13 @@
     --bleu10: #E2EFF6;
 }
 
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
-body{
+body {
     height: auto;
     width: 100vw;
     align-items: center;
@@ -27,7 +27,7 @@ body{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-header{
+header {
     z-index: 30;
     position: fixed;
     padding: 10px;
@@ -40,14 +40,14 @@ header{
 
 /*************************** LIENS DU NAVIGATEUR */
 
-.Titre_Sportify{
+.Titre_Sportify {
     z-index: 3;
     font-size: 40px;
     color: var(--bleu9);
     font-family: Moder;
 }
 
-.Wrapper_Liens{
+.Wrapper_Liens {
     z-index: 3;
     display: flex;
     justify-content: space-evenly;
@@ -63,7 +63,7 @@ header{
     transition: color 0.3s ease-in-out;
 }
 
-#liens_Nav:hover{
+#liens_Nav:hover {
     color: var(--bleu10);
     cursor: pointer;
 }
@@ -85,7 +85,7 @@ header{
 
 /* ************ WRAPPER */
 
-.Wrapper{
+.Wrapper {
 
     width: 100vw;
     display: flex;
@@ -94,7 +94,7 @@ header{
     height: auto;
 }
 
-.ContainerResult{
+.ContainerResult {
     width: 80vw;
     display: flex;
     flex-direction: column;
@@ -103,7 +103,7 @@ header{
     height: auto;
 }
 
-.Titre{
+.Titre {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -111,14 +111,14 @@ header{
     height: 30vh;
 }
 
-h1{
+h1 {
     margin-top: 70px;
     justify-items: end;
     font-size: 70px;
     color: var(--bleu8);
 }
 
-.Resultats{
+.Resultats {
     width: 60vw;
     gap: 30px;
     display: flex;
@@ -127,7 +127,7 @@ h1{
     flex-wrap: wrap;
 }
 
-#WrappBDD{
+#WrappBDD {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -143,14 +143,14 @@ h1{
     border: 1px solid rgba(210, 210, 210, 0.22);
 }
 
-.dateRdv{
+.dateRdv {
     font-size: 30px;
     color: var(--bleu3);
     font-weight: bold;
     text-align: center;
 }
 
-.txt_perso{
+.txt_perso {
     margin-top: 1vh;
     display: flex;
     justify-content: center;
@@ -158,17 +158,17 @@ h1{
     flex-direction: column;
 }
 
-.HeureRdv{
+.HeureRdv {
     font-size: 20px;
     color: var(--bleu6);
 }
 
-.Spe{
+.Spe {
     font-size: 15px;
     color: var(--bleu7);
 }
 
-form{
+form {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -177,14 +177,14 @@ form{
     margin-top: 100px;
 }
 
-.Input{
+.Input {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     width: 40vw;
 }
 
-.Input button{
+.Input button {
     width: 8vh;
     height: 8vh;
     border-radius: 50%;
@@ -192,12 +192,12 @@ form{
     border: solid 10px var(--bleu5);
 }
 
-.Input p{
+.Input p {
     color: var(--bleu7);
     font-size: 50px;
 }
 
-Input{
+Input {
     overflow: hidden;
     width: 20vw;
     height: 8vh;
@@ -208,6 +208,6 @@ Input{
     border: solid 10px var(--bleu5);
 }
 
-button i{
+button i {
     scale: 3.5;
 }

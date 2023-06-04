@@ -44,62 +44,62 @@
 
                 $data = mysqli_fetch_assoc($result_adapt);
                 // AFFICHAGE TETE DE PAGE SPORT DE COMPETITION
-                if ($data["specialite"] = "Football") {
+                if ($data["specialite"] == "Football") {
                     echo
                         "<div id='debut'>
                 <img class='Back' src='photos/sport de competition/footballtete.png' alt='background_Gym'>
             </div>;";
-                } else if ($data["specialite"] = "Rugby") {
+                } else if ($data["specialite"] == "Rugby") {
                     echo
                         "<div id='debut'>
                 <img class='Back' src='photos/sport de competition/rugbytete.png' alt='background_Gym'>
             </div>;";
-                } else if ($data["specialite"] = "Natation") {
+                } else if ($data["specialite"] == "Natation") {
                     echo
                         "<div id='debut'>
                 <img class='Back' src='photos/sport de competition/natationtete.png' alt='background_Gym'>
             </div>;";
-                } else if ($data["specialite"] = "Plongeon") {
+                } else if ($data["specialite"] == "Plongeon") {
                     echo
                         "<div id='debut'>
                 <img class='Back' src='photos/sport de competition/plongeontete.png' alt='background_Gym'>
             </div>;";
-                } else if ($data["specialite"] = "Basketball") {
+                } else if ($data["specialite"] == "Basketball") {
                     echo
                         "<div id='debut'>
                 <img class='Back' src='photos/sport de competition/baskettete.png' alt='background_Gym'>
             </div>;";
-                } else if ($data["specialite"] = "Tennis") {
+                } else if ($data["specialite"] == "Tennis") {
                     echo
                         "<div id='debut'>
                 <img class='Back' src='photos/sport de competition/tennistete.png' alt='background_Gym'>
             </div>;";
                 }
                 // AFFICHAGE TETE DE PAGE ACTIVITE SPORTIVES
-                else if ($data["specialite"] = "Musculation") {
+                else if ($data["specialite"] == "Musculation") {
                     echo
                         "<div id='debut'>
-                <img class='Back' src='photos/sport de competition/gym6.png' alt='background_Gym'>
+                <img class='Back' src='photos/activites sportives/gym6.png' alt='background_Gym'>
             </div>;";
-                } else if ($data["specialite"] = "Fitness") {
+                } else if ($data["specialite"] == "Fitness") {
                     echo
                         "<div id='debut'>
-                <img class='Back' src='photos/sport de competition/fitnesstete.png' alt='background_Gym'>
+                <img class='Back' src='photos/activites sportives/fitnesstete.png' alt='background_Gym'>
             </div>;";
-                } else if ($data["specialite"] = "Biking") {
+                } else if ($data["specialite"] == "Biking") {
                     echo
                         "<div id='debut'>
-                <img class='Back' src='photos/sport de competition/bikingtete.png' alt='background_Gym'>
+                <img class='Back' src='photos/activites sportives/bikingtete.png' alt='background_Gym'>
             </div>;";
-                } else if ($data["specialite"] = "Cardio Training") {
+                } else if ($data["specialite"] == "Cardio Training") {
                     echo
                         "<div id='debut'>
-                <img class='Back' src='photos/sport de competition/cardio_trainingTETE.png' alt='background_Gym'>
+                <img class='Back' src='photos/activites sportives/cardio_trainingTETE.png' alt='background_Gym'>
             </div>;";
-                } else if ($data["specialite"] = "Cours collectifs") {
+                } else if ($data["specialite"] == "Cours collectifs") {
                     echo
                         "<div id='debut'>
-                <img class='Back' src='photos/sport de competition/courstete.png' alt='background_Gym'>
+                <img class='Back' src='photos/activites sportives/courstete.png' alt='background_Gym'>
             </div>";
                 }
                 

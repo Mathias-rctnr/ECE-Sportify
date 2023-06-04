@@ -234,7 +234,9 @@ header{
 #PHOTO{
     width: 30vw;
     height: 50vw;
-    background-color: blueviolet;
+    background-image: url("photos/salle/equipment.jpg");
+    background-size: cover;
+    background-position: center;
     translate: 700px 0;
     opacity: 0;
 }

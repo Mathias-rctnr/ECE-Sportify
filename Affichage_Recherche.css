@@ -1,4 +1,4 @@
-:root{
+:root {
     --bleu1: #003A70;
     --bleu2: #0F558F;
     --bleu3: #1965A0;
@@ -11,13 +11,13 @@
     --bleu10: #E2EFF6;
 }
 
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
-body{
+body {
     height: auto;
     width: 100vw;
     align-items: center;
@@ -27,7 +27,7 @@ body{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-header{
+header {
     z-index: 30;
     position: fixed;
     padding: 10px;
@@ -40,14 +40,14 @@ header{
 
 /********* LIENS DU NAVIGATEUR */
 
-.Titre_Sportify{
+.Titre_Sportify {
     z-index: 3;
     font-size: 40px;
     color: var(--bleu9);
     font-family: Moder;
 }
 
-.Wrapper_Liens{
+.Wrapper_Liens {
     z-index: 3;
     display: flex;
     justify-content: space-evenly;
@@ -63,7 +63,7 @@ header{
     transition: color 0.3s ease-in-out;
 }
 
-#liens_Nav:hover{
+#liens_Nav:hover {
     color: var(--bleu10);
     cursor: pointer;
 }
@@ -85,7 +85,7 @@ header{
 
 /* **** WRAPPER */
 
-.Wrapper{
+.Wrapper {
 
     width: 100vw;
     display: flex;
@@ -94,7 +94,7 @@ header{
     height: auto;
 }
 
-.ContainerResult{
+.ContainerResult {
     width: 80vw;
     display: flex;
     flex-direction: column;
@@ -103,7 +103,7 @@ header{
     height: auto;
 }
 
-.Titre{
+.Titre {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -111,14 +111,14 @@ header{
     height: 30vh;
 }
 
-h1{
+h1 {
     margin-top: 70px;
     justify-items: end;
     font-size: 70px;
     color: var(--bleu8);
 }
 
-.Resultats{
+.Resultats {
     width: 60vw;
     gap: 30px;
     height: auto;
@@ -128,7 +128,7 @@ h1{
     flex-wrap: wrap;
 }
 
-#WrappBDD{
+#WrappBDD {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -144,12 +144,12 @@ h1{
     border: 1px solid rgba(210, 210, 210, 0.22);
 }
 
-.imgRecherche{
+.imgRecherche {
     width: 15vw;
     height: 20vh;
 }
 
-.txt_perso{
+.txt_perso {
     width: 15vw;
     height: 10vh;
     display: flex;
@@ -158,13 +158,12 @@ h1{
     flex-direction: column;
 }
 
-.NomCoach{
+.NomCoach {
     font-size: 15px;
     color: var(--bleu5);
 }
 
-.SpeCoach{
+.SpeCoach {
     font-size: 13px;
     color: var(--bleu7);
 }
-
