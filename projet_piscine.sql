@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : sam. 03 juin 2023 à 20:52
+-- Généré le : dim. 04 juin 2023 à 08:51
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -87,7 +87,6 @@ CREATE TABLE IF NOT EXISTS `client` (
   `prenom_carte` varchar(255) NOT NULL,
   `date_exp` date NOT NULL,
   `ccv` int NOT NULL,
-  `abonnement` varchar(255) NOT NULL,
   PRIMARY KEY (`id_client`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
 
@@ -95,9 +94,9 @@ CREATE TABLE IF NOT EXISTS `client` (
 -- Déchargement des données de la table `client`
 --
 
-INSERT INTO `client` (`id_client`, `nom`, `prenom`, `adresse1`, `adresse2`, `ville`, `cp`, `pays`, `tel`, `mail`, `mdp`, `num_etud`, `type_carte`, `num_carte`, `nom_carte`, `prenom_carte`, `date_exp`, `ccv`, `abonnement`) VALUES
-(1, 'Hatron', 'Maxence', '20 boulevard de l hotel de ville', '20 boulevard de l hotel de ville', 'FRANCONVILLE', 95130, 'France', '0624526313', 'maxence.hatron@icloud.com', 'mdp', '123456789pp', '', '1234567890123456', '', '', '0000-00-00', 0, ''),
-(2, 'Tmim', 'Elliott', '54 Bvd Gambetta', '', 'Nogent', 69696, 'France', '0606060606', 'elliott.tmim@edu.ece.fr', 'mdp', '1111111111p', '', '0', '', '', '0000-00-00', 0, '');
+INSERT INTO `client` (`id_client`, `nom`, `prenom`, `adresse1`, `adresse2`, `ville`, `cp`, `pays`, `tel`, `mail`, `mdp`, `num_etud`, `type_carte`, `num_carte`, `nom_carte`, `prenom_carte`, `date_exp`, `ccv`) VALUES
+(1, 'Hatron', 'Maxence', '20 boulevard de l hotel de ville', '20 boulevard de l hotel de ville', 'FRANCONVILLE', 95130, 'France', '0624526313', 'maxence.hatron@icloud.com', 'mdp', '123456789pp', '', '1234567890123456', '', '', '0000-00-00', 0),
+(2, 'Tmim', 'Elliott', '54 Bvd Gambetta', '', 'Nogent', 69696, 'France', '0606060606', 'elliott.tmim@edu.ece.fr', 'mdp', '1111111111p', '', '0', '', '', '0000-00-00', 0);
 
 -- --------------------------------------------------------
 
@@ -110,13 +109,14 @@ CREATE TABLE IF NOT EXISTS `personnel` (
   `id_coach` varchar(255) NOT NULL,
   `nom` varchar(100) NOT NULL,
   `prenom` varchar(100) NOT NULL,
-  `photo` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT 'photos/activites sportives/pas_de_photo.png',
+  `photo` varchar(255) NOT NULL,
   `specialite` varchar(255) NOT NULL,
   `video` varchar(255) NOT NULL,
   `cv` varchar(255) NOT NULL,
   `mail` varchar(255) NOT NULL,
   `mdp` varchar(255) NOT NULL,
-  `salle` varchar(255) NOT NULL,
+  `salle` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `page_web` varchar(255) NOT NULL,
   PRIMARY KEY (`id_coach`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
 
@@ -124,18 +124,18 @@ CREATE TABLE IF NOT EXISTS `personnel` (
 -- Déchargement des données de la table `personnel`
 --
 
-INSERT INTO `personnel` (`id_coach`, `nom`, `prenom`, `photo`, `specialite`, `video`, `cv`, `mail`, `mdp`, `salle`) VALUES
-('A1', 'Seven', 'Martin', 'photos\\activites sportives\\biking.png', 'Biking', '', 'cvbiking.html', 'martin.seven@omnesport.com', 'martinseven', ''),
-('A2', 'Paprika', 'Stephen', 'photos\\sport de competition\\basketball.png', 'Basketball', '', 'cvbasket.html', 'stephen.paprika@omnesport.com', 'stephenpaprika', ''),
-('A3', 'Gallego', 'Daniel', 'photos\\activites sportives\\cardio_training.png', 'Cardio Training', '', 'cvcardio.html', 'daniel.gallego@omnesport.com', 'danielgallego', ''),
-('A4', 'Javel', 'Aude', 'photos\\activites sportives\\cours_collectifs.png', 'Cours collectifs', '', 'cvcoco.html', 'aude.javel@omnesport.com', 'audejavel', ''),
-('A5', 'Lambert', 'Marie', 'photos\\sport de competition\\plongeon.png', 'Plongeon', '', 'cvplongeon.html', 'marie.lambert@omnesport.com', 'marielambert', ''),
-('A6', 'Dubois', 'Anne', 'photos\\activites sportives\\fitness.png\r\n', 'Fitness', '', 'cvfitness.html', 'anne.dubois@omnesport.com', 'annedubois', ''),
-('A7', 'Martin', 'Pierre', 'photos\\sport de competition\\football.png', 'Football', '', 'cvfoot.html', 'pierre.martin@omnesport.com', 'pierremartin', ''),
-('A8', 'Durand', 'Maxime', 'photos\\activites sportives\\musculation.png\r\n', 'Musculation', '', 'cvmuscu.html', 'maxime.durand@omnesport.com', 'maximedurand', ''),
-('A9', 'Patterson', 'Jonathan', 'photos\\sport de competition\\natation.png', 'Natation', '', 'cvnatation.html', 'jonathan.patterson@omnesport.com', 'jonathanpatterson', ''),
-('A10', 'Thomas', 'Aaron', 'photos\\sport de competition\\rugby.png', 'Rugby', '', 'cvrugby.html', 'aaron.thomas@omnesport.com', 'aaronthomas', ''),
-('A11', 'Leroy', 'Alexandre', 'photos\\sport de competition\\tennis.png\r\n', 'Tennis', '', 'cvtennis.html', 'alexandre.leroy@omnesport.com', 'alexandreleroy', '');
+INSERT INTO `personnel` (`id_coach`, `nom`, `prenom`, `photo`, `specialite`, `video`, `cv`, `mail`, `mdp`, `salle`, `page_web`) VALUES
+('A1', 'Seven', 'Martin', 'photos\\activites sportives\\biking.png', 'Biking', '', 'cvbiking.html', 'martin.seven@omnesport.com', 'martinseven', 'Paris', 'biking.php'),
+('A2', 'Paprika', 'Stephen', 'photos\\sport de competition\\basketball.png', 'Basketball', '', 'cvbasket.html', 'stephen.paprika@omnesport.com', 'stephenpaprika', 'Paris', 'basket.php'),
+('A3', 'Gallego', 'Daniel', 'photos\\activites sportives\\cardio_training.png', 'Cardio Training', '', 'cvcardio.html', 'daniel.gallego@omnesport.com', 'danielgallego', 'Monaco', 'cardio.php'),
+('A4', 'Javel', 'Aude', 'photos\\activites sportives\\cours_collectifs.png\r\n', 'Cours collectifs', '', 'cvcoco.html', 'aude.javel@omnesport.com', 'audejavel', 'Monaco', 'cours_collectifs.php'),
+('A5', 'Lambert', 'Marie', 'photos\\sport de competition\\plongeon.png', 'Plongeon', '', 'cvplongeon.html', 'marie.lambert@omnesport.com', 'marielambert', 'Monaco', 'plongeon.php'),
+('A6', 'Dubois', 'Anne', 'photos\\activites sportives\\fitness.png\r\n', 'Fitness', '', 'cvfitness.html', 'anne.dubois@omnesport.com', 'annedubois', 'St-Tropez', 'fitness.php'),
+('A7', 'Martin', 'Pierre', 'photos\\sport de competition\\football.png', 'Football', '', 'cvfoot.html', 'pierre.martin@omnesport.com', 'pierremartin', 'Paris', 'football.php'),
+('A8', 'Durand', 'Maxime', 'photos\\activites sportives\\musculation.png\r\n', 'Musculation', '', 'cvmuscu.html', 'maxime.durand@omnesport.com', 'maximedurand', 'St-Tropez', 'musculation.php'),
+('A9', 'Patterson', 'Jonathan', 'photos\\sport de competition\\natation.png', 'Natation', '', 'cvnatation.html', 'jonathan.patterson@omnesport.com', 'jonathanpatterson', 'St-Tropez', 'natation.php'),
+('A10', 'Thomas', 'Aaron', 'photos\\sport de competition\\rugby.jpg', 'Rugby', '', 'cvrugby.html', 'aaron.thomas@omnesport.com', 'aaronthomas', 'St-Tropez', 'rugby.php'),
+('A11', 'Leroy', 'Alexandre', 'photos\\sport de competition\\tennis.png\r\n', 'Tennis', '', 'cvtennis.html', 'alexandre.leroy@omnesport.com', 'alexandreleroy', 'Paris', 'tennis.php');
 
 -- --------------------------------------------------------
 
