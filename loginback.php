@@ -1,10 +1,5 @@
 <?php
 session_start();
-
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 // Définition du nom de la base de données
 $database = "Projet_Piscine";
 
@@ -28,26 +23,20 @@ if ($db_found) {
     echo "<p>Prenom : " . $data["prenom"] . "<p>";
     $login_id_recup = $data["id_client"];
     echo "id " . $login_id_recup;
-  } 
-  
-  else {
+  } else {
     $sql_coach = "SELECT * FROM personnel WHERE mail = '$mail' AND mdp = '$mdp'";
     $result_coach = mysqli_query($db_handle, $sql_coach);
     if ($result_coach->num_rows == 1) {
       $data = mysqli_fetch_assoc($result_coach);
       $login_id_recup = $data["id_coach"];
-    } 
-    
-    else {
+    } else {
       $sql_admin = "SELECT * FROM admin WHERE mail = '$mail' AND mdp = '$mdp'";
       $result_admin = mysqli_query($db_handle, $sql_admin);
       if ($result_admin->num_rows == 1) {
         $data = mysqli_fetch_assoc($result_admin);
         $login_id_recup = $data["id"];
 
-      } 
-      
-      else {
+      } else {
         header("Location: loginerror.html");
         exit; // redirige vers page d erreur
       }

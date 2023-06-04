@@ -43,15 +43,14 @@
                 $result = mysqli_query($db_handle, $sql);
                 // AFFICHAGE DE LA PAGE MON COMPTE SELON LE TYPE DE COMPTE
                 if ($result->num_rows == 1) {
-                     // COMPTE POUR LES CLIENTS
+                    // COMPTE POUR LES CLIENTS
                     $data = mysqli_fetch_assoc($result);
                     // Récupérer le numéro de carte depuis la base de données
                     $numCarte = $data['num_carte']; // Remplacez cette variable par la valeur récupérée de votre base de données
         
                     // Définir le nombre de caractères à masquer (nombre de caractères précédents à remplacer par des astérisques)
                     $nbCaracteresMasques = strlen($numCarte) - 4; // Dans cet exemple, nous masquons tous les caractères précédents, sauf les 4 derniers chiffres
-                    if($nbCaracteresMasques < 0)
-                    {
+                    if ($nbCaracteresMasques < 0) {
                         $nbCaracteresMasques = 0;
                     }
                     // Générer une chaîne de caractères composée d'astérisques du même nombre que les caractères masqués
@@ -63,8 +62,7 @@
                     // PAREIL POUR LE MDP
                     $mdp = $data['mdp'];
                     $nbCaracteresMasquesmdp = strlen($mdp) - 2;
-                    if($nbCaracteresMasquesmdp < 0)
-                    {
+                    if ($nbCaracteresMasquesmdp < 0) {
                         $nbCaracteresMasquesmdp = 0;
                     }
 

@@ -26,7 +26,7 @@
             <img class="Back" src="photos/sport de competition/tennistete.png" alt="background_Gym">
         </div>
 
-        <?php   // VERIFIER SI UN AUTRE COACH EST DISPONIBLE DANS LA BDD 
+        <?php // VERIFIER SI UN AUTRE COACH EST DISPONIBLE DANS LA BDD 
         //*** COMMENTAIRES IDENTIQUES A MUSCULATION.PHP */
         session_start();
         // Définition du nom de la base de données
@@ -83,13 +83,17 @@
 
             <p class="description_coach">
                 Préparez-vous à vivre une expérience unique sur les courts de tennis avec un coach passionné qui saura
-                vous guider vers <span class="highlight">l'excellence</span>.<br><br> Ce coach de tennis est doté d'une expertise approfondie du jeu, d'une
-                passion inébranlable et d'un talent exceptionnel pour améliorer vos compétences.<br><br> Grâce à des techniques
+                vous guider vers <span class="highlight">l'excellence</span>.<br><br> Ce coach de tennis est doté d'une
+                expertise approfondie du jeu, d'une
+                passion inébranlable et d'un talent exceptionnel pour améliorer vos compétences.<br><br> Grâce à des
+                techniques
                 d'enseignement personnalisées, vous développerez votre technique de frappe, votre agilité, votre
-                stratégie de jeu et votre mentalité de gagnant. Que vous soyez <span class="highlight">débutant ou joueur confirmé</span>, ce coach
+                stratégie de jeu et votre mentalité de gagnant. Que vous soyez <span class="highlight">débutant ou
+                    joueur confirmé</span>, ce coach
                 saura vous pousser à donner le meilleur de vous-même, à repousser vos limites et à atteindre vos
                 objectifs tennistiques.<br><br> Ne manquez
-                pas cette opportunité de vous <span class="highlight">épanouir</span> dans le tennis et de <span class="highlight">devenir un joueur accompli</span>, aux côtés de ce
+                pas cette opportunité de vous <span class="highlight">épanouir</span> dans le tennis et de <span
+                    class="highlight">devenir un joueur accompli</span>, aux côtés de ce
                 coach inspirant.
             </p>
         </div>
@@ -108,7 +112,7 @@
                     $_SESSION['id_Coach'] = "A11";
                     $_SESSION['specialite'] = 'Tennis';
 
-                    $database = "Projet_Piscine";                           //!                     ATTENTION AU NOM DE LA BDD 
+                    $database = "Projet_Piscine"; //!                     ATTENTION AU NOM DE LA BDD 
                     $db_handle = mysqli_connect("localhost", "root", "");
                     $db_found = mysqli_select_db($db_handle, $database);
 

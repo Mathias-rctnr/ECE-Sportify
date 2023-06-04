@@ -1,9 +1,6 @@
 <?php
 
 session_start();
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
 // Définition du nom de la base de données
 $database = "Projet_Piscine";
@@ -44,15 +41,13 @@ if ($db_found) {
             $newId = $maxId + 1;
             $sqlInsert = "INSERT INTO client (id_client, nom, prenom, adresse1, adresse2, ville, cp, pays, tel, mail, mdp, num_etud) VALUES ('$newId', '$nom', '$prenom', '$adresse1', '$adresse2', '$ville', '$cp', '$pays', '$tel', '$mail', '$mdp', '$num_etu')";
             $results = mysqli_query($db_handle, $sqlInsert);
-            if($results){
+            if ($results) {
                 // ON A AJOUTÉ LE COMPTE DANS LA BDD
                 $_SESSION['login_id'] = $newId;
                 header("Location: moncompte.php");
                 exit;
-                
-            }
-            else
-            {
+
+            } else {
                 // ON A PAS AJOUTE ---> ERREUR
                 echo "erreur lors de l ajout";
             }
@@ -61,14 +56,12 @@ if ($db_found) {
             $newId = 1;
             $sqlInsert = "INSERT INTO client (id_client, nom, prenom, adresse1, adresse2, ville, cp, pays, tel, mail, mdp, num_etud) VALUES ('$newId', '$nom', '$prenom', '$adresse1', '$adresse2', '$ville', '$cp', '$pays', '$tel', '$mail', '$mdp', '$num_etu')";
             $results = mysqli_query($db_handle, $sqlInsert);
-            if($results){
+            if ($results) {
                 $_SESSION['login_id'] = $newId;
                 header("Location: moncompte.php");
                 exit;
-                
-            }
-            else
-            {
+
+            } else {
                 echo "erreur lors de l ajout";
             }
         }

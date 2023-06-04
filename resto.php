@@ -65,53 +65,66 @@
                         </p>
                     </div>
                 </div>
-                <img class="img_bloc1" src="photos/salle/resto3.jpg" width="500px" alt ="notre cuisinier">
+                <img class="img_bloc1" src="photos/salle/resto3.jpg" width="500px" alt="notre cuisinier">
             </div>
-        <div class="menu">
-            <p class="sous_titre">
-                Le Menu - Une Fusion de Saveurs et de Nutrition
-            </p>
-            <p class="text">
-                Découvrez notre menu diversifié qui offre une fusion parfaite entre saveurs délicieuses et nutrition
-                équilibrée. Chaque plat est méticuleusement préparé avec des ingrédients de première qualité pour vous
-                offrir une expérience culinaire exceptionnelle. Voici un aperçu des délices que vous pouvez déguster :
-            </p>
-            <div class = "bloc-2">
-                <img class = "img_bloc2" width = 500px src="photos/salle/restaurant2.jpg"  alt = "photo resto">
-                <div class = "sous_bloc2">
-            <ul><br>
-                <li><span>Le Matin Énergétique</span> : Commencez votre journée du bon pied avec nos options nutritives pour le
-                    petit-déjeuner. Profitez de smoothies revitalisants, de bols de fruits frais, d'omelettes protéinées
-                    et bien plus encore.</li><br>
-                <li><span>Le Déjeuner Équilibré</span> : Rechargez-vous après votre séance d'entraînement intense avec nos plats
-                    équilibrés. Savourez nos salades nourrissantes, nos wraps protéinés, nos plats de pâtes saines et
-                    nos options végétariennes pour une récupération optimale.</li><br>
-                <li><span>Le Dîner Gourmet</span> : Terminez votre journée en beauté avec notre expérience culinaire exceptionnelle.
-                    Détendez-vous et régalez-vous avec nos grillades succulentes, nos poissons frais, nos légumes de
-                    saison et bien plus encore.</li><br>
-                <li><span>Les Collations Énergétiques</span> : Entre les repas, offrez-vous nos collations saines et énergétiques
-                    pour maintenir votre niveau d'énergie tout au long de la journée. Nous proposons une sélection de
-                    barres protéinées, de smoothies vitaminés et d'autres options savoureuses.</li><br>
-            </ul>
-            </div>
-            
-            </div>
-        </div>
+            <div class="menu">
+                <p class="sous_titre">
+                    Le Menu - Une Fusion de Saveurs et de Nutrition
+                </p>
+                <p class="text">
+                    Découvrez notre menu diversifié qui offre une fusion parfaite entre saveurs délicieuses et nutrition
+                    équilibrée. Chaque plat est méticuleusement préparé avec des ingrédients de première qualité pour
+                    vous
+                    offrir une expérience culinaire exceptionnelle. Voici un aperçu des délices que vous pouvez déguster
+                    :
+                </p>
+                <div class="bloc-2">
+                    <img class="img_bloc2" width=500px src="photos/salle/restaurant2.jpg" alt="photo resto">
+                    <div class="sous_bloc2">
+                        <ul><br>
+                            <li><span>Le Matin Énergétique</span> : Commencez votre journée du bon pied avec nos options
+                                nutritives pour le
+                                petit-déjeuner. Profitez de smoothies revitalisants, de bols de fruits frais,
+                                d'omelettes protéinées
+                                et bien plus encore.</li><br>
+                            <li><span>Le Déjeuner Équilibré</span> : Rechargez-vous après votre séance d'entraînement
+                                intense avec nos plats
+                                équilibrés. Savourez nos salades nourrissantes, nos wraps protéinés, nos plats de pâtes
+                                saines et
+                                nos options végétariennes pour une récupération optimale.</li><br>
+                            <li><span>Le Dîner Gourmet</span> : Terminez votre journée en beauté avec notre expérience
+                                culinaire exceptionnelle.
+                                Détendez-vous et régalez-vous avec nos grillades succulentes, nos poissons frais, nos
+                                légumes de
+                                saison et bien plus encore.</li><br>
+                            <li><span>Les Collations Énergétiques</span> : Entre les repas, offrez-vous nos collations
+                                saines et énergétiques
+                                pour maintenir votre niveau d'énergie tout au long de la journée. Nous proposons une
+                                sélection de
+                                barres protéinées, de smoothies vitaminés et d'autres options savoureuses.</li><br>
+                        </ul>
+                    </div>
 
-        <div class="venez">
-            <p class="text">
-                Venez découvrir comment notre restaurant peut vous aider à atteindre vos objectifs sportifs grâce à
-                une alimentation saine et adaptée à vos besoins. Nous vous invitons à visiter notre restaurant lors de
-                votre prochaine séance d'entraînement chez Sportify. Profitez de l'ambiance chic et confortable de notre
-                restaurant, conçu pour créer une expérience culinaire mémorable, le tout dans notre salle de sport ultra
-                luxueuse.
-            </p><br>
-            <p id ="avert" class="avertissement">
-                Veuillez noter que l'accès à cet espace est exclusivement réservé aux membres de Sportify. Rejoignez
-                notre communauté dès aujourd'hui pour bénéficier de tous nos avantages.
-            </p>
+                </div>
+            </div>
+
+            <div class="venez">
+                <p class="text">
+                    Venez découvrir comment notre restaurant peut vous aider à atteindre vos objectifs sportifs grâce à
+                    une alimentation saine et adaptée à vos besoins. Nous vous invitons à visiter notre restaurant lors
+                    de
+                    votre prochaine séance d'entraînement chez Sportify. Profitez de l'ambiance chic et confortable de
+                    notre
+                    restaurant, conçu pour créer une expérience culinaire mémorable, le tout dans notre salle de sport
+                    ultra
+                    luxueuse.
+                </p><br>
+                <p id="avert" class="avertissement">
+                    Veuillez noter que l'accès à cet espace est exclusivement réservé aux membres de Sportify. Rejoignez
+                    notre communauté dès aujourd'hui pour bénéficier de tous nos avantages.
+                </p>
+            </div>
         </div>
-    </div>
     </div>
     <div id="dispo">
         <div class="rdv_text">
@@ -120,19 +133,15 @@
         <div id="rdv">
             <div class="container_edt">
                 <div class="edt">
-                <?php
-                    session_start();
-
-                    ini_set('display_errors', 1);
-                    ini_set('display_startup_errors', 1);       //VOIR COMMENTAIRES BASKET.PHP
-                    error_reporting(E_ALL);
+                    <?php
+                    session_start();;
 
                     $compteur = 0;
 
                     $_SESSION['id_Coach'] = "R";
                     $_SESSION['specialite'] = 'Restaurant';
 
-                    $database = "Projet_Piscine";                           //!                     ATTENTION AU NOM DE LA BDD 
+                    $database = "Projet_Piscine"; //!                     ATTENTION AU NOM DE LA BDD 
                     $db_handle = mysqli_connect("localhost", "root", "");
                     $db_found = mysqli_select_db($db_handle, $database);
 
@@ -143,45 +152,45 @@
                     $minutes = array(00, 45, 30, 15, 00, 00, 45, 30, 15, 00, 45);
                     $Reserv = "reserv";
 
-                    if($db_found){
-                            echo "<table>";
+                    if ($db_found) {
+                        echo "<table>";
 
+                        echo "<tr>";
+                        for ($i = 0; $i < 6; $i++) {
+                            echo "<th><p>" . $date[$i] . "</p></th>";
+                        }
+                        echo "</tr>";
+                        for ($row = 0; $row < 11; $row++) {
                             echo "<tr>";
-                            for($i=0; $i<6 ;$i++){
-                                echo "<th><p>" . $date[$i] . "</p></th>";
+
+                            $dbl_zero = "";
+                            if ($minutes[$row] === 0) {
+                                $dbl_zero = "0";
+                            }
+
+                            for ($col = 0; $col < 6; $col++) {
+                                $tempDate = $date[$col];
+                                $tempHeure = $heure[$row];
+                                $tempMinute = $minutes[$row];
+                                $tempSpe = "Restaurant";
+                                $requete = "SELECT * FROM rdv WHERE date = '$tempDate' AND heure_rdv = '$tempHeure' AND minutes_rdv = '$tempMinute' AND specialite = '$tempSpe'";
+                                $result = mysqli_query($db_handle, $requete);
+
+                                if (mysqli_num_rows($result) === 0) {
+                                    $Reserv = "libre";
+                                } else {
+                                    $Reserv = "reserv";
+                                }
+
+                                $compteur++;
+
+                                echo "<td><button class='" . $Reserv . "' name='" . $compteur . "' id='cases' data-row='" . $row . "' data-col='" . $col . "'>" . $heure[$row] . ":" . $minutes[$row] . $dbl_zero . "</button></td>";
                             }
                             echo "</tr>";
-                            for($row=0; $row<11; $row++){
-                                echo "<tr>";
+                        }
+                        echo "</table>";
 
-                                $dbl_zero = "";
-                                if($minutes[$row] === 0){
-                                    $dbl_zero = "0";
-                                }
-
-                                for ($col = 0; $col < 6; $col++) {
-                                    $tempDate = $date[$col];
-                                    $tempHeure = $heure[$row];
-                                    $tempMinute = $minutes[$row];
-                                    $tempSpe = "Restaurant";
-                                    $requete = "SELECT * FROM rdv WHERE date = '$tempDate' AND heure_rdv = '$tempHeure' AND minutes_rdv = '$tempMinute' AND specialite = '$tempSpe'";
-                                    $result = mysqli_query($db_handle, $requete);
-
-                                    if (mysqli_num_rows($result) === 0) {
-                                        $Reserv = "libre";
-                                    } else {
-                                        $Reserv = "reserv";
-                                    }
-
-                                    $compteur++;
-
-                                    echo "<td><button class='" . $Reserv . "' name='". $compteur ."' id='cases' data-row='" . $row ."' data-col='" . $col ."'>" . $heure[$row] .":". $minutes[$row] . $dbl_zero ."</button></td>";
-                                }
-                                echo "</tr>";
-                            }
-                            echo "</table>";
-
-                            $_SESSION['specialite'] = $tempSpe;
+                        $_SESSION['specialite'] = $tempSpe;
                     }
                     ?>
                 </div>
@@ -189,29 +198,29 @@
         </div>
 
         <form action="confirmation.php" method="post">
-                <div id="Input_cases">
-                    <p>Colonne: </p>
-                    <input id="Inp_Col" name="Num_Col" required>
-                    <p>Ligne:</p>
-                    <input id="Inp_Row" name="Num_Lig" required>
-                </div>
+            <div id="Input_cases">
+                <p>Colonne: </p>
+                <input id="Inp_Col" name="Num_Col" required>
+                <p>Ligne:</p>
+                <input id="Inp_Row" name="Num_Lig" required>
             </div>
-        <div class = "button">
+    </div>
+    <div class="button">
         <div class="card">
             <button type="submit" class="card">
                 <p class="title">VALIDER</p>
             </button>
-            </div>
+        </div>
 
         <div class="card">
             <div class="card-info">
                 <p class="title">ME CONTACTER</p>
             </div>
-            </div>
-            </div>
-        </form>
+        </div>
+    </div>
+    </form>
     <script src="musculation.js"></script>
-    
+
 </body>
 
 </html>
