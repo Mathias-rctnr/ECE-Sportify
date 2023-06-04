@@ -6,7 +6,7 @@ if (!($_SESSION["login_id"])) {
     fclose($myfile);
     session_destroy();
     sleep(1);
-    header("Location: chat.php"); //Rediriger l'utilisateur
+    header("Location: chat.php"); //Rediriger l'utilisateur vers chat.php
 }
 ?>
 <!DOCTYPE html>
@@ -20,9 +20,8 @@ if (!($_SESSION["login_id"])) {
 
 <body>
     <?php
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
+    ini_set('display_startup_errors', 1);//En cas de mauvais demarrage
+    error_reporting(E_ALL);//Affiche toutes les erreurs
 
 
     // 
@@ -32,11 +31,11 @@ if (!($_SESSION["login_id"])) {
     $db_handle = mysqli_connect("localhost", "root", "");
     $db_found = mysqli_select_db($db_handle, $database);
 
-    if (!($_SESSION["login_id"])) {
+    if (!($_SESSION["login_id"])) {//Si l'utilisateur n'est pas connecté
         header("Location: login.html");
-    } else if ($_SESSION["login_id"]) {
+    } else if ($_SESSION["login_id"]) {//Sinon on affiche
         $id = $_SESSION["login_id"];
-
+        //div du header
         echo " 
         <div id='content'>
             <header>
@@ -51,58 +50,59 @@ if (!($_SESSION["login_id"])) {
             </header>
             <div class='calque'></div><!--Couleur de fond-->";
 
-        if ($db_found) {
+        if ($db_found) {//si on est bien connecte a la base de donne
             $sql = "SELECT * FROM client WHERE id_client = '$id'";
             $result = mysqli_query($db_handle, $sql);
             // AFFICHAGE DE LA CHATROOM SELON LE TYPE DE COMPTE
-            if ($result->num_rows == 1) {
+            if ($result->num_rows == 1) {//SI c'est un client qui est connecte
                 $data = mysqli_fetch_assoc($result);
-                $nom = $data['prenom'];
+                $nom = $data['prenom'];//On recupere son prenom
                 $_SESSION['nom'] = $nom;
 
-                $ID_client = $id;
+                $ID_client = $id;//ainsi que son ID
                 $_SESSION['ID_client'] = $ID_client;
 
-                $ID_coach = $_POST['id_coach'];
+                $ID_coach = $_POST['id_coach'];//On recupere du form avec valeur constante l'ID du coach
                 $_SESSION['ID_coach'] = $ID_coach;
-                echo "<div id='titre'><span class='Libere'><br>Votre Chatroom avec votre coach</span></div><!--Titre-->";
-            } else { // COMPTE POUR LES COACHS
+                echo "<div id='titre'><span class='Libere'><br>Votre Chatroom avec votre coach</span></div><!--Titre-->";//affichage du titre
+            } else { // CHATROOM POUR LES COACHS
                 $sql1 = "SELECT * FROM personnel WHERE id_coach = '$id'";
                 $result_coach = mysqli_query($db_handle, $sql1);
 
-                if ($result_coach->num_rows == 1) {
-                    $data1 = mysqli_fetch_assoc($result_coach);
-                    $nom = $data1["prenom"];
+                if ($result_coach->num_rows == 1) {//SI c'est un coach
+                    $data1 = mysqli_fetch_assoc($result_coach);//recupere ses donnes
+                    $nom = $data1["prenom"];//Son nom
                     $_SESSION['nom'] = $nom;
 
-                    $ID_coach = $id;
+                    $ID_coach = $id;//Son id
                     $_SESSION['ID_coach'] = $ID_coach;
 
-                    $nom_client = $_POST['nom_client'];
-                    $sql2 = "SELECT * FROM client WHERE nom = '$nom_client'";
+                    $nom_client = $_POST['nom_client'];//recupere le nom du client grâce au form sur "votre compte" des coachs
+                    $sql2 = "SELECT * FROM client WHERE nom = '$nom_client'";//requete pour rechercher le client
                     $result_client = mysqli_query($db_handle, $sql2);
 
-                    if ($result_client->num_rows == 1) {
+                    if ($result_client->num_rows == 1) {//Si un client a ce nom on recupere ses données et son ID
                         $data2 = mysqli_fetch_assoc($result_client);
                         $ID_client = $data2["id_client"];
-                    } else {
-                        echo "Aucun client a été trouvé";
+                    } else {//Sinon on retourne a la page pour rentrer le nom du client
                         header("Location: coach_contacter.html");
                     }
 
-                    echo "<div id='titre'><span class='Libere'><br>Votre Chatroom avec votre client</span></div><!--Titre-->";
+                    echo "<div id='titre'><span class='Libere'><br>Votre Chatroom avec votre client</span></div><!--Titre-->";//on affiche le titre
                 }
             }
         }
 
+        //On entre dans la chatbox
         echo "            
             <div id='wrapper'>
                 <div id='menu'>
                     <p class='welcome'>Bonjour, <b>" . $nom . " </b></p>
                 </div>
                 <div id='chatbox'>";
+        //on ouvre le fichier ID_client.ID_coach.'html' si il existe et qu'il a du contenu
         if (file_exists($ID_client . $ID_coach . '.html') && filesize($ID_client . $ID_coach . '.html') > 0) {
-            $contents = file_get_contents($ID_client . $ID_coach . '.html');
+            $contents = file_get_contents($ID_client . $ID_coach . '.html');//on affiche le contenu
             echo $contents;
         }
         echo "
@@ -113,6 +113,7 @@ if (!($_SESSION["login_id"])) {
                     </form>
                 </div>
             </div>";
+            //form pour ecrire un message et l'envoyer
     }
 
     ?>
@@ -120,12 +121,12 @@ if (!($_SESSION["login_id"])) {
     <script type="text/javascript">
         // jQuery Document
         $(document).ready(function() {
-            $("#submitmsg").click(function() {
-                var msg = $("#usermsg").val();
-                $.post("post.php", {
+            $("#submitmsg").click(function() {//Si on appuie sur le input envoyer
+                var msg = $("#usermsg").val();//on déclare une variable message
+                $.post("chat_traitement.php", {//on redirige vers la page chat_traitement.php
                     text: msg
                 });
-                $("#usermsg").val("");
+                $("#usermsg").val("");//on met à 0 la valeur dans l'input
                 return false;
             });
 
