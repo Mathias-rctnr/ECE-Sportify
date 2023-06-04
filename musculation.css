@@ -431,3 +431,10 @@ table tr{
         border: 2px solid var(--bleu4);
     }
 }
+
+.prochain_coach{
+    background-color: var(--bleu4);
+    width: 200px;
+    height: 60px;
+    color: var(--bleu8);
+}
