@@ -36,7 +36,7 @@
         <div class="text_coach">
             <p class="nom_coach">
                 <span class="highlight">ANNE DUBOIS<br><br> A6</span><br>
-                <span class="bureau">SPORTIFY PARIS - 13 Place des Vosges, 75004 Paris France</span>
+                <span class="bureau">SPORTIFY ST-TROPEZ - 99 Rue du General Allard, 83990 Saint-Tropez France<</span>
             </p>
 
             <p class="description_coach">

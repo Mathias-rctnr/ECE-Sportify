@@ -35,7 +35,7 @@
         <div class="text_coach">
             <p class="nom_coach">
                 <span class="highlight">Jonathan Patterson<br><br> A9</span><br>
-                <span class="bureau">SPORTIFY MONACO - 28 Boulvard des Moulins, Monaco</span>
+                <span class="bureau">SPORTIFY ST-TROPEZ - 99 Rue du General Allard, 83990 Saint-Tropez France<</span>
             </p>
 
             <p class="description_coach">
