@@ -34,7 +34,7 @@
         </div>
         <div class="text_coach">
             <p class="nom_coach">
-                <span class="highlight">AARON THOMAS</span><br>
+                <span class="highlight">AARON THOMAS<br><br> A10</span><br>
                 <span class="bureau">SPORTIFY PARIS - 13 Place des Vosges, 75004 Paris France</span>
             </p>
 

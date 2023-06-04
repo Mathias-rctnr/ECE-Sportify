@@ -35,7 +35,7 @@
         </div>
         <div class="text_coach">
             <p class="nom_coach">
-                <span class="highlight">ANNE DUBOIS</span><br>
+                <span class="highlight">ANNE DUBOIS<br><br> A6</span><br>
                 <span class="bureau">SPORTIFY PARIS - 13 Place des Vosges, 75004 Paris France</span>
             </p>
 

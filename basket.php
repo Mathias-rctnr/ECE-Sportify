@@ -125,7 +125,7 @@
         </div>
         <div class="text_coach">
             <p class="nom_coach">
-                <span class="highlight">STEPHEN PAPRIKA</span></br>
+                <span class="highlight">STEPHEN PAPRIKA <br><br> A2</span></br>
                 <span class="bureau">SPORTIFY MONACO - 28 Boulvard des Moulins, Monaco</span>
             </p>
 

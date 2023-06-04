@@ -35,7 +35,7 @@
         </div>
         <div class="text_coach">
             <p class="nom_coach">
-                <span class="highlight">AUDE JAVEL</span><br>
+                <span class="highlight">AUDE JAVEL<br><br> A4</span><br>
                 <span class="bureau">SPORTIFY MONACO - 28 Boulvard des Moulins, Monaco</span>
             </p>
 

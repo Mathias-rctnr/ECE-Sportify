@@ -34,7 +34,7 @@
         </div>
         <div class="text_coach">
             <p class="nom_coach">
-                <span class="highlight">MARIE LAMBERT</span><br>
+                <span class="highlight">MARIE LAMBERT<br><br> A5</span><br>
                 <span class="bureau">SPORTIFY MONACO - 28 Boulvard des Moulins, Monaco</span>
             </p>
 

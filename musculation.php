@@ -34,7 +34,7 @@
         </div>
         <div class="text_coach">
             <p class="nom_coach">
-                <span class="highlight">MAXIME DURAND</span><br>
+                <span class="highlight">MAXIME DURAND<br><br> A8</span><br>
                 <span class="bureau">SPORTIFY PARIS - 13 Place des Vosges, 75004 Paris France</span>
             </p>
 

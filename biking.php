@@ -127,7 +127,7 @@
         </div>
         <div class="text_coach">
             <p class="nom_coach">
-                <span class="highlight">MARTIN SEVEN</span><br>
+                <span class="highlight">MARTIN SEVEN<br><br> A1</span><br>
                 <span class="bureau">SPORTIFY PARIS - 13 Place des Vosges, 75004 Paris France</span>
             </p>
 
