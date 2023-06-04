@@ -1,3 +1,17 @@
+:root {
+    --bleu1: #003A70;
+    --bleu2: #0F558F;
+    --bleu3: #1965A0;
+    --bleu4: #2476B1;
+    --bleu5: #2D82BD;
+    --bleu6: #4893C6;
+    --bleu7: #64A4CE;
+    --bleu8: #8DBEDC;
+    --bleu9: #B7D7EA;
+    --bleu10: #E2EFF6;
+    --bleu11 : rgba(0,23,55, 0.7);
+  }
+
 *{
     margin: 0;
     padding: 0;
@@ -83,16 +97,16 @@ body{
 }
 
 #Entree{
-    display: grid;
-    width: 35vw;
-    height: 25vh;
-    justify-content: center;
+    display: flex;
+    width: 40vw;
+    height: 35vh;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
     grid-template-rows: repeat(2, 1fr);
-    border: solid 2px rgb(0, 106, 255);
+    border: solid 1px rgb(255, 255, 255);
     border-radius: 20px;
-    background-color: aliceblue;
+    background-color: var(--bleu11);
     padding: 10px;
     min-width: 529px;
     min-height: 223px;
@@ -106,12 +120,14 @@ label{
 }
 
 input{
-    height: 40px;
+    height: 30px;
     padding: 5px;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    border: solid 2px blue;
+    border: solid 2px rgb(255, 255, 255);
+    background-color: transparent;
+    color: white;
 }
 
 #Num_carte, #Titulaire{
@@ -123,21 +139,33 @@ input{
 }
 
 .bouton{
-    width: 30vw;
+    width: 15vw;
+    transition: .3s;
+    border: none;
+}
+
+.bouton:hover{
+    background-color: var(--bleu3);
+    box-shadow: 0 0 5px var(--bleu3),
+    0 0 25px var(--bleu3),
+    0 0 50px var(--bleu3),
+    0 0 100px var(--bleu3);
 }
 
 #Partie1{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-gap: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
 }
 
 #Partie2{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    grid-gap: 2vw;
+    height: 12vh;
+    width: 100%;
+    padding: 2px;
 }
 
 #btn_submit{
@@ -322,18 +350,67 @@ label{
     font-size: 0.8em;
 }
 
-.Prix{
+.Wrap_Num, .Wrap_Date{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    top: 50px;
-    position: absolute;
+    flex-direction: column;
+    height: 10vh;
+    justify-content: space-evenly;
+    align-items: start;
 }
 
-.txt_prix{
-    color: var(--bleu8);
+.Inp_Date{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 250px;
+}
+
+.Wrap_CVC{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Inp_Type{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+    width: 200px;
+    height: 100%;
+}
+
+.Div_InpMois, .Div_InpAnnee{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+}
+
+.Div_InpMois select, .Div_InpAnnee select{
+    margin-top: 6px;
+}
+
+.Div_InpCVV{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+select{
+    border-radius: 5px;
+    width: 70px;
+    height: 25px;
+}
+
+.Prix{
+    position: absolute;
+    top: 50px;
+    color: var(--bleu9);
     font-size: 40px;
-    font-weight: bold;
-    z-index: 90;
+    z-index: 60;
 }
