@@ -84,6 +84,7 @@ if (!($_SESSION["login_id"])) {
                     if ($result_client->num_rows == 1) { //Si un client a ce nom on recupere ses données et son ID
                         $data2 = mysqli_fetch_assoc($result_client);
                         $ID_client = $data2["id_client"];
+                        $_SESSION['ID_client'] = $ID_client;
                     } else { //Sinon on retourne a la page pour rentrer le nom du client
                         header("Location: coach_contacter.html");
                     }
@@ -105,6 +106,7 @@ if (!($_SESSION["login_id"])) {
             $contents = file_get_contents($ID_client . $ID_coach . '.html'); //on affiche le contenu
             echo $contents;
         }
+
         echo "
                 </div>
                     <form name='message' action ='' >
