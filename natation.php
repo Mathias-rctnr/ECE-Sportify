@@ -39,8 +39,8 @@ if ($db_found) {
 
     $sql = "SELECT MIN(id_coach) AS prochain_id
     FROM personnel
-    WHERE specialite = 'Fitness'
-    AND id_coach > 'A6'";
+    WHERE specialite = 'Natation'
+    AND id_coach > 'A9'";
 
     $result_coach = mysqli_query($db_handle, $sql);
 
@@ -104,11 +104,6 @@ if ($db_found) {
             <div class="container_edt">
                 <div class="edt">
                 <?php
-                    session_start();            //VOIR COMMENTAIRES BASKET.PHP
-
-                    ini_set('display_errors', 1);
-                    ini_set('display_startup_errors', 1);
-                    error_reporting(E_ALL);
 
                     $compteur = 0;
 

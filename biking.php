@@ -118,21 +118,17 @@
         <div id="debut">
             <img class="Back" src="photos/activites sportives/bikingtete.png" alt="background_Gym">
         </div>
-
+        //*** COMMENTAIRES IDENTIQUES A MUSCULATION.PHP */
         <?php   // VERIFIER SI UN AUTRE COACH EST DISPONIBLE DANS LA BDD 
 
 session_start();
 // Définition du nom de la base de données
-$database = "projet_piscine";
-// Connexion à la base de données MySQL
-$db_handle = mysqli_connect("localhost", "root", "");
-$db_found = mysqli_select_db($db_handle, $database);
 if ($db_found) {
 
     $sql = "SELECT MIN(id_coach) AS prochain_id
     FROM personnel
-    WHERE specialite = 'Musculation'
-    AND id_coach > 'A8'";
+    WHERE specialite = 'Biking'
+    AND id_coach > 'A1'";
 
     $result_coach = mysqli_query($db_handle, $sql);
 
@@ -197,11 +193,6 @@ if ($db_found) {
             <div class="container_edt">
                 <div class="edt">
                 <?php
-                    session_start();
-
-                    ini_set('display_errors', 1);
-                    ini_set('display_startup_errors', 1);
-                    error_reporting(E_ALL);
 
                     $compteur = 0;
 

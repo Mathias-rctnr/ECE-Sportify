@@ -38,8 +38,8 @@
             // ON SELECTIONNE LE PROCHAIN ID DANS LA BASE
             $sql = "SELECT MIN(id_coach) AS prochain_id
             FROM personnel
-            WHERE specialite = 'Biking'
-            AND id_coach > 'A1'";
+            WHERE specialite = 'Musculation'
+            AND id_coach > 'A8'";
 
             $result_coach = mysqli_query($db_handle, $sql);
 // SI UN AUTRE COACH EXISTE
@@ -107,9 +107,7 @@
         <div id="rdv">
             <div class="container_edt">
                 <div class="edt">
-                <?php
-
-                    session_start();        //VOIR COMMENTIARES DANS BASKET.PHP
+                <?php   //VOIR COMMENTIARES DANS BASKET.PHP
 
             // IDENTIQUE A BASKET.PHP
 

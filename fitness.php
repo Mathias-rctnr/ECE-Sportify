@@ -30,7 +30,6 @@
 //*** COMMENTAIRES IDENTIQUES A MUSCULATION.PHP */
         <?php   // VERIFIER SI UN AUTRE COACH EST DISPONIBLE DANS LA BDD 
 
-session_start();
 // Définition du nom de la base de données
 $database = "projet_piscine";
 // Connexion à la base de données MySQL
@@ -106,9 +105,7 @@ if ($db_found) {
         <div id="rdv">
             <div class="container_edt">
                 <div class="edt">
-                <?php
-
-                    session_start();        //VOIR COMMENTIARES DANS BASKET.PHP
+                <?php      //VOIR COMMENTIARES DANS BASKET.PHP
                     $compteur = 0;
 
                     $_SESSION['id_Coach'] = "A6";
