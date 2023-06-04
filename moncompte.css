@@ -168,7 +168,7 @@ header{
 .ajtcoach{
     padding-top: 20px;
 }
-.card {
+.card{
     font-family: 'Libre Franklin', sans-serif;
     position: relative;
     display: inline-block;
@@ -203,7 +203,7 @@ header{
     padding: 20px 0;
     font-size: 14px;
     color: #fff;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     border: none;
     border-bottom: 1px solid #fff;
     outline: none;
@@ -295,7 +295,10 @@ form{
     transition: .3s;
   }
 
-  
+
+#salle{
+    height: 100px;
+}
 .user-box_spe:focus-within label{
     color: #fff;
     font-size: 25px;

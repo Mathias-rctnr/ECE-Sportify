@@ -219,7 +219,20 @@
                         <input  id='mdp' type='text' name='mdp' required=''>
                         </div>
                         </div>
-                        <div class = 'contour_form_2' >
+                        <div class = 'contour_form_2' > 
+                        <div class='user-box'>
+                        <label>CV(.xml)</label>
+                        <input  id='cv' type='text' name='cv' required='' accept ='xml'>
+
+                        </div>
+                        <div class='user-box'>
+                        <label>Video</label>
+                        <input  id='video' type='text' name='video' >
+                        </div>
+                        <div class='user-box'>
+                        <label>Photo</label>
+                        <input  id='photo' type='text' name='photo' >
+                        </div>
                         <div class='user-box'>
                         <label>Salle</label>
                         <select id = 'salle' name='salle'>
@@ -228,7 +241,7 @@
                         <option value='St-Tropez'>St-Tropez</option>
                         </select>
                         <label>Specialité</label>
-                        <select id = 'specialite' name='specialite'>
+                        <select  name='specialite'>
                         <option value='Biking'>Biking</option>
                         <option value='Basketball'>Basketball</option>
                         <option value='Cardio Training'>Cardio Training</option>
@@ -242,19 +255,6 @@
                         <option value='Tennis'>Tennis</option>
                         </select>
 
-                        </div>
-                        <div class='user-box_spe'>
-                        <label>CV(.xml)</label>
-                        <input  id='cv' type='file' name='cv' required='' accept ='xml'>
-
-                        </div>
-                        <div class='user-box_spe'>
-                        <label>Video</label>
-                        <input  id='video' type='file' name='video' >
-                        </div>
-                        <div class='user-box_spe'>
-                        <label>Photo</label>
-                        <input  id='photo' type='file' name='photo' >
                         </div>
                         <input type = 'submit' class = 'card' value = 'AJOUTER'>
                         </div>

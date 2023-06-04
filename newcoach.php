@@ -52,24 +52,32 @@
         RETOURNER A L'ACCUEIL</a></div>";
         } else {
             // trouver le plus haut ID en chiffre dans une colonne contenant des valeurs telles que B1, B2, B3, etc. 
-            $sql = "SELECT MAX(CAST(SUBSTRING(id, 2) AS UNSIGNED)) AS highest_id FROM personnel WHERE id REGEXP '^B[0-9]+$'";
+            $sql = "SELECT MAX(CAST(SUBSTRING(id_coach, 2) AS UNSIGNED)) AS highest_id FROM personnel WHERE id_coach REGEXP '^B[0-9]+$'";
             $result_id = mysqli_query($db_handle, $sql);
-            if ($result->num_rows > 0) {
+
+            if ($result_id->num_rows > 0) {
+                
                 $row_id = mysqli_fetch_array($result_id);
                 $highest_id = $row_id['highest_id'];
                 // Incrémenter le plus haut ID
                 $new_id = 'B' . ($highest_id + 1);
+
             } else {
                 $new_id = 'B1';
             }
-
+            if($photo == "")
+            {
+                $photo = 'photos/activites sportives/pas_de_photo.png';
+            }
             // On ajoute l element a la bdd
             $sql = "INSERT INTO personnel (id_coach, nom, prenom, mail, mdp, specialite, cv, salle, video, photo) VALUES ('$new_id', '$nom', '$prenom', '$mail', '$mdp', '$specialite', '$cv', '$salle', '$video', '$photo')";
             $result_ajt = mysqli_query($db_handle, $sql);
             if ($result_ajt) {
+
                 echo "<div class = 'container_valid'><p>AJOUT REUSSI ! : LE NOUVEAU MEMBRE DU PERSONNEL EST AJOUTÉ À 'PROJET_PISCINE' <p><a href = 'menu.html' class = 'card'>
                 RETOURNER A L'ACCUEIL</a></div>";
             } else {
+
                 echo "<div class = 'container_error'><p>AJOUT IMPOSSIBLE : ERREUR LORS DE L'AJOUT À LA BDD 'PROJET_PISCINE' <p><a href = 'menu.html' class = 'card'>
         RETOURNER A L'ACCUEIL</a></div>";
             }
