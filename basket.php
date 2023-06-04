@@ -149,7 +149,7 @@
         <div id="rdv">
             <div class="container_edt">
                 <div class="edt">
-                <?php
+                    <?php
                     session_start();
 
                     ini_set('display_errors', 1);
@@ -172,45 +172,45 @@
                     $minutes = array(00, 45, 30, 15, 00, 00, 45, 30, 15, 00, 45);
                     $Reserv = "reserv";
 
-                    if($db_found){
-                            echo "<table>";
+                    if ($db_found) {
+                        echo "<table>";
 
+                        echo "<tr>";
+                        for ($i = 0; $i < 6; $i++) {
+                            echo "<th><p>" . $date[$i] . "</p></th>";
+                        }
+                        echo "</tr>";
+                        for ($row = 0; $row < 11; $row++) {
                             echo "<tr>";
-                            for($i=0; $i<6 ;$i++){
-                                echo "<th><p>" . $date[$i] . "</p></th>";
+
+                            $dbl_zero = "";
+                            if ($minutes[$row] === 0) {
+                                $dbl_zero = "0";
+                            }
+
+                            for ($col = 0; $col < 6; $col++) {
+                                $tempDate = $date[$col];
+                                $tempHeure = $heure[$row];
+                                $tempMinute = $minutes[$row];
+                                $tempSpe = 'basket';
+                                $requete = "SELECT * FROM rdv WHERE date = '$tempDate' AND heure_rdv = '$tempHeure' AND minutes_rdv = '$tempMinute' AND specialite = '$tempSpe'";
+                                $result = mysqli_query($db_handle, $requete);
+
+                                if (mysqli_num_rows($result) === 0) {
+                                    $Reserv = "libre";
+                                } else {
+                                    $Reserv = "reserv";
+                                }
+
+                                $compteur++;
+
+                                echo "<td><button class='" . $Reserv . "' name='" . $compteur . "' id='cases' data-row='" . $row . "' data-col='" . $col . "'>" . $heure[$row] . ":" . $minutes[$row] . $dbl_zero . "</button></td>";
                             }
                             echo "</tr>";
-                            for($row=0; $row<11; $row++){
-                                echo "<tr>";
+                        }
+                        echo "</table>";
 
-                                $dbl_zero = "";
-                                if($minutes[$row] === 0){
-                                    $dbl_zero = "0";
-                                }
-
-                                for ($col = 0; $col < 6; $col++) {
-                                    $tempDate = $date[$col];
-                                    $tempHeure = $heure[$row];
-                                    $tempMinute = $minutes[$row];
-                                    $tempSpe = 'basket';
-                                    $requete = "SELECT * FROM rdv WHERE date = '$tempDate' AND heure_rdv = '$tempHeure' AND minutes_rdv = '$tempMinute' AND specialite = '$tempSpe'";
-                                    $result = mysqli_query($db_handle, $requete);
-
-                                    if (mysqli_num_rows($result) === 0) {
-                                        $Reserv = "libre";
-                                    } else {
-                                        $Reserv = "reserv";
-                                    }
-
-                                    $compteur++;
-
-                                    echo "<td><button class='" . $Reserv . "' name='". $compteur ."' id='cases' data-row='" . $row ."' data-col='" . $col ."'>" . $heure[$row] .":". $minutes[$row] . $dbl_zero ."</button></td>";
-                                }
-                                echo "</tr>";
-                            }
-                            echo "</table>";
-
-                            $_SESSION['specialite'] = $tempSpe;
+                        $_SESSION['specialite'] = $tempSpe;
                     }
                     ?>
                 </div>
@@ -225,20 +225,21 @@
                     <input id="Inp_Row" name="Num_Lig" required>
                 </div>
             </div>
-        <div class = "button">
+    </div>
+    <div class="button">
         <div class="card">
             <button type="submit" class="card">
                 <p class="title">VALIDER</p>
             </button>
-            </div>
+        </div>
 
         <div class="card">
             <div class="card-info">
                 <p class="title">ME CONTACTER</p>
             </div>
-            </div>
-            </div>
-        </form>
+        </div>
+    </div>
+    </form>
     <script src="musculation.js"></script>
 </body>
 

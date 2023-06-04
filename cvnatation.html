@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<!--Même commentaires que pour cvbasket.html-->
 
 <head>
     <title>CV NATATION</title>
@@ -70,7 +71,7 @@
             let formations = xmlDoc.getElementsByTagName("formations")[0];
             let formationElements = formations.getElementsByTagName("formation");
 
-            // Parcourir les postes d'expérience et les afficher aux emplacements souhaités
+            // Parcourir les formations et les afficher aux emplacements souhaités
             let formationsHtml = "";
             for (let i = 0; i < formationElements.length; i++) {
                 let etablissement = formationElements[i].getElementsByTagName("etablissement")[0].textContent;
@@ -78,7 +79,7 @@
                 let date = formationElements[i].getElementsByTagName("date")[0].textContent;
 
                 formationsHtml += "<h3>" + etablissement + "</h3>";
-                formationsHtml += "<p> Diplôme : " + diplome + "</p>";
+                formationsHtml += "<p> Diplome : " + diplome + "</p>";
                 formationsHtml += "<p> " + date + "</p>";
             }
             document.getElementById("formations").innerHTML = formationsHtml;
