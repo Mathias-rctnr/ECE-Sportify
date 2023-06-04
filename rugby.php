@@ -182,15 +182,11 @@
     </form>
 
 
-    <div class="button">
-        <div class="card">
-            <div class="card-info">
-                <form name="form_contact" method="POST" action="chat.php">
-                    <input type="hidden" name="id_coach" value="A10" />
-                    <input type="submit" value='ME CONTACTER' />
-                </form>
-            </div>
-        </div>
+    <div id="form_contacte" class="form_contacte">
+        <form name="form_contact" method="POST" action="chat.php">
+            <input type="hidden" name="id_coach" value="A10" />
+            <input type="submit" id="valider" value='ME CONTACTER' />
+        </form>
     </div>
 
     <script src="musculation.js"></script>
