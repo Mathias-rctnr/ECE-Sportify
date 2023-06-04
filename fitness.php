@@ -107,15 +107,8 @@ if ($db_found) {
             <div class="container_edt">
                 <div class="edt">
                 <?php
-<<<<<<< Updated upstream
+
                     session_start();        //VOIR COMMENTIARES DANS BASKET.PHP
-
-                    ini_set('display_errors', 1);
-                    ini_set('display_startup_errors', 1);
-                    error_reporting(E_ALL);
-=======
->>>>>>> Stashed changes
-
                     $compteur = 0;
 
                     $_SESSION['id_Coach'] = "A6";
