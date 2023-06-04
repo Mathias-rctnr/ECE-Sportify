@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!($_SESSION["login_id"])) {
-    $myfile = fopen(__DIR__ . "/".$_SESSION["login_id"]."html", "a") or die("Impossible d'ouvrir le fichier!" . __DIR__ . "/".$_SESSION["login_id"]."html");
+    $myfile = fopen(__DIR__ . "/" . $_SESSION["login_id"] . "html", "a") or die("Impossible d'ouvrir le fichier!" . __DIR__ . "/" . $_SESSION["login_id"] . "html");
     fwrite($myfile, $logout_message);
     fclose($myfile);
     session_destroy();
@@ -67,18 +67,29 @@ if (!($_SESSION["login_id"])) {
                 $_SESSION['ID_coach'] = $ID_coach;
                 echo "<div id='titre'><span class='Libere'><br>Votre Chatroom avec votre coach</span></div><!--Titre-->";
             } else { // COMPTE POUR LES COACHS
-                $sql = "SELECT * FROM personnel WHERE id_coach = '$id'";
-                $result_coach = mysqli_query($db_handle, $sql);
+                $sql1 = "SELECT * FROM personnel WHERE id_coach = '$id'";
+                $result_coach = mysqli_query($db_handle, $sql1);
 
                 if ($result_coach->num_rows == 1) {
-                    $data = mysqli_fetch_assoc($result_coach);
-                    $nom = $data["prenom"];
+                    $data1 = mysqli_fetch_assoc($result_coach);
+                    $nom = $data1["prenom"];
                     $_SESSION['nom'] = $nom;
 
-                    $ID_coach = $id;  
+                    $ID_coach = $id;
                     $_SESSION['ID_coach'] = $ID_coach;
 
-                    $ID_client = "1";
+                    $nom_client = $_POST['nom_client'];
+                    $sql2 = "SELECT * FROM client WHERE nom = '$nom_client'";
+                    $result_client = mysqli_query($db_handle, $sql2);
+
+                    if ($result_client->num_rows == 1) {
+                        $data2 = mysqli_fetch_assoc($result_client);
+                        $ID_client = $data2["id_client"];
+                    } else {
+                        echo "Aucun client a été trouvé";
+                        header("Location: coach_contacter.html");
+                    }
+
                     echo "<div id='titre'><span class='Libere'><br>Votre Chatroom avec votre client</span></div><!--Titre-->";
                 }
             }
@@ -90,11 +101,11 @@ if (!($_SESSION["login_id"])) {
                     <p class='welcome'>Bonjour, <b>" . $nom . " </b></p>
                 </div>
                 <div id='chatbox'>";
-                if (file_exists($ID_client.$ID_coach.'.html') && filesize($ID_client.$ID_coach.'.html') > 0) {
-                    $contents = file_get_contents($ID_client.$ID_coach.'.html');
-                    echo $contents;
-                }
-                echo "
+        if (file_exists($ID_client . $ID_coach . '.html') && filesize($ID_client . $ID_coach . '.html') > 0) {
+            $contents = file_get_contents($ID_client . $ID_coach . '.html');
+            echo $contents;
+        }
+        echo "
                 </div>
                     <form name='message' action ='' >
                         <input name='usermsg' type='text' id='usermsg' />
@@ -121,7 +132,7 @@ if (!($_SESSION["login_id"])) {
             function loadLog() {
                 var oldscrollHeight = $("#chatbox")[0].scrollHeight - 20; //Hauteur de défilement avant la requête
                 $.ajax({
-                    url: '<?php echo $ID_client.$ID_coach; ?>'+'.html',
+                    url: '<?php echo $ID_client . $ID_coach; ?>' + '.html',
                     cache: false,
                     success: function(html) {
                         $("#chatbox").html(html); //Insérez le log de chat dans la #chatbox div
@@ -141,4 +152,3 @@ if (!($_SESSION["login_id"])) {
 </body>
 
 </html>
-

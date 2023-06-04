@@ -162,6 +162,10 @@
 
                         echo "<a href = '" . $data["cv"] . "' class = 'card'>CV</a>";
                         echo "</div>";
+                        echo "<div class = 'contour_info_2' >";
+
+                        echo "<a href = 'coach_contacter.html' class = 'card'>CONTACTER</a>";
+                        echo "</div>";
                         echo "</div>";
                         echo "</div>
                         <form action = 'deconnexion.php'>

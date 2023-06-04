@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Salle de sport Omnes</title>
+    <link rel="stylesheet" href="salleOmnes.css">
+    <link href="coach_contacter.css" rel="stylesheet">
+</head>
+
+<body>
+    <style id="calque"></style>
+    <div id="total">
+        <header>
+            <div class="Titre_Sportify">Sportify</div><!--Affichage du header-->
+            <div class="Wrapper_Liens">
+                <a class="Liens1" id="liens_Nav" href="menu.html">Accueil</a>
+                <a class="Liens2" id="liens_Nav" href="Tout_parcourir.html">Tout Parcourir</a>
+                <a class="Liens3" id="liens_Nav" href="recherche.html">Recherche</a>
+                <a class="Liens4" id="liens_Nav" href="Affichage_Rdv.php">Rendez-Vous</a>
+                <a class="Liens5" id="liens_Nav" href="moncompte.php">Votre Compte</a>
+            </div>
+        </header>
+        <div id="content"><!--div de toute notre page-->
+            <div class="calque"></div><!--Calque sur le fond la page-->
+
+            <p><span class="Libere"><br>Avec quel client souhaitez-vous échanger ?</span></p><!--titre-->
+
+            <div id="form">
+                <form action="chat.php" method="post">
+                    <input type="text" id="nom_client" name = "nom_client" required>
+                    <input type="submit" id="valider" />
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
