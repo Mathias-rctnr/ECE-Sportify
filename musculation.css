@@ -438,3 +438,31 @@ table tr{
     height: 60px;
     color: var(--bleu8);
 }
+
+/*****Contacter*/
+
+#valider{
+    overflow: hidden;
+    width: 200px;
+    height: 40px;
+    background-color:transparent;
+    border: 2px transparent var(--bleu2);
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    transition: .3s ease-in-out;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+#valider:hover{
+    background-color: var(--bleu7);
+    box-shadow: 0 0 5px var(--bleu7),
+      0 0 25px var(--bleu7),
+      0 0 50px var(--bleu7),
+      0 0 100px var(--bleu7);
+      
+}
+
+#form_contacte{
+    padding-bottom: 50px;
+}

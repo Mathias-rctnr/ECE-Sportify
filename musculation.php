@@ -111,7 +111,7 @@
                     $compteur = 0;
 
                     $_SESSION['id_Coach'] = "A8";
-                    $_SESSION['specialite'] = 'Musculation';
+                    $_SESSION['specialite'] = 'musculation';
 
                     $database = "Projet_Piscine";                           //!                     ATTENTION AU NOM DE LA BDD 
                     $db_handle = mysqli_connect("localhost", "root", "");
@@ -144,7 +144,7 @@
                                 $tempDate = $date[$col];
                                 $tempHeure = $heure[$row];
                                 $tempMinute = $minutes[$row];
-                                $tempSpe = "Musculation";
+                                $tempSpe = "musculation";
                                 $requete = "SELECT * FROM rdv WHERE date = '$tempDate' AND heure_rdv = '$tempHeure' AND minutes_rdv = '$tempMinute' AND specialite = '$tempSpe'";
                                 $result = mysqli_query($db_handle, $requete);
 
@@ -185,15 +185,11 @@
         </div>
     </div>
     </form>
-    <div class="button">
-        <div class="card">
-            <div class="card-info">
-                <form name="form_contact" method="POST" action="chat.php">
-                    <input type="hidden" name="id_coach" value="A8" />
-                    <input type="submit" value='ME CONTACTER' />
-                </form>
-            </div>
-        </div>
+    <div id="form_contacte" class="form_contacte">
+        <form name="form_contact" method="POST" action="chat.php">
+            <input type="hidden" name="id_coach" value="A8" />
+            <input type="submit" id="valider" value='ME CONTACTER' />
+        </form>
     </div>
     <script src="musculation.js"></script>
 </body>
