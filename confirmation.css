@@ -184,3 +184,8 @@ button:active{
     align-items: center;
     width: 50vw;
 }
+
+.txt_Valid{
+    color: var(--bleu9);
+    font-size: 30px;
+}
